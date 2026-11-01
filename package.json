@@ -1,0 +1,26 @@
+{
+  "name": "ai-news-digest",
+  "version": "1.0.0",
+  "description": "AI 新闻聚合 CLI：抓取 RSS 并生成按天累积的 HTML 日报 / AI news aggregator CLI that builds a day-by-day HTML digest from RSS feeds",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test src/*.test.ts",
+    "deploy": "git add docs && (git diff --cached --quiet || git commit -m \"chore: 更新日报 / update digest\") && git push"
+  },
+  "engines": {
+    "node": ">=20.12"
+  },
+  "dependencies": {
+    "node-cron": "^4.6.0",
+    "openai": "^7.47.0",
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

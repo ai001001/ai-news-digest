@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 新闻日报</title>
+  <meta name="description" content="每日 AI 新闻聚合：TechCrunch、The Verge、Hacker News">
+  <style>
+    :root {
+      --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e5e5e2;
+      --accent: #3b5bdb; --accent-soft: #edf2ff; --warn: #c2410c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #111113; --card: #1c1c1f; --text: #ececf1; --muted: #9a9aa3; --line: #2c2c31;
+        --accent: #8ca2ff; --accent-soft: #23283d; --warn: #fb923c;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text);
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    header h1 { margin: 0 0 4px; font-size: 28px; letter-spacing: -0.02em; }
+    header p { margin: 0; color: var(--muted); font-size: 14px; }
+    nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 24px; }
+    nav a {
+      padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
+      font-size: 13px; text-decoration: none; font-variant-numeric: tabular-nums;
+    }
+    .day { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 14px; }
+    .day > summary {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 14px 18px; cursor: pointer; list-style: none;
+    }
+    .day > summary::-webkit-details-marker { display: none; }
+    .day > summary::before { content: "▸"; color: var(--muted); margin-right: 8px; transition: transform .15s; }
+    .day[open] > summary::before { transform: rotate(90deg); }
+    .date { flex: 1; font-weight: 600; font-size: 18px; font-variant-numeric: tabular-nums; }
+    .date small { margin-left: 8px; color: var(--muted); font-weight: 400; font-size: 14px; }
+    .count { color: var(--muted); font-size: 14px; }
+    .stats, .warn, .empty { margin: 0; padding: 0 18px 10px; font-size: 13px; color: var(--muted); }
+    .warn { color: var(--warn); }
+    .list { margin: 0; padding: 0 18px 8px; list-style: none; counter-reset: n; }
+    .item { padding: 12px 0; border-top: 1px solid var(--line); counter-increment: n; }
+    .title { color: var(--text); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
+    .title::before { content: counter(n) ". "; color: var(--muted); font-weight: 400; }
+    .title:hover { color: var(--accent); }
+    .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 2px; font-size: 13px; color: var(--muted); }
+    .src { color: var(--accent); }
+    .summary { margin: 6px 0 0; font-size: 15px; }
+    footer { margin-top: 32px; color: var(--muted); font-size: 12px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>AI 新闻日报</h1>
+      <p>共 2 天 · 21 篇 · 最后更新 2026-11-01 12:02（Asia/Shanghai）</p>
+    </header>
+    <nav><a href="#d-2026-11-01">11-01</a><a href="#d-2026-10-31">10-31</a></nav>
+    <details class="day" id="d-2026-11-01" open>
+      <summary>
+        <span class="date">2026-11-01<small>周日</small></span>
+        <span class="count">4 篇</span>
+      </summary>
+      <div class="stats">📊 TechCrunch 3 · The Verge 1 ｜ 🕒 最近 24 小时 ｜ 更新于 2026-11-01 12:02</div>
+      <p class="warn">⚠️ 抓取失败：Hacker News（HTTP 502）</p>
+      <ol class="list">
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/" target="_blank" rel="noopener noreferrer">Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:41:00.000Z">2026-11-01 05:41</time></div>
+          <p class="summary">苹果CEO表示公司不会为了AI而做AI，并为其在AI领域的现状进行了辩护。</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/" target="_blank" rel="noopener noreferrer">Judge allows NAACP lawsuit over xAI data center pollution to move forward</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:17:03.000Z">2026-11-01 05:17</time></div>
+          <p class="summary">法院允许全国有色人种协进会就xAI数据中心污染提起的诉讼继续审理，指控其违反《清洁空气法》。</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/" target="_blank" rel="noopener noreferrer">OpenAI reportedly lowers funding target for new round</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T16:12:55.000Z">2026-11-01 00:12</time></div>
+          <p class="summary">OpenAI新一轮融资未达预期，已下调融资目标。</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code" target="_blank" rel="noopener noreferrer">I built an AI Tamagotchi before Meta could</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-31T16:05:00.000Z">2026-11-01 00:05</time></div>
+          <p class="summary">作者自建了一个约50美元的AI电子宠物，功能类似Meta的Muse Charm，但更简陋。</p>
+        </li>
+      </ol>
+    </details>
+    <details class="day" id="d-2026-10-31">
+      <summary>
+        <span class="date">2026-10-31<small>周六</small></span>
+        <span class="count">17 篇</span>
+      </summary>
+      <div class="stats">📊 Hacker News 3 · TechCrunch 9 · The Verge 5 ｜ 🕒 最近 24 小时 ｜ 更新于 2026-10-31 23:52</div>
+      
+      <ol class="list">
+        <li class="item">
+          <a class="title" href="https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26" target="_blank" rel="noopener noreferrer">AI startup hacks Anthropic, gains access to employee details, internal messages</a>
+          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span class="heat">🔥 68 points · 16 评论</span></div>
+          
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked" target="_blank" rel="noopener noreferrer">Anthropic&#39;s Claude AI blocks video game cloning and reverse-engineering</a>
+          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span class="heat">🔥 21 points · 3 评论</span></div>
+          
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/" target="_blank" rel="noopener noreferrer">Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T01:20:00.000Z">2026-10-31 09:20</time></div>
+          <p class="summary">When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips of…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/" target="_blank" rel="noopener noreferrer">Ollie, a privacy-focused AI assistant, is shutting down</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T22:56:00.000Z">2026-10-31 06:56</time></div>
+          <p class="summary">As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that r…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3" target="_blank" rel="noopener noreferrer">Apple Intelligence is finally coming to China with iOS 27.3</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T22:32:00.000Z">2026-10-31 06:32</time></div>
+          <p class="summary">Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese ne…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/" target="_blank" rel="noopener noreferrer">Intel’s stock crashes, knocking $12B from government’s stake</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:54:00.000Z">2026-10-31 05:54</time></div>
+          <p class="summary">Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC pr…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/" target="_blank" rel="noopener noreferrer">Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:52:00.000Z">2026-10-31 05:52</time></div>
+          <p class="summary">Blackstone&#39;s forecast is just a prediction, but naturally, a high junk rating would make it more dif…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/" target="_blank" rel="noopener noreferrer">Wall Street closes sharply lower as AI cash burn fears spark tech selloff</a>
+          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-30T21:32:00.000Z">2026-10-31 05:32</time><span class="heat">🔥 63 points · 14 评论</span></div>
+          
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/" target="_blank" rel="noopener noreferrer">Last-minute Halloween costumes for tech nerds</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:26:00.000Z">2026-10-31 05:26</time></div>
+          <p class="summary">No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/" target="_blank" rel="noopener noreferrer">Cracks are emerging in the AI spending boom</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:17:00.000Z">2026-10-31 05:17</time></div>
+          <p class="summary">Big Tech is pouring billions into AI infrastructure, but mounting debt, negative cash flow, and grow…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers" target="_blank" rel="noopener noreferrer">Sam Altman says it’s better for RAM to be in a data center than on your desk</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:48:00.000Z">2026-10-31 04:48</time></div>
+          <p class="summary">Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out" target="_blank" rel="noopener noreferrer">The biggest names in AI are backing a new way to opt out of scraping</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:26:00.000Z">2026-10-31 04:26</time></div>
+          <p class="summary">OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission" target="_blank" rel="noopener noreferrer">Google&amp;#8217;s satellite AI server transmits its first response to Earth</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T18:21:00.000Z">2026-10-31 02:21</time></div>
+          <p class="summary">Google&#39;s AI chip-equipped satellite has generated its first response from space. In a blog post on F…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/" target="_blank" rel="noopener noreferrer">Zest’s new AI agent finds restaurants and books reservations over text</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:47:00.000Z">2026-10-31 01:47</time></div>
+          <p class="summary">Can&#39;t agree on where to eat? Zest&#39;s AI concierge can combine everyone&#39;s tastes, put restaurant optio…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru" target="_blank" rel="noopener noreferrer">Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru</a>
+          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T17:38:00.000Z">2026-10-31 01:38</time></div>
+          <p class="summary">Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru.…</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/" target="_blank" rel="noopener noreferrer">Google’s first data center satellite is online and writing poetry</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:00:00.000Z">2026-10-31 01:00</time></div>
+          <p class="summary">The first TPU in space is running a Google DeepMind Gemma 4 model and writing cheesy poetry.</p>
+        </li>
+        <li class="item">
+          <a class="title" href="https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/" target="_blank" rel="noopener noreferrer">Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’</a>
+          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T16:03:00.000Z">2026-10-31 00:03</time></div>
+          <p class="summary">The cautionary Theranos tale takes on a new significance in the AI era, when companies that have nev…</p>
+        </li>
+      </ol>
+    </details>
+    <footer>由 ai-news-digest 自动生成 · 来源：TechCrunch / The Verge / Hacker News</footer>
+  </div>
+</body>
+</html>

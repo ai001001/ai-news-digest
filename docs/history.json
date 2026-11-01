@@ -1,0 +1,178 @@
+{
+  "days": [
+    {
+      "date": "2026-11-01",
+      "generatedAt": "2026-11-01T04:02:12.134Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
+          "link": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
+          "pubDate": "2026-10-31T21:41:00.000Z",
+          "source": "TechCrunch",
+          "summary": "苹果CEO表示公司不会为了AI而做AI，并为其在AI领域的现状进行了辩护。"
+        },
+        {
+          "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
+          "link": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
+          "pubDate": "2026-10-31T21:17:03.000Z",
+          "source": "TechCrunch",
+          "summary": "法院允许全国有色人种协进会就xAI数据中心污染提起的诉讼继续审理，指控其违反《清洁空气法》。"
+        },
+        {
+          "title": "OpenAI reportedly lowers funding target for new round",
+          "link": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+          "pubDate": "2026-10-31T16:12:55.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI新一轮融资未达预期，已下调融资目标。"
+        },
+        {
+          "title": "I built an AI Tamagotchi before Meta could",
+          "link": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
+          "pubDate": "2026-10-31T16:05:00.000Z",
+          "source": "The Verge",
+          "summary": "作者自建了一个约50美元的AI电子宠物，功能类似Meta的Muse Charm，但更简陋。"
+        }
+      ]
+    },
+    {
+      "date": "2026-10-31",
+      "generatedAt": "2026-10-31T15:52:00.000Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "AI startup hacks Anthropic, gains access to employee details, internal messages",
+          "link": "https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26",
+          "pubDate": "2026-10-31T13:25:00.000Z",
+          "source": "Hacker News",
+          "summary": "",
+          "points": 68,
+          "comments": 16
+        },
+        {
+          "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
+          "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
+          "pubDate": "2026-10-31T13:25:00.000Z",
+          "source": "Hacker News",
+          "summary": "",
+          "points": 21,
+          "comments": 3
+        },
+        {
+          "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
+          "link": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
+          "pubDate": "2026-10-31T01:20:00.000Z",
+          "source": "TechCrunch",
+          "summary": "When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips of…"
+        },
+        {
+          "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+          "link": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+          "pubDate": "2026-10-30T22:56:00.000Z",
+          "source": "TechCrunch",
+          "summary": "As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that r…"
+        },
+        {
+          "title": "Apple Intelligence is finally coming to China with iOS 27.3",
+          "link": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
+          "pubDate": "2026-10-30T22:32:00.000Z",
+          "source": "The Verge",
+          "summary": "Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese ne…"
+        },
+        {
+          "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+          "link": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+          "pubDate": "2026-10-30T21:54:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC pr…"
+        },
+        {
+          "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+          "link": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+          "pubDate": "2026-10-30T21:52:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Blackstone's forecast is just a prediction, but naturally, a high junk rating would make it more dif…"
+        },
+        {
+          "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
+          "link": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
+          "pubDate": "2026-10-30T21:32:00.000Z",
+          "source": "Hacker News",
+          "summary": "",
+          "points": 63,
+          "comments": 14
+        },
+        {
+          "title": "Last-minute Halloween costumes for tech nerds",
+          "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+          "pubDate": "2026-10-30T21:26:00.000Z",
+          "source": "TechCrunch",
+          "summary": "No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time…"
+        },
+        {
+          "title": "Cracks are emerging in the AI spending boom",
+          "link": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+          "pubDate": "2026-10-30T21:17:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Big Tech is pouring billions into AI infrastructure, but mounting debt, negative cash flow, and grow…"
+        },
+        {
+          "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+          "pubDate": "2026-10-30T20:48:00.000Z",
+          "source": "The Verge",
+          "summary": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an…"
+        },
+        {
+          "title": "The biggest names in AI are backing a new way to opt out of scraping",
+          "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
+          "pubDate": "2026-10-30T20:26:00.000Z",
+          "source": "The Verge",
+          "summary": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use…"
+        },
+        {
+          "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
+          "link": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
+          "pubDate": "2026-10-30T18:21:00.000Z",
+          "source": "The Verge",
+          "summary": "Google's AI chip-equipped satellite has generated its first response from space. In a blog post on F…"
+        },
+        {
+          "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+          "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+          "pubDate": "2026-10-30T17:47:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Can't agree on where to eat? Zest's AI concierge can combine everyone's tastes, put restaurant optio…"
+        },
+        {
+          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+          "pubDate": "2026-10-30T17:38:00.000Z",
+          "source": "The Verge",
+          "summary": "Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru.…"
+        },
+        {
+          "title": "Google’s first data center satellite is online and writing poetry",
+          "link": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
+          "pubDate": "2026-10-30T17:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "The first TPU in space is running a Google DeepMind Gemma 4 model and writing cheesy poetry."
+        },
+        {
+          "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
+          "link": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
+          "pubDate": "2026-10-30T16:03:00.000Z",
+          "source": "TechCrunch",
+          "summary": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have nev…"
+        }
+      ]
+    }
+  ]
+}
