@@ -1,4 +1,4 @@
-import { EXCLUDE_CATEGORY_PATTERNS, EXCLUDE_TITLE_PATTERNS } from './config.js';
+import { EXCLUDE_CATEGORY_PATTERNS, EXCLUDE_TITLE_PATTERNS, HN_HEAT_WEIGHT } from './config.js';
 import type { Article, FeedSource, FetchResult } from './types.js';
 
 /**
@@ -83,4 +83,39 @@ export function normalizeUrl(url: string): string {
   } catch {
     return url.trim().toLowerCase();
   }
+}
+
+/**
+ * 把 HN points 换算成 0-100 的热度（对数刻度：10 分≈26，100 分≈50，1000 分≈75）。
+ * Convert HN points into a 0-100 heat score on a log scale (10 → ~26, 100 → ~50, 1000 → ~75).
+ * @param points - HN 热度分数 / HN points
+ * @returns 热度 / Heat score
+ */
+export function hnHeat(points: number): number {
+  return Math.min(100, Math.round(25 * Math.log10(Math.max(0, points) + 1)));
+}
+
+/**
+ * 计算综合热度：有 AI 评分和 HN points 时加权平均，只有其一时直接使用，都没有时返回 undefined。
+ * Compute the overall heat: a weighted average when both the AI rating and HN points exist,
+ * either one alone otherwise, or undefined when neither is available.
+ * @param aiHeat - AI 热度评分 / AI heat rating
+ * @param points - HN 热度分数 / HN points
+ * @returns 综合热度 / Overall heat score
+ */
+export function computeHeat(aiHeat: number | undefined, points: number | undefined): number | undefined {
+  if (points === undefined) return aiHeat;
+  if (aiHeat === undefined) return hnHeat(points);
+  return Math.round((1 - HN_HEAT_WEIGHT) * aiHeat + HN_HEAT_WEIGHT * hnHeat(points));
+}
+
+/**
+ * 排序比较函数：热度从高到低，热度相同（或都没有）时按发布时间从新到旧。
+ * Sort comparator: hottest first, falling back to newest first when heat is equal or missing.
+ * @param a - 文章 A / Article A
+ * @param b - 文章 B / Article B
+ * @returns 比较结果 / Comparison result
+ */
+export function compareByHeat(a: { heat?: number; pubDate: string }, b: { heat?: number; pubDate: string }): number {
+  return (b.heat ?? 0) - (a.heat ?? 0) || b.pubDate.localeCompare(a.pubDate);
 }

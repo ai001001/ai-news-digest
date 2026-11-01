@@ -2,42 +2,51 @@
   "days": [
     {
       "date": "2026-11-01",
-      "generatedAt": "2026-11-01T04:02:12.134Z",
+      "generatedAt": "2026-11-01T05:12:46.932Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502"
-        }
-      ],
+      "failed": [],
       "articles": [
+        {
+          "title": "OpenAI reportedly lowers funding target for new round",
+          "link": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
+          "pubDate": "2026-10-31T16:12:55.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI将新融资目标从300亿美元下调至200亿美元，目前仅获110亿美元，部分大型投资者反应冷淡。该轮由阿联酋投资者领投，融资遇冷源于华尔街对AI基建高投入的担忧。",
+          "heat": 88
+        },
         {
           "title": "Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’",
           "link": "https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/",
           "pubDate": "2026-10-31T21:41:00.000Z",
           "source": "TechCrunch",
-          "summary": "苹果CEO表示公司不会为了AI而做AI，并为其在AI领域的现状进行了辩护。"
+          "summary": "苹果新任CEO John Ternus接受Wired采访，回应外界对苹果AI落后的质疑，称\"非常满意现状\"，苹果会利用AI但\"不为AI而AI\"，用户不必感知AI存在，关键是产品是否被喜爱。",
+          "heat": 65
         },
         {
           "title": "Judge allows NAACP lawsuit over xAI data center pollution to move forward",
           "link": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/",
           "pubDate": "2026-10-31T21:17:03.000Z",
           "source": "TechCrunch",
-          "summary": "法院允许全国有色人种协进会就xAI数据中心污染提起的诉讼继续审理，指控其违反《清洁空气法》。"
+          "summary": "联邦法官驳回 xAI 的撤诉请求，允许 NAACP 依据《清洁空气法》继续起诉其孟菲斯 Colossus 数据中心未获许可运行35台燃气轮机。xAI 辩称设备属移动源且原告无起诉资格，均未被采纳。",
+          "heat": 62
         },
         {
-          "title": "OpenAI reportedly lowers funding target for new round",
-          "link": "https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/",
-          "pubDate": "2026-10-31T16:12:55.000Z",
-          "source": "TechCrunch",
-          "summary": "OpenAI新一轮融资未达预期，已下调融资目标。"
+          "title": "The Impact of Generative AI on Critical Thinking: Self-Reported (2025)",
+          "link": "https://dl.acm.org/doi/full/10.1145/3706598.3713778",
+          "pubDate": "2026-10-31T18:02:29.000Z",
+          "source": "Hacker News",
+          "summary": "2025年一项研究探讨生成式AI对批判性思维的影响，基于用户自我报告数据。研究发现AI工具的使用与批判性思维实践存在关联，引发对过度依赖AI削弱独立思考能力的讨论。",
+          "points": 75,
+          "comments": 53,
+          "heat": 46
         },
         {
           "title": "I built an AI Tamagotchi before Meta could",
           "link": "https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code",
           "pubDate": "2026-10-31T16:05:00.000Z",
           "source": "The Verge",
-          "summary": "作者自建了一个约50美元的AI电子宠物，功能类似Meta的Muse Charm，但更简陋。"
+          "summary": "记者花50美元购入Waveshare ESP32-S3 1.75C，用Meta开源代码和Muse云做出类Muse Charm的AI挂件，可对话但响应慢、无语音输出，实用性有限。",
+          "heat": 35
         }
       ]
     },
@@ -48,129 +57,146 @@
       "failed": [],
       "articles": [
         {
-          "title": "AI startup hacks Anthropic, gains access to employee details, internal messages",
-          "link": "https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26",
-          "pubDate": "2026-10-31T13:25:00.000Z",
-          "source": "Hacker News",
-          "summary": "",
-          "points": 68,
-          "comments": 16
-        },
-        {
-          "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
-          "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
-          "pubDate": "2026-10-31T13:25:00.000Z",
-          "source": "Hacker News",
-          "summary": "",
-          "points": 21,
-          "comments": 3
+          "title": "Cracks are emerging in the AI spending boom",
+          "link": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
+          "pubDate": "2026-10-30T21:17:00.000Z",
+          "source": "TechCrunch",
+          "summary": "科技巨头今年计划投入超7400亿美元建设AI基础设施，但负现金流与债务攀升引发投资者担忧。Alphabet三季度自由现金流为-91亿美元，股价暴跌12%，市值蒸发5000亿美元。",
+          "heat": 88
         },
         {
           "title": "Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia",
           "link": "https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/",
           "pubDate": "2026-10-31T01:20:00.000Z",
           "source": "TechCrunch",
-          "summary": "When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips of…"
-        },
-        {
-          "title": "Ollie, a privacy-focused AI assistant, is shutting down",
-          "link": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
-          "pubDate": "2026-10-30T22:56:00.000Z",
-          "source": "TechCrunch",
-          "summary": "As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that r…"
+          "summary": "英伟达洽谈为Nscale西弗吉尼亚AI数据中心提供数十亿美元债务担保，Anthropic已签首栋建筑446亿美元合同。此举深化英伟达对云厂商的资金支持。",
+          "heat": 85
         },
         {
           "title": "Apple Intelligence is finally coming to China with iOS 27.3",
           "link": "https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3",
           "pubDate": "2026-10-30T22:32:00.000Z",
           "source": "The Verge",
-          "summary": "Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese ne…"
-        },
-        {
-          "title": "Intel’s stock crashes, knocking $12B from government’s stake",
-          "link": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
-          "pubDate": "2026-10-30T21:54:00.000Z",
-          "source": "TechCrunch",
-          "summary": "Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC pr…"
-        },
-        {
-          "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
-          "link": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
-          "pubDate": "2026-10-30T21:52:00.000Z",
-          "source": "TechCrunch",
-          "summary": "Blackstone's forecast is just a prediction, but naturally, a high junk rating would make it more dif…"
-        },
-        {
-          "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
-          "link": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
-          "pubDate": "2026-10-30T21:32:00.000Z",
-          "source": "Hacker News",
-          "summary": "",
-          "points": 63,
-          "comments": 14
-        },
-        {
-          "title": "Last-minute Halloween costumes for tech nerds",
-          "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
-          "pubDate": "2026-10-30T21:26:00.000Z",
-          "source": "TechCrunch",
-          "summary": "No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time…"
-        },
-        {
-          "title": "Cracks are emerging in the AI spending boom",
-          "link": "https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/",
-          "pubDate": "2026-10-30T21:17:00.000Z",
-          "source": "TechCrunch",
-          "summary": "Big Tech is pouring billions into AI infrastructure, but mounting debt, negative cash flow, and grow…"
-        },
-        {
-          "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
-          "pubDate": "2026-10-30T20:48:00.000Z",
-          "source": "The Verge",
-          "summary": "Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an…"
+          "summary": "苹果宣布随 iOS 27.3 在中国上线 Apple Intelligence，测试版 11 月 4 日推出、12 月正式发布。",
+          "heat": 85
         },
         {
           "title": "The biggest names in AI are backing a new way to opt out of scraping",
           "link": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out",
           "pubDate": "2026-10-30T20:26:00.000Z",
           "source": "The Verge",
-          "summary": "OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use…"
+          "summary": "OpenAI、Google、微软和Anthropic将采纳IETF新提出的共享\"policy token\"标准，写入robots.txt，让出版商一次性向多家AI公司表达训练偏好，无需逐一设置。",
+          "heat": 85
+        },
+        {
+          "title": "Intel’s stock crashes, knocking $12B from government’s stake",
+          "link": "https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/",
+          "pubDate": "2026-10-30T21:54:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英特尔第四季度营收指引仅150-160亿美元，远低于预期，股价周五暴跌约28%，美国政府所持10%股份缩水120亿美元。AI挤占内存推高PC价格，拖累PC销售。",
+          "heat": 82
+        },
+        {
+          "title": "Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says",
+          "link": "https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/",
+          "pubDate": "2026-10-30T21:52:00.000Z",
+          "source": "TechCrunch",
+          "summary": "FT报道，黑石预计Anthropic IPO后将获BB级高收益垃圾债评级，与其此前投资级预期相反。黑石是Anthropic 630亿美元芯片融资的锚定投资者。",
+          "heat": 82
         },
         {
           "title": "Google&#8217;s satellite AI server transmits its first response to Earth",
           "link": "https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission",
           "pubDate": "2026-10-30T18:21:00.000Z",
           "source": "The Verge",
-          "summary": "Google's AI chip-equipped satellite has generated its first response from space. In a blog post on F…"
-        },
-        {
-          "title": "Zest’s new AI agent finds restaurants and books reservations over text",
-          "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
-          "pubDate": "2026-10-30T17:47:00.000Z",
-          "source": "TechCrunch",
-          "summary": "Can't agree on where to eat? Zest's AI concierge can combine everyone's tastes, put restaurant optio…"
-        },
-        {
-          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
-          "link": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
-          "pubDate": "2026-10-30T17:38:00.000Z",
-          "source": "The Verge",
-          "summary": "Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru.…"
+          "summary": "Google Project Suncatcher 卫星在轨启动 TPU，星载 Gemma 4 模型生成太空俳句并传回地球，完成首次天基 AI 推理。",
+          "heat": 78
         },
         {
           "title": "Google’s first data center satellite is online and writing poetry",
           "link": "https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/",
           "pubDate": "2026-10-30T17:00:00.000Z",
           "source": "TechCrunch",
-          "summary": "The first TPU in space is running a Google DeepMind Gemma 4 model and writing cheesy poetry."
+          "summary": "Google首个太空数据中心原型卫星Suncatcher已上线，搭载4块TPU并运行DeepMind Gemma 4模型，成功生成太空俳句。",
+          "heat": 78
+        },
+        {
+          "title": "Sam Altman says it’s better for RAM to be in a data center than on your desk",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers",
+          "pubDate": "2026-10-30T20:48:00.000Z",
+          "source": "The Verge",
+          "summary": "OpenAI CEO Sam Altman称，全球DRAM供应紧张下，个人电脑内存利用率低，不如集中于数据中心。OpenAI的大规模采购已挤压RAM供应，推高消费电子价格。",
+          "heat": 72
+        },
+        {
+          "title": "AI startup hacks Anthropic, gains access to employee details, internal messages",
+          "link": "https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26",
+          "pubDate": "2026-10-31T13:25:00.000Z",
+          "source": "Hacker News",
+          "summary": "AI安全初创公司Cathedral用AI代理在12小时内攻入Anthropic内部系统，获取员工薪资、Slack消息等敏感数据。Anthropic称已当天切断访问，未泄露Claude对话及模型权重。",
+          "points": 68,
+          "comments": 16,
+          "heat": 68
+        },
+        {
+          "title": "Wall Street closes sharply lower as AI cash burn fears spark tech selloff",
+          "link": "https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/",
+          "pubDate": "2026-10-30T21:32:00.000Z",
+          "source": "Hacker News",
+          "summary": "华尔街股市大幅收低，人工智能领域现金消耗过快的担忧引发科技股抛售潮。此次下跌反映出市场对AI投资回报周期的疑虑加剧，科技板块承压明显。",
+          "points": 63,
+          "comments": 14,
+          "heat": 67
+        },
+        {
+          "title": "Anthropic's Claude AI blocks video game cloning and reverse-engineering",
+          "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked",
+          "pubDate": "2026-10-31T13:25:00.000Z",
+          "source": "Hacker News",
+          "summary": "Anthropic 的 Claude Code 和 Opus 5.5 模型被曝拒绝协助游戏开发者进行逆向工程或克隆，据称因新增文本规则禁止“重建特定现有游戏”，以应对 AI 克隆游戏和勒索威胁。",
+          "points": 21,
+          "comments": 3,
+          "heat": 59
+        },
+        {
+          "title": "Zest’s new AI agent finds restaurants and books reservations over text",
+          "link": "https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/",
+          "pubDate": "2026-10-30T17:47:00.000Z",
+          "source": "TechCrunch",
+          "summary": "餐厅发现应用Zest推出短信AI礼宾，发短信即可获个性化推荐并预订餐桌，支持OpenTable等平台，还能进群聊综合多人喜好投票选餐厅。",
+          "heat": 55
+        },
+        {
+          "title": "Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
+          "pubDate": "2026-10-30T17:38:00.000Z",
+          "source": "The Verge",
+          "summary": "星巴克CEO Brian Niccol称，将探索在得来速车道识别会员、展示个性化数字菜单并简化支付，2027年起测试后台AI模型辅助咖啡师录入订单。",
+          "heat": 55
         },
         {
           "title": "Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’",
           "link": "https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/",
           "pubDate": "2026-10-30T16:03:00.000Z",
           "source": "TechCrunch",
-          "summary": "The cautionary Theranos tale takes on a new significance in the AI era, when companies that have nev…"
+          "summary": "Theranos吹哨人Tyler Shultz警告，AI热潮是欺骗的绝佳机会。他指出Theranos曾以约百亿美元估值融资却技术从未奏效，如今未盈利公司以万亿美元估值吸金，投资者需警惕。",
+          "heat": 55
+        },
+        {
+          "title": "Ollie, a privacy-focused AI assistant, is shutting down",
+          "link": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/",
+          "pubDate": "2026-10-30T22:56:00.000Z",
+          "source": "TechCrunch",
+          "summary": "隐私优先AI助手Ollie宣布11月6日关闭，CEO称竞争加剧难以为继。该公司9月刚获Khosla Ventures领投750万美元种子轮，提供订阅制家庭助手服务。",
+          "heat": 45
+        },
+        {
+          "title": "Last-minute Halloween costumes for tech nerds",
+          "link": "https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/",
+          "pubDate": "2026-10-30T21:26:00.000Z",
+          "source": "TechCrunch",
+          "summary": "TechCrunch发布万圣节科技主题装扮指南，包括AI智能体图标、Meta与OpenAI助手头像、PHP漏洞等创意，还调侃AI递归自我改进，属节日趣味内容。",
+          "heat": 12
         }
       ]
     }

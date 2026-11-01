@@ -32,14 +32,19 @@ export interface Article {
   /** 清洗后的完整 description，作为 AI 摘要的输入 / Cleaned full description, used as AI summary input */
   description: string;
   /**
-   * 一句话摘要：默认截取 description 前 100 字符，启用 AI 后替换为 DeepSeek 生成的总结。
-   * One-line summary: truncated description by default, replaced by a DeepSeek-generated summary when AI is enabled.
+   * 摘要：默认截取 description 前 100 字符，启用 AI 后替换为 DeepSeek 生成的 50-100 字总结。
+   * Summary: truncated description by default, replaced by a 50-100 character DeepSeek summary when AI is enabled.
    */
   summary: string;
   /** HN 热度分数（仅 HN 有）/ HN points (HN only) */
   points?: number;
   /** HN 评论数（仅 HN 有）/ HN comment count (HN only) */
   comments?: number;
+  /**
+   * 综合热度 0-100（AI 评分与 HN 热度加权），用于日报内排序。
+   * Overall heat score 0-100 (weighted AI rating and HN points), used for ordering within a day.
+   */
+  heat?: number;
 }
 
 /**
@@ -68,12 +73,14 @@ export interface StoredArticle {
   pubDate: string;
   /** 来源名称 / Source name */
   source: string;
-  /** 一句话摘要 / One-line summary */
+  /** 摘要 / Summary */
   summary: string;
   /** HN 热度分数（仅 HN 有）/ HN points (HN only) */
   points?: number;
   /** HN 评论数（仅 HN 有）/ HN comment count (HN only) */
   comments?: number;
+  /** 综合热度 0-100 / Overall heat score 0-100 */
+  heat?: number;
 }
 
 /**
@@ -89,7 +96,7 @@ export interface DigestDay {
   hours: number;
   /** 最近一次运行中抓取失败的源 / Feeds that failed in the latest run */
   failed: { source: string; error: string }[];
-  /** 当天收录的文章（按时间倒序）/ Articles of the day, newest first */
+  /** 当天收录的文章（按热度从高到低）/ Articles of the day, hottest first */
   articles: StoredArticle[];
 }
 

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { isPromotional, normalizeUrl, processArticles } from './processor.js';
+import { compareByHeat, computeHeat, hnHeat, isPromotional, normalizeUrl, processArticles } from './processor.js';
 import type { Article } from './types.js';
 
 const NOW = new Date('2026-11-01T00:00:00Z');
@@ -96,4 +96,28 @@ test('processArticles 跨源按 URL 去重，保留先出现的 / processArticle
     NOW,
   );
   assert.deepEqual(result.map((a) => a.source), ['TechCrunch']);
+});
+
+test('hnHeat 按对数刻度换算 points / hnHeat maps points on a log scale', () => {
+  assert.equal(hnHeat(0), 0);
+  assert.equal(hnHeat(99), 50);
+  assert.equal(hnHeat(999), 75);
+  assert.equal(hnHeat(1e9), 100);
+});
+
+test('computeHeat 加权合并 AI 评分与 HN 热度 / computeHeat blends the AI rating with HN heat', () => {
+  assert.equal(computeHeat(80, undefined), 80);
+  assert.equal(computeHeat(undefined, 99), 50);
+  assert.equal(computeHeat(undefined, undefined), undefined);
+  assert.equal(computeHeat(80, 99), 68);
+});
+
+test('compareByHeat 热度从高到低，同分按时间倒序 / compareByHeat sorts hottest first, then newest', () => {
+  const list = [
+    { id: 'a', heat: 40, pubDate: '2026-10-31T10:00:00Z' },
+    { id: 'b', pubDate: '2026-10-31T12:00:00Z' },
+    { id: 'c', heat: 90, pubDate: '2026-10-31T08:00:00Z' },
+    { id: 'd', heat: 40, pubDate: '2026-10-31T11:00:00Z' },
+  ];
+  assert.deepEqual(list.sort(compareByHeat).map((x) => x.id), ['c', 'd', 'a', 'b']);
 });

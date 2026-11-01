@@ -1,6 +1,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { normalizeUrl } from './processor.js';
+import { compareByHeat, normalizeUrl } from './processor.js';
 import { formatDate } from './time.js';
 import type { Article, DigestDay, DigestHistory, FetchResult, StoredArticle } from './types.js';
 
@@ -60,6 +60,7 @@ function toStored(a: Article): StoredArticle {
   const stored: StoredArticle = { title: a.title, link: a.link, pubDate: a.pubDate.toISOString(), source: a.source, summary: a.summary };
   if (a.points !== undefined) stored.points = a.points;
   if (a.comments !== undefined) stored.comments = a.comments;
+  if (a.heat !== undefined) stored.heat = a.heat;
   return stored;
 }
 
@@ -90,8 +91,28 @@ export function mergeDay(
   day.generatedAt = now.toISOString();
   day.hours = hours;
   day.failed = results.filter((r) => r.error).map((r) => ({ source: r.source, error: r.error ?? '' }));
-  day.articles = [...day.articles, ...articles.map(toStored)].sort((a, b) => b.pubDate.localeCompare(a.pubDate));
+  day.articles = [...day.articles, ...articles.map(toStored)].sort(compareByHeat);
 
   history.days.sort((a, b) => b.date.localeCompare(a.date));
   return day;
+}
+
+/**
+ * 找出需要补全的历史文章：没有热度，或摘要短于最小长度。
+ * Find stored articles that need a backfill: missing heat, or a summary shorter than the minimum.
+ * @param history - 历史记录 / History
+ * @param minLength - 摘要最小长度 / Minimum summary length
+ * @returns 待补全的文章（引用历史中的原对象）/ Articles to backfill (references into the history)
+ */
+export function findStale(history: DigestHistory, minLength: number): StoredArticle[] {
+  return history.days.flatMap((d) => d.articles.filter((a) => a.heat === undefined || Array.from(a.summary).length < minLength));
+}
+
+/**
+ * 按热度重新排序每一天的文章。
+ * Re-sort every day's articles by heat.
+ * @param history - 历史记录（原地修改）/ History (modified in place)
+ */
+export function sortDays(history: DigestHistory): void {
+  for (const d of history.days) d.articles.sort(compareByHeat);
 }

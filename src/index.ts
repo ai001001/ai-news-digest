@@ -1,11 +1,12 @@
 import { parseArgs } from 'node:util';
 import cron from 'node-cron';
-import { CRON_SCHEDULE, CRON_TIMEZONE, DEFAULT_HOURS, DEFAULT_OUT_DIR, FEEDS } from './config.js';
+import { CRON_SCHEDULE, CRON_TIMEZONE, DEFAULT_HOURS, DEFAULT_OUT_DIR, FEEDS, SUMMARY_MIN_LENGTH } from './config.js';
 import { fetchAll } from './fetcher.js';
-import { dropSeen, loadHistory, mergeDay, saveHistory } from './history.js';
-import { processArticles } from './processor.js';
+import { dropSeen, findStale, loadHistory, mergeDay, saveHistory, sortDays } from './history.js';
+import { computeHeat, processArticles } from './processor.js';
 import { renderHtml, writePage } from './renderer.js';
 import { summarizeAll } from './summarizer.js';
+import type { Article } from './types.js';
 
 const HELP = `用法 / Usage: npm start -- [options]
 
@@ -13,11 +14,13 @@ const HELP = `用法 / Usage: npm start -- [options]
   --out <dir>   输出目录，默认 ${DEFAULT_OUT_DIR} / Output directory
   --cron        定时模式：每周日 12:00（${CRON_TIMEZONE}）自动运行，不立即执行
                 Scheduled mode: run every Sunday at 12:00 (${CRON_TIMEZONE}); does not run immediately
+  --backfill    为历史中缺少热度或摘要过短的文章重新生成摘要与热度，然后重新渲染页面
+                Regenerate summaries and heat for stored articles missing heat or with short summaries, then re-render
   -h, --help    显示帮助 / Show help
 
 环境变量 / Environment:
-  DEEPSEEK_API_KEY   设置后用 DeepSeek 生成一句话摘要，否则截取 description
-                     If set, DeepSeek writes one-line summaries; otherwise the description is truncated
+  DEEPSEEK_API_KEY   设置后用 DeepSeek 生成 50-100 字摘要和热度评分，否则截取 description
+                     If set, DeepSeek writes 50-100 character summaries and heat ratings; otherwise the description is truncated
                      可写在项目根目录的 .env 文件中 / Can be put in a .env file in the project root`;
 
 /**
@@ -67,12 +70,60 @@ async function runOnce(hours: number, outDir: string): Promise<void> {
   } else {
     console.log('ℹ️  未设置 DEEPSEEK_API_KEY，跳过 AI 摘要，使用截取的 description');
   }
+  // 没有 AI 评分的文章（未启用或失败）退回 HN 热度
+  // Articles without an AI rating (disabled or failed) fall back to HN heat
+  for (const a of articles) a.heat ??= computeHeat(undefined, a.points);
 
   const day = mergeDay(history, articles, results, hours, now);
   await saveHistory(history, outDir);
   const file = await writePage(renderHtml(history, now), outDir);
 
   console.log(`✅ 已更新日报：${file}（${day.date} 新增 ${articles.length} 篇，当天共 ${day.articles.length} 篇）`);
+}
+
+/**
+ * 补全历史文章：重新抓取原文，生成 50-100 字摘要与热度，按热度重排后重新渲染页面。
+ * Backfill stored articles: re-fetch the originals, generate 50-100 character summaries and heat, re-sort and re-render.
+ *
+ * @param outDir - 输出目录 / Output directory
+ */
+async function runBackfill(outDir: string): Promise<void> {
+  const apiKey = process.env.DEEPSEEK_API_KEY;
+  if (!apiKey) throw new Error('--backfill 需要 DEEPSEEK_API_KEY / --backfill requires DEEPSEEK_API_KEY');
+
+  const history = await loadHistory(outDir);
+  const stale = findStale(history, SUMMARY_MIN_LENGTH);
+  console.log(`🔧 需要补全 ${stale.length} 篇历史文章`);
+
+  if (stale.length > 0) {
+    // 历史中没有保存 RSS 简介，description 留空，让摘要器抓取原文网页
+    // The history does not keep RSS descriptions; leave description empty so the summarizer fetches the page
+    const articles: Article[] = stale.map((s) => ({
+      title: s.title,
+      link: s.link,
+      pubDate: new Date(s.pubDate),
+      source: s.source,
+      categories: [],
+      description: '',
+      summary: s.summary,
+      points: s.points,
+      comments: s.comments,
+    }));
+    const { ok, errors } = await summarizeAll(articles, apiKey);
+    console.log(`  ✓ AI 摘要 ${ok}/${articles.length} 篇`);
+    for (const e of errors) console.log(`  ✗ ${e}（保留原摘要）`);
+
+    stale.forEach((s, i) => {
+      s.summary = articles[i].summary;
+      const heat = articles[i].heat ?? computeHeat(undefined, s.points);
+      if (heat !== undefined) s.heat = heat;
+    });
+  }
+
+  sortDays(history);
+  await saveHistory(history, outDir);
+  const file = await writePage(renderHtml(history, new Date()), outDir);
+  console.log(`✅ 已重新渲染：${file}`);
 }
 
 /**
@@ -113,6 +164,7 @@ async function main(): Promise<void> {
       hours: { type: 'string', default: String(DEFAULT_HOURS) },
       out: { type: 'string', default: DEFAULT_OUT_DIR },
       cron: { type: 'boolean', default: false },
+      backfill: { type: 'boolean', default: false },
       help: { type: 'boolean', short: 'h', default: false },
     },
   });
@@ -127,7 +179,9 @@ async function main(): Promise<void> {
     throw new Error(`--hours 必须是正数 / --hours must be a positive number: ${values.hours}`);
   }
 
-  if (values.cron) {
+  if (values.backfill) {
+    await runBackfill(values.out);
+  } else if (values.cron) {
     startCron(hours, values.out);
   } else {
     await runOnce(hours, values.out);

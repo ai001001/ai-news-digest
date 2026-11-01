@@ -31,8 +31,23 @@ export const DEFAULT_HOURS = 24;
 /** 默认输出目录（GitHub Pages 从这里发布）/ Default output directory (published by GitHub Pages) */
 export const DEFAULT_OUT_DIR = 'docs';
 
+/** 摘要最小长度（字符）/ Min summary length in characters */
+export const SUMMARY_MIN_LENGTH = 50;
+
 /** 摘要最大长度（字符）/ Max summary length in characters */
 export const SUMMARY_MAX_LENGTH = 100;
+
+/**
+ * RSS 简介短于该长度时，抓取原文网页补充上下文，让摘要更具体。
+ * When the RSS description is shorter than this, fetch the article page for extra context so summaries are more specific.
+ */
+export const ARTICLE_CONTEXT_MIN_LENGTH = 400;
+
+/**
+ * HN 热度在综合热度中的权重（其余为 AI 评分）。
+ * Weight of HN points in the overall heat score (the rest is the AI rating).
+ */
+export const HN_HEAT_WEIGHT = 0.4;
 
 /** 单个请求超时（毫秒）/ Per-request timeout in milliseconds */
 export const REQUEST_TIMEOUT_MS = 10_000;
@@ -47,7 +62,7 @@ export const SUMMARY_MODEL = 'deepseek-flash';
 export const SUMMARY_CONCURRENCY = 5;
 
 /** 送给 AI 的 description 最大长度（字符），防止超长正文浪费 token / Max description length sent to AI, to avoid wasting tokens */
-export const SUMMARY_INPUT_MAX_LENGTH = 2000;
+export const SUMMARY_INPUT_MAX_LENGTH = 3000;
 
 /**
  * 命中任一分类即视为推广稿（活动宣传、赞助内容）并排除。

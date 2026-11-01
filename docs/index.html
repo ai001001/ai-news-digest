@@ -7,13 +7,15 @@
   <meta name="description" content="每日 AI 新闻聚合：TechCrunch、The Verge、Hacker News">
   <style>
     :root {
-      --bg: #f7f7f5; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e5e5e2;
+      --bg: #f6f6f3; --card: #ffffff; --text: #1d1d1f; --muted: #6e6e73; --line: #e6e6e1;
       --accent: #3b5bdb; --accent-soft: #edf2ff; --warn: #c2410c;
+      --hot: #e03131; --warm: #f08c00; --mild: #868e96;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #111113; --card: #1c1c1f; --text: #ececf1; --muted: #9a9aa3; --line: #2c2c31;
+        --bg: #111113; --card: #1b1b1e; --text: #ececf1; --muted: #9a9aa3; --line: #2c2c31;
         --accent: #8ca2ff; --accent-soft: #23283d; --warn: #fb923c;
+        --hot: #ff6b6b; --warm: #ffa94d; --mild: #868e96;
       }
     }
     * { box-sizing: border-box; }
@@ -21,171 +23,389 @@
       margin: 0; background: var(--bg); color: var(--text);
       font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     }
-    .wrap { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
-    header h1 { margin: 0 0 4px; font-size: 28px; letter-spacing: -0.02em; }
-    header p { margin: 0; color: var(--muted); font-size: 14px; }
-    nav { display: flex; flex-wrap: wrap; gap: 6px; margin: 20px 0 24px; }
-    nav a {
-      padding: 2px 10px; border-radius: 999px; background: var(--accent-soft); color: var(--accent);
-      font-size: 13px; text-decoration: none; font-variant-numeric: tabular-nums;
+    .layout { display: grid; grid-template-columns: 272px minmax(0, 1fr); max-width: 1140px; margin: 0 auto; }
+
+    /* 左侧目录 / Sidebar */
+    .sidebar {
+      position: sticky; top: 0; height: 100vh; overflow-y: auto;
+      padding: 28px 18px 24px; border-right: 1px solid var(--line);
     }
-    .day { background: var(--card); border: 1px solid var(--line); border-radius: 12px; margin-bottom: 14px; }
-    .day > summary {
-      display: flex; justify-content: space-between; align-items: baseline;
-      padding: 14px 18px; cursor: pointer; list-style: none;
+    .brand h1 { margin: 0; font-size: 22px; letter-spacing: -0.02em; }
+    .brand p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+    #toggle { display: none; }
+    .search { position: relative; margin: 18px 0 6px; }
+    #q {
+      width: 100%; padding: 8px 12px 8px 32px; border: 1px solid var(--line); border-radius: 10px;
+      background: var(--card); color: var(--text); font: inherit; font-size: 14px; outline: none;
     }
-    .day > summary::-webkit-details-marker { display: none; }
-    .day > summary::before { content: "▸"; color: var(--muted); margin-right: 8px; transition: transform .15s; }
-    .day[open] > summary::before { transform: rotate(90deg); }
-    .date { flex: 1; font-weight: 600; font-size: 18px; font-variant-numeric: tabular-nums; }
-    .date small { margin-left: 8px; color: var(--muted); font-weight: 400; font-size: 14px; }
-    .count { color: var(--muted); font-size: 14px; }
-    .stats, .warn, .empty { margin: 0; padding: 0 18px 10px; font-size: 13px; color: var(--muted); }
+    #q:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-soft); }
+    .search::before { content: "⌕"; position: absolute; left: 11px; top: 6px; color: var(--muted); font-size: 16px; }
+    #hint { min-height: 18px; margin: 0 0 6px; font-size: 12px; color: var(--accent); }
+    .tree summary {
+      display: flex; align-items: center; gap: 8px; padding: 6px 8px; border-radius: 8px;
+      cursor: pointer; list-style: none; user-select: none;
+    }
+    .tree summary::-webkit-details-marker { display: none; }
+    .tree summary::before { content: "▸"; color: var(--muted); font-size: 11px; transition: transform .15s; }
+    .tree details[open] > summary::before { transform: rotate(90deg); }
+    .tree summary:hover { background: var(--accent-soft); }
+    .tree summary span:first-child { flex: 1; }
+    .year > summary { font-weight: 700; font-size: 15px; }
+    .month { margin-left: 12px; }
+    .month > summary { font-weight: 600; font-size: 14px; }
+    .tree ul { list-style: none; margin: 2px 0 6px 22px; padding: 0 0 0 10px; border-left: 1px solid var(--line); }
+    .tree li a {
+      display: flex; align-items: center; gap: 10px; padding: 5px 8px; border-radius: 8px;
+      color: var(--text); text-decoration: none; font-size: 14px; font-variant-numeric: tabular-nums;
+    }
+    .tree li a:hover { background: var(--accent-soft); }
+    .tree li a.active { background: var(--accent); color: #fff; }
+    .tree li a.active .wd, .tree li a.active .badge { color: #fff; background: rgba(255, 255, 255, .22); }
+    .tree li a.dim { opacity: .35; }
+    .dd { font-weight: 600; }
+    .wd { flex: 1; color: var(--muted); font-size: 12px; }
+    .badge {
+      min-width: 24px; padding: 0 7px; border-radius: 999px; background: var(--accent-soft);
+      color: var(--accent); font-size: 12px; font-weight: 600; text-align: center; font-variant-numeric: tabular-nums;
+    }
+    .sidebar footer { margin-top: 24px; color: var(--muted); font-size: 11px; }
+
+    /* 右侧内容 / Main content */
+    main { padding: 28px 28px 64px; min-width: 0; }
+    .day { margin-bottom: 40px; }
+    body.js .day { display: none; }
+    body.js .day.active, body.js.searching .day { display: block; }
+    body.js.searching .day.nohit, body.searching .pager { display: none; }
+    .day-head h2 { margin: 0; font-size: 26px; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+    .day-head h2 small { margin-left: 10px; color: var(--muted); font-size: 15px; font-weight: 400; }
+    .stats, .warn, .empty { margin: 4px 0 0; font-size: 13px; color: var(--muted); }
     .warn { color: var(--warn); }
-    .list { margin: 0; padding: 0 18px 8px; list-style: none; counter-reset: n; }
-    .item { padding: 12px 0; border-top: 1px solid var(--line); counter-increment: n; }
-    .title { color: var(--text); font-weight: 600; text-decoration: none; overflow-wrap: anywhere; }
-    .title::before { content: counter(n) ". "; color: var(--muted); font-weight: 400; }
+    .list { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+    .item {
+      display: flex; gap: 14px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 14px;
+      background: var(--card); transition: border-color .15s, box-shadow .15s;
+    }
+    .item:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(0, 0, 0, .05); }
+    .item[hidden] { display: none; }
+    .rank {
+      flex: none; width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center;
+      background: var(--accent-soft); color: var(--accent); font-weight: 700; font-size: 14px;
+    }
+    .rank.top { background: var(--hot); color: #fff; }
+    .body { min-width: 0; flex: 1; }
+    .title { color: var(--text); font-weight: 650; font-size: 17px; line-height: 1.45; text-decoration: none; overflow-wrap: anywhere; }
     .title:hover { color: var(--accent); }
-    .meta { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 2px; font-size: 13px; color: var(--muted); }
-    .src { color: var(--accent); }
-    .summary { margin: 6px 0 0; font-size: 15px; }
-    footer { margin-top: 32px; color: var(--muted); font-size: 12px; text-align: center; }
+    .summary { margin: 6px 0 0; font-size: 15px; line-height: 1.7; color: var(--text); opacity: .88; }
+    .meta { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 14px; margin-top: 8px; font-size: 13px; color: var(--muted); }
+    .src { color: var(--accent); font-weight: 600; }
+    .heat { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; }
+    .heat .bar { width: 64px; height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; }
+    .heat .bar i { display: block; height: 100%; border-radius: 3px; background: currentColor; }
+    .heat b { font-weight: 600; font-variant-numeric: tabular-nums; }
+    .heat.hot { color: var(--hot); } .heat.warm { color: var(--warm); } .heat.mild { color: var(--mild); }
+    .pager { display: flex; justify-content: space-between; margin-top: 18px; font-size: 14px; }
+    .pager a { color: var(--accent); text-decoration: none; padding: 6px 12px; border-radius: 8px; background: var(--accent-soft); }
+
+    /* 窄屏：目录移到顶部，可折叠 / Narrow screens: sidebar moves to the top and collapses */
+    @media (max-width: 860px) {
+      .layout { grid-template-columns: 1fr; }
+      .sidebar { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); padding: 20px 16px 12px; }
+      .brand { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      #toggle {
+        display: block; flex: none; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px;
+        background: var(--card); color: var(--text); font: inherit; font-size: 13px; cursor: pointer;
+      }
+      body.js .sidebar:not(.open) .tree, body.js .sidebar:not(.open) footer { display: none; }
+      main { padding: 20px 16px 48px; }
+      .item { padding: 14px; gap: 10px; }
+      .heat { margin-left: 0; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <h1>AI 新闻日报</h1>
-      <p>共 2 天 · 21 篇 · 最后更新 2026-11-01 12:02（Asia/Shanghai）</p>
-    </header>
-    <nav><a href="#d-2026-11-01">11-01</a><a href="#d-2026-10-31">10-31</a></nav>
-    <details class="day" id="d-2026-11-01" open>
-      <summary>
-        <span class="date">2026-11-01<small>周日</small></span>
-        <span class="count">4 篇</span>
-      </summary>
-      <div class="stats">📊 TechCrunch 3 · The Verge 1 ｜ 🕒 最近 24 小时 ｜ 更新于 2026-11-01 12:02</div>
-      <p class="warn">⚠️ 抓取失败：Hacker News（HTTP 502）</p>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div>
+          <h1>AI 新闻日报</h1>
+          <p>共 2 天 · 22 篇 · 更新于 2026-11-01 13:21</p>
+        </div>
+        <button id="toggle" type="button">📅 按日期浏览</button>
+      </div>
+      <div class="search"><input id="q" type="search" placeholder="搜索标题、摘要、来源…" autocomplete="off"></div>
+      <p id="hint"></p>
+      <nav class="tree" aria-label="按日期浏览">
+        <details class="year" data-key="2026" open>
+          <summary><span>2026 年</span><span class="badge">22</span></summary>
+          <details class="month" data-key="2026-11" open>
+            <summary><span>11 月</span><span class="badge">5</span></summary>
+            <ul><li><a href="#d-2026-11-01" data-date="2026-11-01"><span class="dd">01</span><span class="wd">周日</span><span class="badge">5</span></a></li></ul>
+          </details><details class="month" data-key="2026-10">
+            <summary><span>10 月</span><span class="badge">17</span></summary>
+            <ul><li><a href="#d-2026-10-31" data-date="2026-10-31"><span class="dd">31</span><span class="wd">周六</span><span class="badge">17</span></a></li></ul>
+          </details>
+        </details>
+      </nav>
+      <footer>由 ai-news-digest 自动生成<br>来源：TechCrunch / The Verge / Hacker News<br>时区：Asia/Shanghai</footer>
+    </aside>
+    <main>
+    <section class="day" id="d-2026-11-01" data-date="2026-11-01">
+      <header class="day-head">
+        <h2>2026 年 11 月 1 日<small>周日</small></h2>
+        <div class="stats">共 5 篇 · 按热度排序 ｜ 📊 TechCrunch 3 · Hacker News 1 · The Verge 1 ｜ 🕒 最近 24 小时 · 更新于 2026-11-01 13:12</div>
+        
+      </header>
       <ol class="list">
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/" target="_blank" rel="noopener noreferrer">Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:41:00.000Z">2026-11-01 05:41</time></div>
-          <p class="summary">苹果CEO表示公司不会为了AI而做AI，并为其在AI领域的现状进行了辩护。</p>
+        <li class="item" data-search="openai reportedly lowers funding target for new round openai将新融资目标从300亿美元下调至200亿美元，目前仅获110亿美元，部分大型投资者反应冷淡。该轮由阿联酋投资者领投，融资遇冷源于华尔街对ai基建高投入的担忧。 techcrunch">
+          <span class="rank top">1</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/" target="_blank" rel="noopener noreferrer">OpenAI reportedly lowers funding target for new round</a>
+            <p class="summary">OpenAI将新融资目标从300亿美元下调至200亿美元，目前仅获110亿美元，部分大型投资者反应冷淡。该轮由阿联酋投资者领投，融资遇冷源于华尔街对AI基建高投入的担忧。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T16:12:55.000Z">2026-11-01 00:12</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:88%"></i></span><b>🔥 88</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/" target="_blank" rel="noopener noreferrer">Judge allows NAACP lawsuit over xAI data center pollution to move forward</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:17:03.000Z">2026-11-01 05:17</time></div>
-          <p class="summary">法院允许全国有色人种协进会就xAI数据中心污染提起的诉讼继续审理，指控其违反《清洁空气法》。</p>
+        <li class="item" data-search="apple ceo says the company doesn’t ‘want to ship ai for ai’s sake’ 苹果新任ceo john ternus接受wired采访，回应外界对苹果ai落后的质疑，称&quot;非常满意现状&quot;，苹果会利用ai但&quot;不为ai而ai&quot;，用户不必感知ai存在，关键是产品是否被喜爱。 techcrunch">
+          <span class="rank top">2</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/31/apple-ceo-says-the-company-doesnt-want-to-ship-ai-for-ais-sake/" target="_blank" rel="noopener noreferrer">Apple CEO says the company doesn’t ‘want to ship AI for AI’s sake’</a>
+            <p class="summary">苹果新任CEO John Ternus接受Wired采访，回应外界对苹果AI落后的质疑，称&quot;非常满意现状&quot;，苹果会利用AI但&quot;不为AI而AI&quot;，用户不必感知AI存在，关键是产品是否被喜爱。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:41:00.000Z">2026-11-01 05:41</time><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:65%"></i></span><b>🔥 65</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/31/openai-reportedly-lowers-funding-target-for-new-round/" target="_blank" rel="noopener noreferrer">OpenAI reportedly lowers funding target for new round</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T16:12:55.000Z">2026-11-01 00:12</time></div>
-          <p class="summary">OpenAI新一轮融资未达预期，已下调融资目标。</p>
+        <li class="item" data-search="judge allows naacp lawsuit over xai data center pollution to move forward 联邦法官驳回 xai 的撤诉请求，允许 naacp 依据《清洁空气法》继续起诉其孟菲斯 colossus 数据中心未获许可运行35台燃气轮机。xai 辩称设备属移动源且原告无起诉资格，均未被采纳。 techcrunch">
+          <span class="rank top">3</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/" target="_blank" rel="noopener noreferrer">Judge allows NAACP lawsuit over xAI data center pollution to move forward</a>
+            <p class="summary">联邦法官驳回 xAI 的撤诉请求，允许 NAACP 依据《清洁空气法》继续起诉其孟菲斯 Colossus 数据中心未获许可运行35台燃气轮机。xAI 辩称设备属移动源且原告无起诉资格，均未被采纳。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T21:17:03.000Z">2026-11-01 05:17</time><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:62%"></i></span><b>🔥 62</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code" target="_blank" rel="noopener noreferrer">I built an AI Tamagotchi before Meta could</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-31T16:05:00.000Z">2026-11-01 00:05</time></div>
-          <p class="summary">作者自建了一个约50美元的AI电子宠物，功能类似Meta的Muse Charm，但更简陋。</p>
+        <li class="item" data-search="the impact of generative ai on critical thinking: self-reported (2025) 2025年一项研究探讨生成式ai对批判性思维的影响，基于用户自我报告数据。研究发现ai工具的使用与批判性思维实践存在关联，引发对过度依赖ai削弱独立思考能力的讨论。 hacker news">
+          <span class="rank">4</span>
+          <div class="body">
+            <a class="title" href="https://dl.acm.org/doi/full/10.1145/3706598.3713778" target="_blank" rel="noopener noreferrer">The Impact of Generative AI on Critical Thinking: Self-Reported (2025)</a>
+            <p class="summary">2025年一项研究探讨生成式AI对批判性思维的影响，基于用户自我报告数据。研究发现AI工具的使用与批判性思维实践存在关联，引发对过度依赖AI削弱独立思考能力的讨论。</p>
+            <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T18:02:29.000Z">2026-11-01 02:02</time><span>▲ 75 points · 53 评论</span><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:46%"></i></span><b>🔥 46</b></span></div>
+          </div>
+        </li>
+        <li class="item" data-search="i built an ai tamagotchi before meta could 记者花50美元购入waveshare esp32-s3 1.75c，用meta开源代码和muse云做出类muse charm的ai挂件，可对话但响应慢、无语音输出，实用性有限。 the verge">
+          <span class="rank">5</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/gadgets/1013375/muse-charm-gadgets-preview-waveshare-esp32-claude-vibe-code" target="_blank" rel="noopener noreferrer">I built an AI Tamagotchi before Meta could</a>
+            <p class="summary">记者花50美元购入Waveshare ESP32-S3 1.75C，用Meta开源代码和Muse云做出类Muse Charm的AI挂件，可对话但响应慢、无语音输出，实用性有限。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-31T16:05:00.000Z">2026-11-01 00:05</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:35%"></i></span><b>🔥 35</b></span></div>
+          </div>
         </li>
       </ol>
-    </details>
-    <details class="day" id="d-2026-10-31">
-      <summary>
-        <span class="date">2026-10-31<small>周六</small></span>
-        <span class="count">17 篇</span>
-      </summary>
-      <div class="stats">📊 Hacker News 3 · TechCrunch 9 · The Verge 5 ｜ 🕒 最近 24 小时 ｜ 更新于 2026-10-31 23:52</div>
-      
+      <div class="pager"><a href="#d-2026-10-31">← 2026-10-31</a><span></span></div>
+    </section>
+    <section class="day" id="d-2026-10-31" data-date="2026-10-31">
+      <header class="day-head">
+        <h2>2026 年 10 月 31 日<small>周六</small></h2>
+        <div class="stats">共 17 篇 · 按热度排序 ｜ 📊 TechCrunch 9 · The Verge 5 · Hacker News 3 ｜ 🕒 最近 24 小时 · 更新于 2026-10-31 23:52</div>
+        
+      </header>
       <ol class="list">
-        <li class="item">
-          <a class="title" href="https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26" target="_blank" rel="noopener noreferrer">AI startup hacks Anthropic, gains access to employee details, internal messages</a>
-          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span class="heat">🔥 68 points · 16 评论</span></div>
-          
+        <li class="item" data-search="cracks are emerging in the ai spending boom 科技巨头今年计划投入超7400亿美元建设ai基础设施，但负现金流与债务攀升引发投资者担忧。alphabet三季度自由现金流为-91亿美元，股价暴跌12%，市值蒸发5000亿美元。 techcrunch">
+          <span class="rank top">1</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/" target="_blank" rel="noopener noreferrer">Cracks are emerging in the AI spending boom</a>
+            <p class="summary">科技巨头今年计划投入超7400亿美元建设AI基础设施，但负现金流与债务攀升引发投资者担忧。Alphabet三季度自由现金流为-91亿美元，股价暴跌12%，市值蒸发5000亿美元。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:17:00.000Z">2026-10-31 05:17</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:88%"></i></span><b>🔥 88</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked" target="_blank" rel="noopener noreferrer">Anthropic&#39;s Claude AI blocks video game cloning and reverse-engineering</a>
-          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span class="heat">🔥 21 points · 3 评论</span></div>
-          
+        <li class="item" data-search="nvidia weighs playing the cosigner for nscale’s ai data center in west virginia 英伟达洽谈为nscale西弗吉尼亚ai数据中心提供数十亿美元债务担保，anthropic已签首栋建筑446亿美元合同。此举深化英伟达对云厂商的资金支持。 techcrunch">
+          <span class="rank top">2</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/" target="_blank" rel="noopener noreferrer">Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia</a>
+            <p class="summary">英伟达洽谈为Nscale西弗吉尼亚AI数据中心提供数十亿美元债务担保，Anthropic已签首栋建筑446亿美元合同。此举深化英伟达对云厂商的资金支持。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T01:20:00.000Z">2026-10-31 09:20</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:85%"></i></span><b>🔥 85</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/nvidia-weighs-playing-the-cosigner-for-nscales-ai-data-center-in-west-virginia/" target="_blank" rel="noopener noreferrer">Nvidia weighs playing the cosigner for Nscale’s AI data center in West Virginia</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-31T01:20:00.000Z">2026-10-31 09:20</time></div>
-          <p class="summary">When investors get nervous about AI spending, it helps to have the chipmaker that sells the chips of…</p>
+        <li class="item" data-search="apple intelligence is finally coming to china with ios 27.3 苹果宣布随 ios 27.3 在中国上线 apple intelligence，测试版 11 月 4 日推出、12 月正式发布。 the verge">
+          <span class="rank top">3</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3" target="_blank" rel="noopener noreferrer">Apple Intelligence is finally coming to China with iOS 27.3</a>
+            <p class="summary">苹果宣布随 iOS 27.3 在中国上线 Apple Intelligence，测试版 11 月 4 日推出、12 月正式发布。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T22:32:00.000Z">2026-10-31 06:32</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:85%"></i></span><b>🔥 85</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/" target="_blank" rel="noopener noreferrer">Ollie, a privacy-focused AI assistant, is shutting down</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T22:56:00.000Z">2026-10-31 06:56</time></div>
-          <p class="summary">As an increasing number of AI assistants flood the market, the founder of Ollie, an assistant that r…</p>
+        <li class="item" data-search="the biggest names in ai are backing a new way to opt out of scraping openai、google、微软和anthropic将采纳ietf新提出的共享&quot;policy token&quot;标准，写入robots.txt，让出版商一次性向多家ai公司表达训练偏好，无需逐一设置。 the verge">
+          <span class="rank">4</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out" target="_blank" rel="noopener noreferrer">The biggest names in AI are backing a new way to opt out of scraping</a>
+            <p class="summary">OpenAI、Google、微软和Anthropic将采纳IETF新提出的共享&quot;policy token&quot;标准，写入robots.txt，让出版商一次性向多家AI公司表达训练偏好，无需逐一设置。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:26:00.000Z">2026-10-31 04:26</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:85%"></i></span><b>🔥 85</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/tech/1023974/apple-intelligence-china-ios-27-3" target="_blank" rel="noopener noreferrer">Apple Intelligence is finally coming to China with iOS 27.3</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T22:32:00.000Z">2026-10-31 06:32</time></div>
-          <p class="summary">Apple will launch Apple Intelligence in China with iOS 27.3, the company announced on its Chinese ne…</p>
+        <li class="item" data-search="intel’s stock crashes, knocking $12b from government’s stake 英特尔第四季度营收指引仅150-160亿美元，远低于预期，股价周五暴跌约28%，美国政府所持10%股份缩水120亿美元。ai挤占内存推高pc价格，拖累pc销售。 techcrunch">
+          <span class="rank">5</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/" target="_blank" rel="noopener noreferrer">Intel’s stock crashes, knocking $12B from government’s stake</a>
+            <p class="summary">英特尔第四季度营收指引仅150-160亿美元，远低于预期，股价周五暴跌约28%，美国政府所持10%股份缩水120亿美元。AI挤占内存推高PC价格，拖累PC销售。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:54:00.000Z">2026-10-31 05:54</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:82%"></i></span><b>🔥 82</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/intels-stock-crashes-knocking-12b-from-governments-stake/" target="_blank" rel="noopener noreferrer">Intel’s stock crashes, knocking $12B from government’s stake</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:54:00.000Z">2026-10-31 05:54</time></div>
-          <p class="summary">Intel is being hurt by PC sales as the AI industry gobbles memory and other components causing PC pr…</p>
+        <li class="item" data-search="anthropic expected to receive high ‘junk’ rating from credit agencies following ipo, ft report says ft报道，黑石预计anthropic ipo后将获bb级高收益垃圾债评级，与其此前投资级预期相反。黑石是anthropic 630亿美元芯片融资的锚定投资者。 techcrunch">
+          <span class="rank">6</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/" target="_blank" rel="noopener noreferrer">Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says</a>
+            <p class="summary">FT报道，黑石预计Anthropic IPO后将获BB级高收益垃圾债评级，与其此前投资级预期相反。黑石是Anthropic 630亿美元芯片融资的锚定投资者。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:52:00.000Z">2026-10-31 05:52</time><span class="heat hot" title="综合热度 / Heat score"><span class="bar"><i style="width:82%"></i></span><b>🔥 82</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/anthropic-expected-to-receive-high-junk-rating-from-credit-agencies-following-ipo-report-says/" target="_blank" rel="noopener noreferrer">Anthropic expected to receive high ‘junk’ rating from credit agencies following IPO, FT report says</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:52:00.000Z">2026-10-31 05:52</time></div>
-          <p class="summary">Blackstone&#39;s forecast is just a prediction, but naturally, a high junk rating would make it more dif…</p>
+        <li class="item" data-search="google&amp;#8217;s satellite ai server transmits its first response to earth google project suncatcher 卫星在轨启动 tpu，星载 gemma 4 模型生成太空俳句并传回地球，完成首次天基 ai 推理。 the verge">
+          <span class="rank">7</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission" target="_blank" rel="noopener noreferrer">Google&amp;#8217;s satellite AI server transmits its first response to Earth</a>
+            <p class="summary">Google Project Suncatcher 卫星在轨启动 TPU，星载 Gemma 4 模型生成太空俳句并传回地球，完成首次天基 AI 推理。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T18:21:00.000Z">2026-10-31 02:21</time><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:78%"></i></span><b>🔥 78</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/" target="_blank" rel="noopener noreferrer">Wall Street closes sharply lower as AI cash burn fears spark tech selloff</a>
-          <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-30T21:32:00.000Z">2026-10-31 05:32</time><span class="heat">🔥 63 points · 14 评论</span></div>
-          
+        <li class="item" data-search="google’s first data center satellite is online and writing poetry google首个太空数据中心原型卫星suncatcher已上线，搭载4块tpu并运行deepmind gemma 4模型，成功生成太空俳句。 techcrunch">
+          <span class="rank">8</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/" target="_blank" rel="noopener noreferrer">Google’s first data center satellite is online and writing poetry</a>
+            <p class="summary">Google首个太空数据中心原型卫星Suncatcher已上线，搭载4块TPU并运行DeepMind Gemma 4模型，成功生成太空俳句。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:00:00.000Z">2026-10-31 01:00</time><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:78%"></i></span><b>🔥 78</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/" target="_blank" rel="noopener noreferrer">Last-minute Halloween costumes for tech nerds</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:26:00.000Z">2026-10-31 05:26</time></div>
-          <p class="summary">No Halloween costume? Just be a deceptively cute AI agent icon, a PHP vulnerability, or sleepy time…</p>
+        <li class="item" data-search="sam altman says it’s better for ram to be in a data center than on your desk openai ceo sam altman称，全球dram供应紧张下，个人电脑内存利用率低，不如集中于数据中心。openai的大规模采购已挤压ram供应，推高消费电子价格。 the verge">
+          <span class="rank">9</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers" target="_blank" rel="noopener noreferrer">Sam Altman says it’s better for RAM to be in a data center than on your desk</a>
+            <p class="summary">OpenAI CEO Sam Altman称，全球DRAM供应紧张下，个人电脑内存利用率低，不如集中于数据中心。OpenAI的大规模采购已挤压RAM供应，推高消费电子价格。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:48:00.000Z">2026-10-31 04:48</time><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:72%"></i></span><b>🔥 72</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/cracks-are-emerging-in-the-ai-spending-boom/" target="_blank" rel="noopener noreferrer">Cracks are emerging in the AI spending boom</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:17:00.000Z">2026-10-31 05:17</time></div>
-          <p class="summary">Big Tech is pouring billions into AI infrastructure, but mounting debt, negative cash flow, and grow…</p>
+        <li class="item" data-search="ai startup hacks anthropic, gains access to employee details, internal messages ai安全初创公司cathedral用ai代理在12小时内攻入anthropic内部系统，获取员工薪资、slack消息等敏感数据。anthropic称已当天切断访问，未泄露claude对话及模型权重。 hacker news">
+          <span class="rank">10</span>
+          <div class="body">
+            <a class="title" href="https://www.indiatoday.in/technology/news/story/ai-startup-hacks-anthropic-in-12-hours-gains-access-to-employee-details-and-internal-messages-3025452-2026-10-26" target="_blank" rel="noopener noreferrer">AI startup hacks Anthropic, gains access to employee details, internal messages</a>
+            <p class="summary">AI安全初创公司Cathedral用AI代理在12小时内攻入Anthropic内部系统，获取员工薪资、Slack消息等敏感数据。Anthropic称已当天切断访问，未泄露Claude对话及模型权重。</p>
+            <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span>▲ 68 points · 16 评论</span><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:68%"></i></span><b>🔥 68</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers" target="_blank" rel="noopener noreferrer">Sam Altman says it’s better for RAM to be in a data center than on your desk</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:48:00.000Z">2026-10-31 04:48</time></div>
-          <p class="summary">Asked about supply chain shortages, like the ongoing RAM shortage, OpenAI CEO Sam Altman said in an…</p>
+        <li class="item" data-search="wall street closes sharply lower as ai cash burn fears spark tech selloff 华尔街股市大幅收低，人工智能领域现金消耗过快的担忧引发科技股抛售潮。此次下跌反映出市场对ai投资回报周期的疑虑加剧，科技板块承压明显。 hacker news">
+          <span class="rank">11</span>
+          <div class="body">
+            <a class="title" href="https://www.reuters.com/business/nasdaq-futures-tumble-amazon-intel-results-deepen-ai-spending-woes-2026-10-30/" target="_blank" rel="noopener noreferrer">Wall Street closes sharply lower as AI cash burn fears spark tech selloff</a>
+            <p class="summary">华尔街股市大幅收低，人工智能领域现金消耗过快的担忧引发科技股抛售潮。此次下跌反映出市场对AI投资回报周期的疑虑加剧，科技板块承压明显。</p>
+            <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-30T21:32:00.000Z">2026-10-31 05:32</time><span>▲ 63 points · 14 评论</span><span class="heat warm" title="综合热度 / Heat score"><span class="bar"><i style="width:67%"></i></span><b>🔥 67</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out" target="_blank" rel="noopener noreferrer">The biggest names in AI are backing a new way to opt out of scraping</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T20:26:00.000Z">2026-10-31 04:26</time></div>
-          <p class="summary">OpenAI, Google, Microsoft, and Anthropic say they will adopt a new standard that publishers can use…</p>
+        <li class="item" data-search="anthropic&#39;s claude ai blocks video game cloning and reverse-engineering anthropic 的 claude code 和 opus 5.5 模型被曝拒绝协助游戏开发者进行逆向工程或克隆，据称因新增文本规则禁止“重建特定现有游戏”，以应对 ai 克隆游戏和勒索威胁。 hacker news">
+          <span class="rank">12</span>
+          <div class="body">
+            <a class="title" href="https://www.tomshardware.com/tech-industry/artificial-intelligence/anthropics-ai-model-is-now-blocking-attempts-at-video-game-recreation-and-cloning-users-also-claim-non-malicious-generic-reverse-engineering-tasks-are-blocked" target="_blank" rel="noopener noreferrer">Anthropic&#39;s Claude AI blocks video game cloning and reverse-engineering</a>
+            <p class="summary">Anthropic 的 Claude Code 和 Opus 5.5 模型被曝拒绝协助游戏开发者进行逆向工程或克隆，据称因新增文本规则禁止“重建特定现有游戏”，以应对 AI 克隆游戏和勒索威胁。</p>
+            <div class="meta"><span class="src">Hacker News</span><time datetime="2026-10-31T13:25:00.000Z">2026-10-31 21:25</time><span>▲ 21 points · 3 评论</span><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:59%"></i></span><b>🔥 59</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/tech/1023528/google-project-suncatcher-ai-satellite-transmission" target="_blank" rel="noopener noreferrer">Google&amp;#8217;s satellite AI server transmits its first response to Earth</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T18:21:00.000Z">2026-10-31 02:21</time></div>
-          <p class="summary">Google&#39;s AI chip-equipped satellite has generated its first response from space. In a blog post on F…</p>
+        <li class="item" data-search="zest’s new ai agent finds restaurants and books reservations over text 餐厅发现应用zest推出短信ai礼宾，发短信即可获个性化推荐并预订餐桌，支持opentable等平台，还能进群聊综合多人喜好投票选餐厅。 techcrunch">
+          <span class="rank">13</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/" target="_blank" rel="noopener noreferrer">Zest’s new AI agent finds restaurants and books reservations over text</a>
+            <p class="summary">餐厅发现应用Zest推出短信AI礼宾，发短信即可获个性化推荐并预订餐桌，支持OpenTable等平台，还能进群聊综合多人喜好投票选餐厅。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:47:00.000Z">2026-10-31 01:47</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:55%"></i></span><b>🔥 55</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/zests-new-ai-agent-finds-restaurants-and-books-reservations-over-text/" target="_blank" rel="noopener noreferrer">Zest’s new AI agent finds restaurants and books reservations over text</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:47:00.000Z">2026-10-31 01:47</time></div>
-          <p class="summary">Can&#39;t agree on where to eat? Zest&#39;s AI concierge can combine everyone&#39;s tastes, put restaurant optio…</p>
+        <li class="item" data-search="starbucks wants to use ai to show you a ‘personalized digital menu’ at the drive-thru 星巴克ceo brian niccol称，将探索在得来速车道识别会员、展示个性化数字菜单并简化支付，2027年起测试后台ai模型辅助咖啡师录入订单。 the verge">
+          <span class="rank">14</span>
+          <div class="body">
+            <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru" target="_blank" rel="noopener noreferrer">Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru</a>
+            <p class="summary">星巴克CEO Brian Niccol称，将探索在得来速车道识别会员、展示个性化数字菜单并简化支付，2027年起测试后台AI模型辅助咖啡师录入订单。</p>
+            <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T17:38:00.000Z">2026-10-31 01:38</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:55%"></i></span><b>🔥 55</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://www.theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru" target="_blank" rel="noopener noreferrer">Starbucks wants to use AI to show you a ‘personalized digital menu’ at the drive-thru</a>
-          <div class="meta"><span class="src">The Verge</span><time datetime="2026-10-30T17:38:00.000Z">2026-10-31 01:38</time></div>
-          <p class="summary">Starbucks could eventually show you a personalized digital menu when you pull up to the drive-thru.…</p>
+        <li class="item" data-search="theranos whistleblower tyler shultz warns that the ai boom is ‘a great opportunity to go deceive people’ theranos吹哨人tyler shultz警告，ai热潮是欺骗的绝佳机会。他指出theranos曾以约百亿美元估值融资却技术从未奏效，如今未盈利公司以万亿美元估值吸金，投资者需警惕。 techcrunch">
+          <span class="rank">15</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/" target="_blank" rel="noopener noreferrer">Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’</a>
+            <p class="summary">Theranos吹哨人Tyler Shultz警告，AI热潮是欺骗的绝佳机会。他指出Theranos曾以约百亿美元估值融资却技术从未奏效，如今未盈利公司以万亿美元估值吸金，投资者需警惕。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T16:03:00.000Z">2026-10-31 00:03</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:55%"></i></span><b>🔥 55</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/googles-first-data-center-satellite-is-online-and-writing-poetry/" target="_blank" rel="noopener noreferrer">Google’s first data center satellite is online and writing poetry</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T17:00:00.000Z">2026-10-31 01:00</time></div>
-          <p class="summary">The first TPU in space is running a Google DeepMind Gemma 4 model and writing cheesy poetry.</p>
+        <li class="item" data-search="ollie, a privacy-focused ai assistant, is shutting down 隐私优先ai助手ollie宣布11月6日关闭，ceo称竞争加剧难以为继。该公司9月刚获khosla ventures领投750万美元种子轮，提供订阅制家庭助手服务。 techcrunch">
+          <span class="rank">16</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/" target="_blank" rel="noopener noreferrer">Ollie, a privacy-focused AI assistant, is shutting down</a>
+            <p class="summary">隐私优先AI助手Ollie宣布11月6日关闭，CEO称竞争加剧难以为继。该公司9月刚获Khosla Ventures领投750万美元种子轮，提供订阅制家庭助手服务。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T22:56:00.000Z">2026-10-31 06:56</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:45%"></i></span><b>🔥 45</b></span></div>
+          </div>
         </li>
-        <li class="item">
-          <a class="title" href="https://techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people/" target="_blank" rel="noopener noreferrer">Theranos whistleblower Tyler Shultz warns that the AI boom is ‘a great opportunity to go deceive people’</a>
-          <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T16:03:00.000Z">2026-10-31 00:03</time></div>
-          <p class="summary">The cautionary Theranos tale takes on a new significance in the AI era, when companies that have nev…</p>
+        <li class="item" data-search="last-minute halloween costumes for tech nerds techcrunch发布万圣节科技主题装扮指南，包括ai智能体图标、meta与openai助手头像、php漏洞等创意，还调侃ai递归自我改进，属节日趣味内容。 techcrunch">
+          <span class="rank">17</span>
+          <div class="body">
+            <a class="title" href="https://techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds/" target="_blank" rel="noopener noreferrer">Last-minute Halloween costumes for tech nerds</a>
+            <p class="summary">TechCrunch发布万圣节科技主题装扮指南，包括AI智能体图标、Meta与OpenAI助手头像、PHP漏洞等创意，还调侃AI递归自我改进，属节日趣味内容。</p>
+            <div class="meta"><span class="src">TechCrunch</span><time datetime="2026-10-30T21:26:00.000Z">2026-10-31 05:26</time><span class="heat mild" title="综合热度 / Heat score"><span class="bar"><i style="width:12%"></i></span><b>🔥 12</b></span></div>
+          </div>
         </li>
       </ol>
-    </details>
-    <footer>由 ai-news-digest 自动生成 · 来源：TechCrunch / The Verge / Hacker News</footer>
+      <div class="pager"><span></span><a href="#d-2026-11-01">2026-11-01 →</a></div>
+    </section>
+    </main>
   </div>
+  <script>
+(() => {
+  document.body.classList.add('js');
+  const days = [...document.querySelectorAll('.day')];
+  const links = [...document.querySelectorAll('.tree a[data-date]')];
+  const sidebar = document.querySelector('.sidebar');
+  const q = document.getElementById('q');
+  const hint = document.getElementById('hint');
+
+  // 显示指定日期，并展开它所在的年、月 / Show a date and expand its year and month
+  const show = (date, scroll) => {
+    const target = days.find((d) => d.dataset.date === date) || days[0];
+    if (!target) return;
+    days.forEach((d) => d.classList.toggle('active', d === target));
+    links.forEach((a) => {
+      const on = a.dataset.date === target.dataset.date;
+      a.classList.toggle('active', on);
+      if (on) {
+        let el = a.parentElement;
+        while (el && el !== sidebar) {
+          if (el.tagName === 'DETAILS') el.open = true;
+          el = el.parentElement;
+        }
+      }
+    });
+    if (scroll) window.scrollTo({ top: 0 });
+  };
+  const fromHash = () => decodeURIComponent(location.hash.replace(/^#d-/, ''));
+  window.addEventListener('hashchange', () => {
+    if (q.value) { q.value = ''; search(); }
+    show(fromHash(), true);
+    sidebar.classList.remove('open');
+  });
+
+  // 搜索：在所有日期中过滤标题、摘要和来源 / Search: filter titles, summaries and sources across all days
+  const search = () => {
+    const term = q.value.trim().toLowerCase();
+    document.body.classList.toggle('searching', !!term);
+    let hits = 0;
+    days.forEach((d) => {
+      let n = 0;
+      d.querySelectorAll('.item').forEach((it) => {
+        const ok = !term || it.dataset.search.includes(term);
+        it.hidden = !ok;
+        if (ok) n++;
+      });
+      d.classList.toggle('nohit', !!term && n === 0);
+      hits += n;
+      const link = links.find((a) => a.dataset.date === d.dataset.date);
+      if (link) link.classList.toggle('dim', !!term && n === 0);
+    });
+    hint.textContent = term ? '找到 ' + hits + ' 篇' : '';
+  };
+  q.addEventListener('input', search);
+  q.addEventListener('keydown', (e) => { if (e.key === 'Escape') { q.value = ''; search(); } });
+
+  document.getElementById('toggle').addEventListener('click', () => sidebar.classList.toggle('open'));
+  show(fromHash(), false);
+})();
+</script>
 </body>
 </html>

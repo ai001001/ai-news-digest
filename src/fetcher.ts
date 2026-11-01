@@ -6,6 +6,8 @@ const parser = new Parser();
 
 const USER_AGENT = 'Mozilla/5.0 (compatible; ai-news-digest/1.0; +https://github.com/)';
 
+const FEED_ACCEPT = 'application/rss+xml, application/atom+xml, application/xml, text/xml';
+
 /** 失败重试次数 / Number of retries on failure */
 const MAX_RETRIES = 2;
 
@@ -101,14 +103,15 @@ function toArticle(item: Parser.Item & { summary?: string }, feed: FeedSource): 
  * 请求 URL 并返回文本；遇到 5xx 或网络错误时按退避重试。
  * Fetch a URL as text; retry with backoff on 5xx or network errors.
  * @param url - 请求地址 / URL to fetch
+ * @param accept - Accept 请求头 / Accept header
  * @param retries - 最大重试次数 / Max retry count
  * @returns 响应文本 / Response body text
  */
-async function fetchWithRetry(url: string, retries: number = MAX_RETRIES): Promise<string> {
+async function fetchWithRetry(url: string, accept: string = FEED_ACCEPT, retries: number = MAX_RETRIES): Promise<string> {
   for (let attempt = 0; ; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { 'User-Agent': USER_AGENT, Accept: 'application/rss+xml, application/atom+xml, application/xml, text/xml' },
+        headers: { 'User-Agent': USER_AGENT, Accept: accept },
         signal: AbortSignal.timeout(REQUEST_TIMEOUT_MS),
       });
       if (res.ok) return await res.text();
@@ -119,6 +122,38 @@ async function fetchWithRetry(url: string, retries: number = MAX_RETRIES): Promi
       if (attempt >= retries || (err instanceof Error && /^HTTP 4/.test(err.message))) throw err;
     }
     await new Promise((r) => setTimeout(r, 1000 * (attempt + 1)));
+  }
+}
+
+/**
+ * 从文章网页提取正文：优先取 meta 描述，再拼接 <p> 段落文字。
+ * Extract body text from an article page: the meta description first, then the text of <p> paragraphs.
+ * @param html - 网页 HTML / Page HTML
+ * @returns 纯文本 / Plain text
+ */
+export function extractArticleText(html: string): string {
+  const meta =
+    /<meta[^>]+(?:property|name)=["'](?:og:description|description)["'][^>]+content=["']([^"']*)["']/i.exec(html)?.[1] ??
+    /<meta[^>]+content=["']([^"']*)["'][^>]+(?:property|name)=["'](?:og:description|description)["']/i.exec(html)?.[1] ??
+    '';
+  const body = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, ' ');
+  // 只保留有一定长度的段落，跳过导航、按钮等碎片
+  // Keep only reasonably long paragraphs, skipping nav and button fragments
+  const paragraphs = [...body.matchAll(/<p[\s>][\s\S]*?<\/p>/gi)].map((m) => stripHtml(m[0])).filter((p) => p.length >= 40);
+  return [stripHtml(meta), ...paragraphs].filter(Boolean).join(' ');
+}
+
+/**
+ * 抓取文章网页正文，作为 AI 摘要的补充上下文；失败时返回空字符串。
+ * Fetch an article page's body text as extra context for AI summaries; returns an empty string on failure.
+ * @param url - 文章链接 / Article URL
+ * @returns 正文纯文本 / Body text
+ */
+export async function fetchArticleText(url: string): Promise<string> {
+  try {
+    return extractArticleText(await fetchWithRetry(url, 'text/html,application/xhtml+xml', 0));
+  } catch {
+    return '';
   }
 }
 
