@@ -8,7 +8,8 @@
     "start": "tsx src/index.ts",
     "typecheck": "tsc --noEmit",
     "test": "tsx --test src/*.test.ts",
-    "deploy": "git add docs && (git diff --cached --quiet || git commit -m \"chore: 更新日报 / update digest\") && git push"
+    "deploy": "git add docs && (git diff --cached --quiet || git commit -m \"chore: 更新日报 / update digest\") && git push",
+    "daily": "tsx src/index.ts --deploy"
   },
   "engines": {
     "node": ">=20.12"

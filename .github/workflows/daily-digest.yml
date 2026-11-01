@@ -1,0 +1,86 @@
+# AI 新闻日报：每天美国东部时间 22:00 自动运行，成功后推送 docs/ 并发布到 GitHub Pages
+# AI news digest: runs daily at 22:00 US Eastern Time, then pushes docs/ and publishes to GitHub Pages
+name: Daily AI News Digest
+
+on:
+  schedule:
+    # GitHub cron 只支持 UTC：22:00 EDT = 02:00 UTC，22:00 EST = 03:00 UTC，由下方 guard 步骤二选一
+    # GitHub cron is UTC-only: 22:00 EDT = 02:00 UTC, 22:00 EST = 03:00 UTC; the guard step picks one
+    - cron: '0 2 * * *'
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: daily-digest
+  cancel-in-progress: false
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: 判断是否为纽约 22:00 / Check for 22:00 in New York
+        id: guard
+        env:
+          EVENT: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
+        run: |
+          # 按触发的 cron 而非实际执行时间判断，避免排队延迟导致跳过或重复
+          # Decide by the triggering cron rather than the actual start time, so queue delays cannot skip or double-run
+          offset=$(TZ=America/New_York date +%z)
+          if [ "$EVENT" != "schedule" ] \
+            || { [ "$offset" = "-0400" ] && [ "$SCHEDULE" = "0 2 * * *" ]; } \
+            || { [ "$offset" = "-0500" ] && [ "$SCHEDULE" = "0 3 * * *" ]; }; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "纽约当前 UTC 偏移 $offset，本次触发 ($SCHEDULE) 不是 22:00，跳过 / Not 22:00 in New York, skipping"
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.run == 'true'
+
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.run == 'true'
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: 安装依赖 / Install dependencies
+        if: steps.guard.outputs.run == 'true'
+        run: npm ci
+
+      - name: 生成日报 / Build digest
+        if: steps.guard.outputs.run == 'true'
+        env:
+          DEEPSEEK_API_KEY: ${{ secrets.DEEPSEEK_API_KEY }}
+        run: npm start
+
+      - name: 推送到 GitHub / Push to GitHub
+        id: push
+        if: steps.guard.outputs.run == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs
+          if git diff --cached --quiet; then
+            echo "日报没有变化，跳过推送 / No changes, skipping push"
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git commit -m "chore: 更新日报 / update digest"
+          git pull --rebase
+          git push
+          echo "pushed=true" >> "$GITHUB_OUTPUT"
+
+      - name: 触发 Pages 发布 / Trigger Pages build
+        if: steps.push.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        # 推送本身通常会触发发布，这里显式请求一次作为保险
+        # The push normally triggers a build; request one explicitly as a safeguard
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || echo "Pages 构建请求失败，等待推送触发 / Pages build request failed; relying on push"

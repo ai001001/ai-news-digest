@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { CRON_TIMEZONE, FEEDS } from './config.js';
+import { DISPLAY_TIMEZONE, FEEDS } from './config.js';
 import { compareByHeat } from './processor.js';
 import { formatDateTime } from './time.js';
 import type { DigestDay, DigestHistory, StoredArticle } from './types.js';
@@ -379,7 +379,7 @@ export function renderHtml(history: DigestHistory, now: Date): string {
       <nav class="tree" aria-label="按日期浏览">
         ${renderTree(history.days)}
       </nav>
-      <footer>由 ai-news-digest 自动生成<br>来源：${sources.join(' / ')}<br>时区：${CRON_TIMEZONE}</footer>
+      <footer>由 ai-news-digest 自动生成<br>来源：${sources.join(' / ')}<br>时区：${DISPLAY_TIMEZONE}</footer>
     </aside>
     <main>
     ${days || '<p class="empty">暂无日报。</p>'}

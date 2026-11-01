@@ -89,10 +89,19 @@ export const EXCLUDE_TITLE_PATTERNS: RegExp[] = [
 ];
 
 /**
- * 定时模式的 cron 表达式：每周日 12:00。
- * Cron expression for scheduled mode: every Sunday at 12:00.
+ * 定时模式的 cron 表达式：每天 22:00。
+ * Cron expression for scheduled mode: every day at 22:00.
  */
-export const CRON_SCHEDULE = '0 12 * * 0';
+export const CRON_SCHEDULE = '0 22 * * *';
 
-/** 定时模式使用的时区（中国时间）/ Timezone for scheduled mode (China Standard Time) */
-export const CRON_TIMEZONE = 'Asia/Shanghai';
+/**
+ * 定时模式使用的时区（美国东部时间，自动处理夏令时）。
+ * Timezone for scheduled mode (US Eastern Time, DST handled automatically).
+ */
+export const CRON_TIMEZONE = 'America/New_York';
+
+/**
+ * 页面日期分组与时间显示使用的时区（中国时间）。
+ * Timezone for day grouping and time display on the page (China Standard Time).
+ */
+export const DISPLAY_TIMEZONE = 'Asia/Shanghai';

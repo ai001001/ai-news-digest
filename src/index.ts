@@ -1,4 +1,5 @@
-import { parseArgs } from 'node:util';
+import { execFile } from 'node:child_process';
+import { parseArgs, promisify } from 'node:util';
 import cron from 'node-cron';
 import { CRON_SCHEDULE, CRON_TIMEZONE, DEFAULT_HOURS, DEFAULT_OUT_DIR, FEEDS, SUMMARY_MIN_LENGTH } from './config.js';
 import { fetchAll } from './fetcher.js';
@@ -12,8 +13,10 @@ const HELP = `用法 / Usage: npm start -- [options]
 
   --hours <n>   时间窗口（小时），默认 ${DEFAULT_HOURS} / Time window in hours
   --out <dir>   输出目录，默认 ${DEFAULT_OUT_DIR} / Output directory
-  --cron        定时模式：每周日 12:00（${CRON_TIMEZONE}）自动运行，不立即执行
-                Scheduled mode: run every Sunday at 12:00 (${CRON_TIMEZONE}); does not run immediately
+  --cron        定时模式：每天 22:00（${CRON_TIMEZONE}）自动运行，成功后自动推送到 GitHub Pages，不立即执行
+                Scheduled mode: run daily at 22:00 (${CRON_TIMEZONE}) and push to GitHub Pages on success; does not run immediately
+  --deploy      运行成功后提交 ${DEFAULT_OUT_DIR}/ 并推送到 GitHub，触发 Pages 发布
+                After a successful run, commit ${DEFAULT_OUT_DIR}/ and push to GitHub to publish via Pages
   --backfill    为历史中缺少热度或摘要过短的文章重新生成摘要与热度，然后重新渲染页面
                 Regenerate summaries and heat for stored articles missing heat or with short summaries, then re-render
   -h, --help    显示帮助 / Show help
@@ -126,9 +129,32 @@ async function runBackfill(outDir: string): Promise<void> {
   console.log(`✅ 已重新渲染：${file}`);
 }
 
+const execFileAsync = promisify(execFile);
+
 /**
- * 启动定时模式：按 CRON_SCHEDULE 在 CRON_TIMEZONE 时区运行；单次失败只记录日志，不退出进程。
- * Start scheduled mode: run on CRON_SCHEDULE in CRON_TIMEZONE; a failed run is logged without exiting.
+ * 提交输出目录并推送到远程仓库，由 GitHub Pages 自动发布；没有变化时不提交。
+ * Commit the output directory and push to the remote so GitHub Pages republishes it; skips the commit when nothing changed.
+ *
+ * @param outDir - 输出目录 / Output directory
+ */
+async function deploy(outDir: string): Promise<void> {
+  const git = (...args: string[]) => execFileAsync('git', args);
+  await git('add', '--', outDir);
+  try {
+    await git('diff', '--cached', '--quiet', '--', outDir);
+    console.log('ℹ️  日报没有变化，跳过推送');
+    return;
+  } catch {
+    // 有暂存的改动时 git diff --quiet 以非零退出 / git diff --quiet exits non-zero when changes are staged
+  }
+  await git('commit', '-m', 'chore: 更新日报 / update digest', '--', outDir);
+  await git('push');
+  console.log('🚀 已推送到 GitHub，Pages 将自动发布');
+}
+
+/**
+ * 启动定时模式：按 CRON_SCHEDULE 在 CRON_TIMEZONE 时区运行，成功后自动推送；单次失败只记录日志，不退出进程。
+ * Start scheduled mode: run on CRON_SCHEDULE in CRON_TIMEZONE and push on success; a failed run is logged without exiting.
  *
  * @param hours - 时间窗口（小时）/ Time window in hours
  * @param outDir - 输出目录 / Output directory
@@ -140,6 +166,7 @@ function startCron(hours: number, outDir: string): void {
       console.log(`\n🕛 定时任务触发：${new Date().toLocaleString('zh-CN', { timeZone: CRON_TIMEZONE })}`);
       try {
         await runOnce(hours, outDir);
+        await deploy(outDir);
       } catch (err) {
         console.error('❌ 本次运行失败 / Run failed:', err instanceof Error ? err.message : err);
       }
@@ -149,7 +176,7 @@ function startCron(hours: number, outDir: string): void {
 
   const next = task.getNextRun();
   const nextText = next ? next.toLocaleString('zh-CN', { timeZone: CRON_TIMEZONE }) : '未知';
-  console.log(`⏰ 定时模式已开启：每周日 12:00（${CRON_TIMEZONE}），下次运行 ${nextText}。按 Ctrl+C 退出。`);
+  console.log(`⏰ 定时模式已开启：每天 22:00（${CRON_TIMEZONE}），下次运行 ${nextText}。按 Ctrl+C 退出。`);
 }
 
 /**
@@ -165,6 +192,7 @@ async function main(): Promise<void> {
       out: { type: 'string', default: DEFAULT_OUT_DIR },
       cron: { type: 'boolean', default: false },
       backfill: { type: 'boolean', default: false },
+      deploy: { type: 'boolean', default: false },
       help: { type: 'boolean', short: 'h', default: false },
     },
   });
@@ -181,10 +209,12 @@ async function main(): Promise<void> {
 
   if (values.backfill) {
     await runBackfill(values.out);
+    if (values.deploy) await deploy(values.out);
   } else if (values.cron) {
     startCron(hours, values.out);
   } else {
     await runOnce(hours, values.out);
+    if (values.deploy) await deploy(values.out);
   }
 }
 

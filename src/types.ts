@@ -88,7 +88,7 @@ export interface StoredArticle {
  * The digest for a single day.
  */
 export interface DigestDay {
-  /** 日期 "YYYY-MM-DD"（CRON_TIMEZONE 时区）/ Date "YYYY-MM-DD" in CRON_TIMEZONE */
+  /** 日期 "YYYY-MM-DD"（DISPLAY_TIMEZONE 时区）/ Date "YYYY-MM-DD" in DISPLAY_TIMEZONE */
   date: string;
   /** 最近一次生成时间（ISO 8601）/ Last generation time (ISO 8601) */
   generatedAt: string;
