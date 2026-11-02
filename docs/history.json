@@ -1,6 +1,60 @@
 {
   "days": [
     {
+      "date": "2026-11-02",
+      "generatedAt": "2026-11-02T10:33:37.506Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "AI delivers 'zero financial payoff' to most companies, Apollo economist says",
+          "link": "https://techcrunch.com/2026/10/25/ai-delivers-zero-financial-payoff-to-most-companies-according-to-apollo-economist/",
+          "pubDate": "2026-11-01T22:10:45.000Z",
+          "source": "Hacker News",
+          "summary": "Apollo首席经济学家Slok指出，剔除七大科技巨头后的标普493企业利润率和人均收入持平，AI未带来生产力提升，企业难将廉价智能转化为增长。",
+          "points": 227,
+          "comments": 223,
+          "heat": 67
+        },
+        {
+          "title": "OpenAI might rebrand its data centers as ‘AI compute campuses’",
+          "link": "https://techcrunch.com/2026/11/01/openai-might-rebrand-its-data-centers-as-ai-compute-campuses/",
+          "pubDate": "2026-11-01T21:55:23.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI 计划中期选举后发起公关攻势，首席全球事务官 Chris Lehane 透露多项举措，包括为 AI 设“限速”、推动全球标准，并将数据中心改称“AI 计算园区”。",
+          "heat": 65
+        },
+        {
+          "title": "It wasn't AI that flipped Proton's charge",
+          "link": "https://blog.raed.dev/posts/proton-loser-thinking/",
+          "pubDate": "2026-11-01T18:53:55.000Z",
+          "source": "Hacker News",
+          "summary": "404 Media曝光Proton CEO Andy Yen斥责工程师请求渗透测试为\"loser thinking\"，要求多用AI写代码并以AI使用率定去留，引发对这家隐私公司安全文化的质疑。",
+          "points": 157,
+          "comments": 89,
+          "heat": 59
+        },
+        {
+          "title": "AI agent swarms in Minecraft fail to build civilization, drown in bureaucracy",
+          "link": "https://www.tomshardware.com/tech-industry/artificial-intelligence/ai-agent-swarms-unleashed-in-minecraft-to-build-a-thriving-civilization-50-agent-teams-fail-after-falling-into-paralyzing-bureaucracy",
+          "pubDate": "2026-11-01T13:47:24.000Z",
+          "source": "Hacker News",
+          "summary": "Y Combinator与Olam Labs研究人员让数百个AI智能体在《我的世界》中协作或对抗，50个GPT-6.1 Sol智能体被要求三小时内建立繁荣文明却失败，暴露群体智能的协调难题。",
+          "points": 171,
+          "comments": 80,
+          "heat": 48
+        },
+        {
+          "title": "AI can make tech CEOs’ lives easier. What about everyone else?",
+          "link": "https://techcrunch.com/2026/11/01/ai-can-make-tech-ceos-lives-easier-what-about-everyone-else/",
+          "pubDate": "2026-11-01T20:57:58.000Z",
+          "source": "TechCrunch",
+          "summary": "TechCrunch播客讨论科技CEO的AI言论为何显得脱节：Mayer用AI写女儿学校描述，Altman称无法想象不用ChatGPT育儿。主持人质疑高管脱离普通人，担忧AI产品忽视大众需求。",
+          "heat": 42
+        }
+      ]
+    },
+    {
       "date": "2026-11-01",
       "generatedAt": "2026-11-01T05:49:59.043Z",
       "hours": 24,
