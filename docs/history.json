@@ -1,6 +1,125 @@
 {
   "days": [
     {
+      "date": "2026-11-03",
+      "generatedAt": "2026-11-03T10:28:04.583Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
+          "pubDate": "2026-11-02T18:01:30.000Z",
+          "source": "The Verge",
+          "summary": "OpenAI宣布“电网保护者计划”，将在佐治亚州埃芬汉县新建数据中心试点，极端天气或紧急情况下可释放最多1000兆瓦电力，约够70万户家庭空调使用。此举正值美国多地居民反对数据中心项目。",
+          "heat": 72
+        },
+        {
+          "title": "Apple Watch’s AI features for rewinding and recapping conversations begin beta testing",
+          "link": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
+          "pubDate": "2026-11-03T07:20:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Now in beta: Apple's new Audio Intelligence features can help you remember what someone said or take…"
+        },
+        {
+          "title": "Google takes Dreambeans to India in bid to bring AI-generated personal stories to the masses",
+          "link": "https://techcrunch.com/2026/11/02/google-takes-dreambeans-to-india-in-bid-to-bring-ai-generated-personal-stories-to-the-masses/",
+          "pubDate": "2026-11-03T03:30:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Google's Dreambeans, its latest AI experiment, now supports 13 Indian languages."
+        },
+        {
+          "title": "Apple may try to increase revenue by doing…something with third-party AI apps",
+          "link": "https://techcrunch.com/2026/11/02/apple-may-try-to-increase-revenue-by-doing-something-with-third-party-ai-apps/",
+          "pubDate": "2026-11-03T01:49:52.000Z",
+          "source": "TechCrunch",
+          "summary": "Apple hinted at ways that it could spur revenue through third-party \"opportunities\" during its Monda…"
+        },
+        {
+          "title": "Y Combinator’s Garry Tan uses AI agents so much, he spends up to $200K a year on tokens",
+          "link": "https://techcrunch.com/2026/11/02/y-combinators-garry-tan-uses-ai-agents-so-much-he-spends-up-to-200k-a-year-on-tokens/",
+          "pubDate": "2026-11-03T00:35:52.000Z",
+          "source": "TechCrunch",
+          "summary": "Y Combinator Garry Tan has jokingly admitted that he's suffered from \"cyber psychosis” and barely sl…"
+        },
+        {
+          "title": "Trajectory raises $45M to make AI model training accessible to nontechnical experts",
+          "link": "https://techcrunch.com/2026/11/02/trajectory-raises-45m-to-make-ai-model-training-accessible-to-nontechnical-experts/",
+          "pubDate": "2026-11-02T23:13:53.000Z",
+          "source": "TechCrunch",
+          "summary": "The one-year-old startup is now valued at $300 million."
+        },
+        {
+          "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
+          "link": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
+          "pubDate": "2026-11-02T22:14:50.000Z",
+          "source": "TechCrunch",
+          "summary": "RSI is the point at which AI grows so good at training itself that it spawns a dramatic acceleration…"
+        },
+        {
+          "title": "Web host Squarespace lays off 19% of its employees",
+          "link": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
+          "pubDate": "2026-11-02T19:25:59.000Z",
+          "source": "TechCrunch",
+          "summary": "The website builder said that the job losses are part of a broader restructuring of its organization…"
+        },
+        {
+          "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+          "link": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+          "pubDate": "2026-11-02T19:19:17.000Z",
+          "source": "TechCrunch",
+          "summary": "The New York Times is suing privacy-focused web browser company Brave for allegedly scraping the out…"
+        },
+        {
+          "title": "Anthropic clamps down on Claude’s AI video game clones",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1024632/anthropic-claude-ai-video-game-clones",
+          "pubDate": "2026-11-02T18:56:02.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic has updated Claude Code's system prompt to prevent the AI tool from being used to re-creat…"
+        },
+        {
+          "title": "The New York Times sues Brave web browser for AI scraping and bypassing paywalls",
+          "link": "https://www.theverge.com/tech/1024588/brave-lawsuit-ai-scraping-new-york-times",
+          "pubDate": "2026-11-02T17:51:19.000Z",
+          "source": "The Verge",
+          "summary": "The New York Times and a group of other publications have filed lawsuits against the company that ma…"
+        },
+        {
+          "title": "42AI comes out of stealth with $62.5M and a world model that can ‘predict human behavior’",
+          "link": "https://techcrunch.com/2026/11/02/42ai-comes-out-of-stealth-with-62-5m-and-a-world-model-that-can-predict-human-behavior/",
+          "pubDate": "2026-11-02T16:30:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Here's a question straight out of sci-fi: What if AI could predict what you were going to do before…"
+        },
+        {
+          "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs",
+          "link": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
+          "pubDate": "2026-11-02T16:23:21.000Z",
+          "source": "TechCrunch",
+          "summary": "Musk recently referred to Grok Bot as having \"the fastest growth of a product that I've ever seen in…"
+        },
+        {
+          "title": "Omen AI adds liquid know-how in $16 million Aquatic Labs acquisition",
+          "link": "https://techcrunch.com/2026/11/02/omen-ai-adds-liquid-know-how-in-16-million-aquatic-labs-acquisition/",
+          "pubDate": "2026-11-02T15:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Two startups tackling the data center water problem are joining forces in a $16 million deal."
+        },
+        {
+          "title": "OpenAI is finally merging ChatGPT’s Chat and Work tabs",
+          "link": "https://techcrunch.com/2026/11/02/openai-is-finally-merging-chatgpts-chat-and-work-tabs/",
+          "pubDate": "2026-11-02T13:57:53.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI said that ChatGPT and Codex will draw usage from the same allocation pool after this change."
+        }
+      ]
+    },
+    {
       "date": "2026-11-02",
       "generatedAt": "2026-11-02T10:33:37.506Z",
       "hours": 24,
