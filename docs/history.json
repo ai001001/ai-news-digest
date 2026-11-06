@@ -1,6 +1,228 @@
 {
   "days": [
     {
+      "date": "2026-11-06",
+      "generatedAt": "2026-11-06T10:24:26.109Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "OpenAI released a new cybersecurity model. Is that enough?",
+          "link": "https://techcrunch.com/2026/11/05/openai-released-a-new-cybersecurity-model-is-that-enough/",
+          "pubDate": "2026-11-05T19:06:12.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI推出网络安全模型ChatGPT Cyber，仅向Daybreak Red高级用户开放。该模型此前扫描Linux内核发现948个潜在漏洞，在Firefox中找出81个新型漏洞。",
+          "heat": 82
+        },
+        {
+          "title": "OpenAI president Greg Brockman says company could be IPO ready in 2027",
+          "link": "https://techcrunch.com/2026/11/05/openai-president-greg-brockman-says-company-could-be-ipo-ready-in-2027/",
+          "pubDate": "2026-11-05T18:02:27.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI总裁Greg Brockman在WSJ科技会议上表示，公司预计2027年具备IPO条件。他透露企业业务收入已占总营收多数，第三季度年化收入环比增长70%，并赢得摩根大通等客户。",
+          "heat": 82
+        },
+        {
+          "title": "Palo Alto Networks in talks to buy AI agent security startup Clutch for $500M",
+          "link": "https://techcrunch.com/2026/11/05/palo-alto-networks-in-talks-to-buy-ai-agent-security-startup-clutch-for-500m/",
+          "pubDate": "2026-11-06T06:28:32.000Z",
+          "source": "TechCrunch",
+          "summary": "Palo Alto Networks正谈判以5亿美元现金加里程碑付款收购AI代理安全初创公司Clutch，后者估值仅8500万美元、ARR近1000万美元，溢价约50倍。这将是其今年第七笔收购。",
+          "heat": 78
+        },
+        {
+          "title": "Airbnb is working on an AI travel agent",
+          "link": "https://www.theverge.com/tech/1028412/airbnb-ai-travel-agent-q3-2026-earnings",
+          "pubDate": "2026-11-06T00:06:12.000Z",
+          "source": "The Verge",
+          "summary": "Airbnb 在 2026 年 Q3 财报信中宣布，将于 2027 年上半年推出 AI 旅行代理，帮助用户规划并预订行程。公司称将凭借房东房客匹配经验和专为旅行设计的新界面建立优势。",
+          "heat": 78
+        },
+        {
+          "title": "Perplexity launches its own take on AI agents for work",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work",
+          "pubDate": "2026-11-05T22:26:50.000Z",
+          "source": "The Verge",
+          "summary": "Perplexity 推出面向工作场景的常驻 AI 智能体 Teammates，可在工作区承担多角色任务并调用已有项目与记忆，与其本地代理系统 Perplexity Computer 集成。",
+          "heat": 78
+        },
+        {
+          "title": "‘Total repudiation’: The blue wave is about to hit AI",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1026927/total-repudiation-the-blue-wave-is-about-to-hit-ai",
+          "pubDate": "2026-11-05T17:51:52.000Z",
+          "source": "The Verge",
+          "summary": "美国民主党中期选举拿下两院，多位公开主张问责AI公司的候选人胜出。AI行业正面临监管收紧、数据中心建设放缓等前景，多数主要AI公司CEO对此保持沉默。",
+          "heat": 78
+        },
+        {
+          "title": "Agility is the first pure humanoid robot company on the stock market. Are you buying?",
+          "link": "https://techcrunch.com/2026/11/05/agility-is-the-first-pure-humanoid-robot-company-on-the-stock-market-are-you-buying/",
+          "pubDate": "2026-11-05T12:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Agility通过SPAC反向并购登陆纳斯达克，成为首家上市的人形机器人纯业务公司，新募资4.65亿美元。其Digit机器人已部署于9家工业客户，但上半年收入仅17.4万美元、亏损3.62亿美元。",
+          "heat": 78
+        },
+        {
+          "title": "Claude can now analyze your spending with its new Personal Finance tool",
+          "link": "https://techcrunch.com/2026/11/05/claude-can-now-analyze-your-spending-with-its-new-personal-finance-tool/",
+          "pubDate": "2026-11-05T18:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic为Claude推出个人理财工具，用户可通过Plaid连接银行和信用卡账户，用自然语言查询消费、分析支出并识别异常。访问为只读，无法转移资金，意在追赶OpenAI。",
+          "heat": 76
+        },
+        {
+          "title": "Meta warns that election backlash against data centers could make AI expansion harder",
+          "link": "https://techcrunch.com/2026/11/05/metas-warns-that-election-backlash-against-data-centers-could-make-ai-expansion-harder/",
+          "pubDate": "2026-11-05T19:12:39.000Z",
+          "source": "TechCrunch",
+          "summary": "Meta总裁警告，中期选举后政治阻力与社区抵制可能使AI数据中心扩张更难。Meta在23州有数据中心，5个规划达1吉瓦以上，公司担忧投资受影响。",
+          "heat": 75
+        },
+        {
+          "title": "OpenAI is stepping back from NDAs for data center projects",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1028454/openai-data-center-nda",
+          "pubDate": "2026-11-06T00:37:56.000Z",
+          "source": "The Verge",
+          "summary": "OpenAI宣布在数据中心项目中不再与公共官员签署保密协议，仅保留涉及安全、商业秘密等狭义保护。此前中期选举选民反对数据中心扩张，NDA做法广受审查，亚马逊10月也作出类似承诺。",
+          "heat": 72
+        },
+        {
+          "title": "Airbnb says it’s launching an AI travel agent in the first half of 2027",
+          "link": "https://techcrunch.com/2026/11/05/airbnb-says-its-launching-an-ai-travel-agent-in-the-first-half-of-2027/",
+          "pubDate": "2026-11-05T22:40:55.000Z",
+          "source": "TechCrunch",
+          "summary": "Airbnb宣布将于2027年上半年推出自研AI旅行助手，可规划行程、比较房源、管理预订并提供住宿期间协助。该助手采用生成式UI，实时组合地图、照片、比价等组件，而非纯聊天机器人。",
+          "heat": 72
+        },
+        {
+          "title": "Meta says US users can now video chat with their Muse AI avatar",
+          "link": "https://techcrunch.com/2026/11/05/meta-says-us-users-can-now-video-chat-with-their-muse-ai-avatar/",
+          "pubDate": "2026-11-05T19:48:28.000Z",
+          "source": "TechCrunch",
+          "summary": "Meta周四向全美用户开放Muse Voice，可与AI助手Muse视频通话，基于Muse Realtime Avatar和Voice模型，形象可自定义。年底前还将推出Muse Charm可穿戴设备。",
+          "heat": 72
+        },
+        {
+          "title": "Muse has a voice mode now",
+          "link": "https://www.theverge.com/tech/1028015/meta-muse-ai-voice-mode-expressive-avatar",
+          "pubDate": "2026-11-05T19:03:04.000Z",
+          "source": "The Verge",
+          "summary": "Meta CEO 扎克伯格宣布，其 AI 助手 Muse 上线实时语音对话功能，已在 iOS 应用推送。对话时头像随语音同步动画，用户可通过指令或设置调整音色。实测响应迅速，但查询信息时偶有停顿。",
+          "heat": 72
+        },
+        {
+          "title": "Claude AI can plug directly into your bank account",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1027652/anthropic-claude-plaid-personal-finance",
+          "pubDate": "2026-11-05T18:00:00.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic 为 Claude 新增个人理财功能，通过 Plaid 连接银行与信用卡账户，用户可询问月度支出分类、账单余额和储蓄空间。访问权限为只读。",
+          "heat": 72
+        },
+        {
+          "title": "OpenAI says its new cybersecurity model is better at not hacking other companies",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1027599/openai-gpt-6-cyber-launch",
+          "pubDate": "2026-11-05T17:00:00.000Z",
+          "source": "The Verge",
+          "summary": "OpenAI 发布网络安全模型 GPT-6 Cyber，称其找漏洞能力更强，测试中越界攻击其他平台的比例低于 1%，较上代约 5% 明显下降。",
+          "heat": 72
+        },
+        {
+          "title": "Axiom Math wants to keep AI slop out of mathematics",
+          "link": "https://techcrunch.com/2026/11/05/axiom-math-wants-to-keep-ai-slop-out-of-mathematics/",
+          "pubDate": "2026-11-05T16:16:45.000Z",
+          "source": "TechCrunch",
+          "summary": "Axiom Math 用 AI 智能体将 Stacks Project 约7654页数学内容转为1600万行 Lean 代码并完成形式化验证，为 AI 数学建立可验证基础。",
+          "heat": 72
+        },
+        {
+          "title": "Dropbox acquires Tigris Data for $350M to bolster its AI infrastructure",
+          "link": "https://techcrunch.com/2026/11/05/dropbox-acquires-tigris-data-for-350m-to-bolster-its-ai-iinfrastructure/",
+          "pubDate": "2026-11-05T15:19:05.000Z",
+          "source": "TechCrunch",
+          "summary": "Dropbox 以 3.5 亿美元收购云存储公司 Tigris Data，为其迄今最大收购，用于支持面向 AI 开发者的 DBX Agent Cloud 平台，交易预计 2026 年第四季度完成。",
+          "heat": 72
+        },
+        {
+          "title": "Box taps Nvidia’s Nemotron for new agent-first content retrieval system",
+          "link": "https://techcrunch.com/2026/11/05/box-taps-nvidias-nemotron-for-new-agent-first-content-retrieval-system/",
+          "pubDate": "2026-11-05T14:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Box 将 Nvidia Nemotron 嵌入模型集成进产品核心，推出面向智能体的内容检索系统。官方称查询快 4 倍、错误少 20%、token 省 90%。",
+          "heat": 72
+        },
+        {
+          "title": "Nasdaq Sinks 5% as Investors Retreat from AI Trade After Election",
+          "link": "https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-05-2026",
+          "pubDate": "2026-11-05T18:00:01.000Z",
+          "source": "Hacker News",
+          "summary": "美国大选后投资者撤出AI相关交易，纳斯达克指数单日下跌5%。市场对AI板块的抛售反映出大选后科技股情绪转弱。",
+          "points": 160,
+          "comments": 190,
+          "heat": 71
+        },
+        {
+          "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
+          "link": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
+          "pubDate": "2026-11-05T23:09:57.000Z",
+          "source": "Hacker News",
+          "summary": "马克·库班指控Facebook明知却仍投放AI深度伪造诈骗广告，并称文件显示相关欺诈收入达160亿美元。",
+          "points": 337,
+          "comments": 160,
+          "heat": 68
+        },
+        {
+          "title": "Grimes is going to star in an AI movie that’s coming to theaters",
+          "link": "https://www.theverge.com/entertainment/1026282/grimes-ai-movie",
+          "pubDate": "2026-11-05T17:00:00.000Z",
+          "source": "The Verge",
+          "summary": "AI生成科幻片《Gods Don't Give Gifts》宣布歌手Grimes参演，提供肖像与配音，定档12月4日院线，号称首部登陆影院的AI电影。制片方Fable称此类数字演员选角将更常见。",
+          "heat": 58
+        },
+        {
+          "title": "You can post AI music straight to SoundCloud from ElevenLabs",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1027427/ai-music-soundcloud-elevenlabs",
+          "pubDate": "2026-11-05T15:00:00.000Z",
+          "source": "The Verge",
+          "summary": "SoundCloud 集成 ElevenLabs，用户可将 AI 生成音乐直接发布，作品标注 AI 来源。Artist Pro 订阅者另获三个月 ElevenMusic Pro 免费使用权。",
+          "heat": 55
+        },
+        {
+          "title": "Aina’s smart ring has a screen, a joystick, and a mic so you can talk to AI agents",
+          "link": "https://techcrunch.com/2026/11/05/ainas-smart-ring-has-a-screen-a-joystick-and-a-mic-so-you-can-talk-to-ai-agents/",
+          "pubDate": "2026-11-05T14:42:00.000Z",
+          "source": "TechCrunch",
+          "summary": "硬件初创公司Aina发布399美元AI智能戒指，带屏幕、摇杆、麦克风和扬声器，可语音调用AI代理、记笔记及通话。公司7月融资550万美元，意在为AI代理打造新交互入口。",
+          "heat": 52
+        },
+        {
+          "title": "The hidden supply chain costs of the AI boom",
+          "link": "https://www.theverge.com/podcast/1024438/willy-shih-supply-chain-ai-chips-ram-where-does-my-stuff-come-from-book",
+          "pubDate": "2026-11-05T15:00:00.000Z",
+          "source": "The Verge",
+          "summary": "哈佛商学院教授Willy Shih在新书访谈中指出，富士康威斯康星州建厂计划落空的根源在于供应链配套缺失；AI热潮正引发前所未有的基础设施扩张，但政界与监管层仍忽视全球供应链的经济现实。",
+          "heat": 45
+        },
+        {
+          "title": "A YC startup is putting $1M behind 5 unsolved materials science problems for AI",
+          "link": "https://techcrunch.com/2026/11/05/a-yc-startup-is-putting-1m-behind-five-unsolved-materials-science-problems-for-ai/",
+          "pubDate": "2026-11-05T13:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "YC孵化的旧金山初创Discovered Materials悬赏100万美元，征集AI模型解决材料科学五大未解难题。此前让前沿模型自主攻坚数日，进展甚微。",
+          "heat": 42
+        },
+        {
+          "title": "I struggle to believe that AI R&D is ingenious",
+          "link": "https://www.lesswrong.com/posts/DALNiKBjMGMF8grme/arjun-panickssery-s-shortform?commentId=fJtaHHHfx45tD7BSL",
+          "pubDate": "2026-11-06T05:19:04.000Z",
+          "source": "Hacker News",
+          "summary": "AI研究员Arjun Panickssery质疑自主AI研发的创造力：在Scrabble引擎等项目中，模型判断力存在基础缺陷，无法识别关键文献、实验设计无效，仅在反馈快的任务中表现较好。",
+          "points": 91,
+          "comments": 74,
+          "heat": 35
+        }
+      ]
+    },
+    {
       "date": "2026-11-05",
       "generatedAt": "2026-11-05T10:22:30.060Z",
       "hours": 24,
