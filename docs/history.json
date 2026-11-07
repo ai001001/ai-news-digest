@@ -1,6 +1,196 @@
 {
   "days": [
     {
+      "date": "2026-11-07",
+      "generatedAt": "2026-11-07T09:38:04.840Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "OpenAI valued at $1.25 trillion, as rival Anthropic nears its IPO",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029380/openai-1-25-trillion-investment-valuation",
+          "pubDate": "2026-11-06T23:46:18.000Z",
+          "source": "The Verge",
+          "summary": "据彭博社报道，OpenAI新一轮融资再募110亿美元，估值达1.25万亿美元，成为全球最高估值公司之一；此前3月刚以8520亿美元估值融资1220亿美元。公司仍在争取追加投资，总额或达200亿美元。",
+          "heat": 95
+        },
+        {
+          "title": "OpenAI reportedly raises an additional $11 billion at a $1.25 trillion valuation",
+          "link": "https://techcrunch.com/2026/11/06/openai-reportedly-raises-an-additional-11-billion-at-a-1-25-trillion-valuation/",
+          "pubDate": "2026-11-06T22:53:46.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI据报在新一轮融资中再募110亿美元，估值达1.25万亿美元，该轮融资尚未关闭，预计未来几周完成，总额或约200亿美元。此前9月目标为300亿美元，目前进度不及预期。",
+          "heat": 95
+        },
+        {
+          "title": "China reportedly recruited AI exec to spy on Jensen Huang",
+          "link": "https://www.theverge.com/tech/1029338/nvidia-ceo-jensen-huang-china-spy",
+          "pubDate": "2026-11-06T23:00:44.000Z",
+          "source": "The Verge",
+          "summary": "《纽约时报》报道称，中国国家安全部招募Megaspeed高管Alice Huang，针对英伟达CEO黄仁勋搜集美国AI芯片情报，并试图影响该公司推动最先进芯片对华供应。Megaspeed是英伟达客户。",
+          "heat": 85
+        },
+        {
+          "title": "Big Tech lost big in the 2026 election",
+          "link": "https://www.theverge.com/podcast/1028731/2026-midterms-tech-ai-vergecast",
+          "pubDate": "2026-11-06T16:38:02.000Z",
+          "source": "The Verge",
+          "summary": "2026年美国中期选举民主党大胜，选民普遍反对大型科技公司与AI。The Vergecast讨论选举对科技业影响：国会或加强AI监管，数据中心建设阻力加大。",
+          "heat": 78
+        },
+        {
+          "title": "AI is dramatically accelerating AI research",
+          "link": "https://www.planned-obsolescence.org/p/ai-is-dramatically-accelerating-ai",
+          "pubDate": "2026-11-06T20:27:23.000Z",
+          "source": "Hacker News",
+          "summary": "METR报告显示，Anthropic的AI能力进步速度已达此前两倍，或已触及RSP“大幅加速”阈值。作者认为AI自动化是主因，并警告这指向比主流预测更短的超级智能时间线。",
+          "points": 302,
+          "comments": 238,
+          "heat": 76
+        },
+        {
+          "title": "Crusoe sells troubled Wyoming data center project to Google",
+          "link": "https://techcrunch.com/2026/11/06/crusoe-sells-troubled-wyoming-data-center-project-to-google/",
+          "pubDate": "2026-11-07T01:40:28.000Z",
+          "source": "TechCrunch",
+          "summary": "Crusoe确认将怀俄明州未完工数据中心项目出售给谷歌，谷歌计划投资170亿美元开发。该项目原规划扩容至10吉瓦，因成本和工期问题易主，凸显独立开发商交付大型AI数据中心的难度。",
+          "heat": 75
+        },
+        {
+          "title": "Ramp data shows AI spending stalling just as Anthropic nears its IPO",
+          "link": "https://techcrunch.com/2026/11/06/ramp-data-shows-ai-spending-stalling-just-as-anthropic-nears-its-ipo/",
+          "pubDate": "2026-11-06T15:54:47.000Z",
+          "source": "TechCrunch",
+          "summary": "支付平台Ramp数据显示，8至9月AI token支出仅增长1.5%，远低于7月的42%，Anthropic筹备IPO之际，AI支出现停滞迹象。最激进的前1%企业支出也回落至人均月1万美元以下。",
+          "heat": 75
+        },
+        {
+          "title": "All the latest updates on AI data centers",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/902546/data-centers-ai-energy-power-grids-controversy",
+          "pubDate": "2026-11-06T20:02:22.000Z",
+          "source": "The Verge",
+          "summary": "The Verge汇总AI数据中心扩张争议：中期选举后选民普遍反对，民主党呼吁限制。OpenAI、亚马逊承诺与社区合作并承担能源成本，但电力与环境问题持续升温。",
+          "heat": 72
+        },
+        {
+          "title": "Hundreds of Artex AI hacking tools found publicly exposed to the web",
+          "link": "https://techcrunch.com/2026/11/06/hundreds-of-artex-ai-hacking-tools-found-publicly-exposed-to-the-web/",
+          "pubDate": "2026-11-06T18:44:38.000Z",
+          "source": "TechCrunch",
+          "summary": "安全公司Censys发现逾800个开源AI黑客工具Artex实例在公网无需密码即可访问，该工具已用于韩国金融业和ConnectWise等攻击，暴露实例还泄露攻击植入物。",
+          "heat": 72
+        },
+        {
+          "title": "Meta introduces Spaces, a new way to collaborate with your Muse agent",
+          "link": "https://techcrunch.com/2026/11/06/meta-introduces-spaces-a-new-way-to-collaborate-with-your-muse-agent/",
+          "pubDate": "2026-11-06T18:44:20.000Z",
+          "source": "TechCrunch",
+          "summary": "Meta 为 Muse 智能体推出 Spaces，用户可围绕旅行规划等主题创建定制空间，并连接第三方应用自动更新信息。Muse 上线不到两个月，美加用户已达 1000 万。",
+          "heat": 72
+        },
+        {
+          "title": "Meta&#8217;s Muse AI can create custom &#8216;spaces&#8217; for the version of the app you need right now",
+          "link": "https://www.theverge.com/tech/1028871/meta-muse-ai-spaces",
+          "pubDate": "2026-11-06T18:10:10.000Z",
+          "source": "The Verge",
+          "summary": "Meta 的 AI 助手 Muse 推出\"spaces\"功能，用户描述需求即可创建购物中心、学校看板等 App 式体验，接入 Gmail、Notion 等外部应用后 AI 会后台持续更新信息。",
+          "heat": 72
+        },
+        {
+          "title": "How a Blue Wave midterm might reshape the AI industry",
+          "link": "https://techcrunch.com/podcast/how-a-blue-wave-midterm-might-reshape-the-ai-industry/",
+          "pubDate": "2026-11-06T18:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "美国中期选举民主党大胜，41项数据中心相关公投中40项通过限制开发。新当选的民主党州长和议员料将支持更多监管，可能重塑AI数据中心行业格局并加强对大科技的审查。",
+          "heat": 72
+        },
+        {
+          "title": "After the midterms, is the AI industry in for a rough two years?",
+          "link": "https://techcrunch.com/video/after-the-midterms-is-the-ai-industry-in-for-a-rough-two-years/",
+          "pubDate": "2026-11-06T17:23:52.000Z",
+          "source": "TechCrunch",
+          "summary": "美国中期选举民主党大胜，41项数据中心相关公投中40项通过限制开发；新当选民主党州长和议员料支持更严监管，AI数据中心扩张与大型科技公司审查或面临两年阻力。",
+          "heat": 72
+        },
+        {
+          "title": "Microsoft is winding down Oracle deal to rent AI cloud capacity",
+          "link": "https://www.reuters.com/business/microsoft-is-winding-down-oracle-deal-rent-ai-cloud-capacity-bloomberg-news-2026-11-06/",
+          "pubDate": "2026-11-06T18:04:06.000Z",
+          "source": "Hacker News",
+          "summary": "微软正逐步终止与甲骨文此前达成的AI云算力租赁合作协议，该协议原计划为微软补充AI云容量。此举反映超大规模云厂商在算力布局上的策略调整。",
+          "points": 97,
+          "comments": 18,
+          "heat": 65
+        },
+        {
+          "title": "After blocking Muse, Amazon now lets users text Alexa to help them shop",
+          "link": "https://techcrunch.com/2026/11/06/after-blocking-muse-amazon-now-lets-users-text-alexa-to-help-them-shop/",
+          "pubDate": "2026-11-06T14:10:00.000Z",
+          "source": "TechCrunch",
+          "summary": "亚马逊推出短信版 Alexa 购物功能，未来几周向数百万美国用户开放，支持自然语言搜索、加购、下单与比价。此前 9 月亚马逊曾封堵 Meta 的 Muse 查询其站点。",
+          "heat": 62
+        },
+        {
+          "title": "Amazon will let you text Alexa your shopping list",
+          "link": "https://www.theverge.com/tech/1028587/amazon-alexa-shopping-ai-text-orders",
+          "pubDate": "2026-11-06T14:00:00.000Z",
+          "source": "The Verge",
+          "summary": "亚马逊为 Alexa for Shopping 新增短信购物：用户发文字或照片描述商品，Alexa 搜索匹配、回复推荐并代下单，方便不便打开 App 时购物。",
+          "heat": 62
+        },
+        {
+          "title": "Protesters break into Microsoft data center site in Amsterdam",
+          "link": "https://www.theverge.com/news/1028549/protesters-microsoft-data-center-site-amsterdam",
+          "pubDate": "2026-11-06T11:55:19.000Z",
+          "source": "The Verge",
+          "summary": "阿姆斯特丹约100名抗议者闯入微软新数据中心工地，部分人爬上起重机悬挂“fuck AI”横幅，并打出“微软支持种族灭绝”标语。行动组织Geef Tegengas反对在该市郊建设三座85米高数据中心塔。",
+          "heat": 62
+        },
+        {
+          "title": "Underdog shows off a 32MB speech model in new demo",
+          "link": "https://techcrunch.com/2026/11/06/underdog-shows-off-a-32mb-speech-model-in-new-demo/",
+          "pubDate": "2026-11-06T13:02:16.000Z",
+          "source": "TechCrunch",
+          "summary": "初创公司Underdog发布仅31.7MB、3100万参数的开源语音模型Woof，可同时生成语音和音乐，无需联网即可在浏览器及多数设备运行。该公司此前还推出167MB语音转文字模型Bark。",
+          "heat": 58
+        },
+        {
+          "title": "How Akai and Moog are embracing vibe-coded mods",
+          "link": "https://www.theverge.com/tech/1028720/vibe-coding-open-source-inmusic-akai",
+          "pubDate": "2026-11-06T16:34:39.000Z",
+          "source": "The Verge",
+          "summary": "inMusic CEO Jack O'Donnell 宣布向改装社区开放工具，将开源 MPC Sample Key 等设备代码并提供 SDK，降低设备变砖风险，以鼓励用户自定义开发。",
+          "heat": 55
+        },
+        {
+          "title": "Physicl raises $10M to make the digital world real enough for robots",
+          "link": "https://techcrunch.com/2026/11/06/physicl-raises-10m-to-make-the-digital-world-real-enough-for-robots/",
+          "pubDate": "2026-11-06T13:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Physicl获Inovia Capital领投的1000万美元种子轮融资，利用3D渲染管线构建高保真物理仿真环境，并推出含1万个3D场景的Studio，为机器人生成合成训练数据。",
+          "heat": 55
+        },
+        {
+          "title": "University libraries are being swarmed by AI bots, putting public access at risk",
+          "link": "https://www.cbc.ca/news/world/university-libraries-ai-data-scraping-bots-9.7408287",
+          "pubDate": "2026-11-06T14:13:09.000Z",
+          "source": "Hacker News",
+          "summary": "美国多所大学图书馆遭遇AI爬虫大规模抓取，公共访问服务面临压力甚至被迫限制。报道指出，自动化流量激增威胁学术资源开放共享，高校正寻求技术与管理对策。",
+          "points": 129,
+          "comments": 58,
+          "heat": 54
+        },
+        {
+          "title": "AI is the new dating dealbreaker",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1028609/ai-dating-feelings-doomers-singularity",
+          "pubDate": "2026-11-06T17:00:00.000Z",
+          "source": "The Verge",
+          "summary": "旧金山25岁分析师Irene在Hinge上发现，不少用户将\"Fuck AI\"写入个人资料作为价值观声明，AI态度正成为约会中的新分歧点。",
+          "heat": 42
+        }
+      ]
+    },
+    {
       "date": "2026-11-06",
       "generatedAt": "2026-11-06T10:24:26.109Z",
       "hours": 24,
