@@ -17,7 +17,7 @@ export async function loadHistory(outDir: string): Promise<DigestHistory> {
   try {
     const raw = await readFile(path.join(outDir, HISTORY_FILE), 'utf8');
     const data = JSON.parse(raw) as DigestHistory;
-    return { days: Array.isArray(data.days) ? data.days : [] };
+    return { days: Array.isArray(data.days) ? data.days : [], dropped: Array.isArray(data.dropped) ? data.dropped : [] };
   } catch (err) {
     if ((err as NodeJS.ErrnoException).code === 'ENOENT') return { days: [] };
     throw err;
@@ -46,7 +46,7 @@ export async function saveHistory(history: DigestHistory, outDir: string): Promi
  * @returns 新文章 / New articles
  */
 export function dropSeen(articles: Article[], history: DigestHistory): Article[] {
-  const seen = new Set(history.days.flatMap((d) => d.articles.map((a) => normalizeUrl(a.link))));
+  const seen = new Set([...history.days.flatMap((d) => d.articles.map((a) => normalizeUrl(a.link))), ...(history.dropped ?? [])]);
   return articles.filter((a) => !seen.has(normalizeUrl(a.link)));
 }
 
@@ -109,10 +109,17 @@ export function findStale(history: DigestHistory, minLength: number): StoredArti
 }
 
 /**
- * 按热度重新排序每一天的文章。
- * Re-sort every day's articles by heat.
+ * 按热度重新排序每一天的文章，只保留前 N 篇；被移除的链接记入 dropped，避免之后再次收录。
+ * Re-sort every day's articles by heat and keep the top N; removed links go into dropped so they are not collected again.
  * @param history - 历史记录（原地修改）/ History (modified in place)
+ * @param topN - 每天保留的篇数 / Articles to keep per day
  */
-export function sortDays(history: DigestHistory): void {
-  for (const d of history.days) d.articles.sort(compareByHeat);
+export function keepTop(history: DigestHistory, topN: number): void {
+  const dropped = new Set(history.dropped ?? []);
+  for (const d of history.days) {
+    d.articles.sort(compareByHeat);
+    for (const a of d.articles.slice(topN)) dropped.add(normalizeUrl(a.link));
+    d.articles = d.articles.slice(0, topN);
+  }
+  history.dropped = [...dropped];
 }

@@ -31,6 +31,9 @@ export const DEFAULT_HOURS = 24;
 /** 默认输出目录（GitHub Pages 从这里发布）/ Default output directory (published by GitHub Pages) */
 export const DEFAULT_OUT_DIR = 'docs';
 
+/** 每天只保留热度最高的前 N 篇 / Keep only the top N articles by heat per day */
+export const DAILY_TOP_N = 5;
+
 /** 摘要最小长度（字符）/ Min summary length in characters */
 export const SUMMARY_MIN_LENGTH = 50;
 

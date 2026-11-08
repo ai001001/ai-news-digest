@@ -1,9 +1,9 @@
 import { execFile } from 'node:child_process';
 import { parseArgs, promisify } from 'node:util';
 import cron from 'node-cron';
-import { CRON_SCHEDULE, CRON_TIMEZONE, DEFAULT_HOURS, DEFAULT_OUT_DIR, FEEDS, SUMMARY_MIN_LENGTH } from './config.js';
+import { CRON_SCHEDULE, CRON_TIMEZONE, DAILY_TOP_N, DEFAULT_HOURS, DEFAULT_OUT_DIR, FEEDS, SUMMARY_MIN_LENGTH } from './config.js';
 import { fetchAll } from './fetcher.js';
-import { dropSeen, findStale, loadHistory, mergeDay, saveHistory, sortDays } from './history.js';
+import { dropSeen, findStale, keepTop, loadHistory, mergeDay, saveHistory } from './history.js';
 import { computeHeat, processArticles } from './processor.js';
 import { renderHtml, writePage } from './renderer.js';
 import { summarizeAll } from './summarizer.js';
@@ -78,15 +78,16 @@ async function runOnce(hours: number, outDir: string): Promise<void> {
   for (const a of articles) a.heat ??= computeHeat(undefined, a.points);
 
   const day = mergeDay(history, articles, results, hours, now);
+  keepTop(history, DAILY_TOP_N);
   await saveHistory(history, outDir);
   const file = await writePage(renderHtml(history, now), outDir);
 
-  console.log(`✅ 已更新日报：${file}（${day.date} 新增 ${articles.length} 篇，当天共 ${day.articles.length} 篇）`);
+  console.log(`✅ 已更新日报：${file}（${day.date} 新增 ${articles.length} 篇，当天保留前 ${day.articles.length} 篇）`);
 }
 
 /**
- * 补全历史文章：重新抓取原文，生成 50-100 字摘要与热度，按热度重排后重新渲染页面。
- * Backfill stored articles: re-fetch the originals, generate 50-100 character summaries and heat, re-sort and re-render.
+ * 补全历史文章：重新抓取原文，生成 50-100 字摘要与热度，按热度重排并只保留每天前 N 篇后重新渲染页面。
+ * Backfill stored articles: re-fetch the originals, generate 50-100 character summaries and heat, re-sort, keep the daily top N and re-render.
  *
  * @param outDir - 输出目录 / Output directory
  */
@@ -123,7 +124,7 @@ async function runBackfill(outDir: string): Promise<void> {
     });
   }
 
-  sortDays(history);
+  keepTop(history, DAILY_TOP_N);
   await saveHistory(history, outDir);
   const file = await writePage(renderHtml(history, new Date()), outDir);
   console.log(`✅ 已重新渲染：${file}`);

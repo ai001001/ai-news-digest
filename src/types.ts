@@ -107,4 +107,9 @@ export interface DigestDay {
 export interface DigestHistory {
   /** 每天的日报 / Daily digests */
   days: DigestDay[];
+  /**
+   * 因未进入每日前 N 而被移除的文章链接（规范化后），用于跨天去重。
+   * Normalized links of articles dropped for missing the daily top N, kept for cross-day dedupe.
+   */
+  dropped?: string[];
 }

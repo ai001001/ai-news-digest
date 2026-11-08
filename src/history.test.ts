@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { dropSeen, mergeDay } from './history.js';
+import { dropSeen, keepTop, mergeDay } from './history.js';
 import type { Article, DigestHistory } from './types.js';
 
 /**
@@ -43,4 +43,15 @@ test('mergeDay 按天追加，不覆盖已有日期 / mergeDay appends per day w
   assert.deepEqual(history.days[0].articles.map((a) => a.link), ['https://a.com/3', 'https://a.com/2']);
   assert.deepEqual(history.days[0].failed, [{ source: 'The Verge', error: 'HTTP 503' }]);
   assert.deepEqual(history.days[1].articles.map((a) => a.link), ['https://a.com/1']);
+});
+
+test('keepTop 每天只保留热度前 N 篇，被移除的文章不再收录 / keepTop keeps the top N per day and never re-collects dropped ones', () => {
+  const history: DigestHistory = { days: [] };
+  const articles = [10, 90, 50].map((heat, i) => ({ ...makeArticle(`https://a.com/${i}`, '2026-11-01T01:00:00Z'), heat }));
+  mergeDay(history, articles, [], 24, new Date('2026-11-01T04:00:00Z'));
+  keepTop(history, 2);
+
+  assert.deepEqual(history.days[0].articles.map((a) => a.link), ['https://a.com/1', 'https://a.com/2']);
+  assert.deepEqual(history.dropped, ['a.com/0']);
+  assert.deepEqual(dropSeen([makeArticle('https://a.com/0', '2026-11-02T01:00:00Z')], history), []);
 });
