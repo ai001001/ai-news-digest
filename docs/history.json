@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-09",
+      "generatedAt": "2026-11-09T10:54:56.379Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Nvidia will investigate CEO Jensen Huang’s relationship with possible Chinese spy",
+          "link": "https://techcrunch.com/2026/11/08/nvidia-says-its-investigating-ceo-jensen-huangs-relationship-with-possible-chinese-spy/",
+          "pubDate": "2026-11-08T21:00:11.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达董事会宣布对CEO黄仁勋与可能中国间谍艾丽斯·黄的关系展开独立调查。黄仁勋在内部备忘录中承认婚外情并道歉，但董事会称无理由认为国家安全或公司机密受损。",
+          "heat": 92
+        },
+        {
+          "title": "Is Jensen Huang’s job on the line? Yale’s Jeffrey Sonnenfeld estimates it’s “about a 50-50”",
+          "link": "https://techcrunch.com/2026/11/08/is-jensen-huangs-job-on-the-line-yales-jeffrey-sonnenfeld-estimates-its-about-a-50-50/",
+          "pubDate": "2026-11-09T05:26:29.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达董事会就CEO黄仁勋与疑似中国间谍的关系启动调查。耶鲁教授Sonnenfeld认为其留任几率约五五开，称任何其他员工都会因此被解雇。",
+          "heat": 88
+        },
+        {
+          "title": "Here’s the full text of Jensen Huang’s memo to Nvidia",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029595/full-text-jensen-huang-affair-memo-nvidia",
+          "pubDate": "2026-11-08T22:54:50.000Z",
+          "source": "The Verge",
+          "summary": "英伟达宣布调查CEO黄仁勋与中国政府特工、AI高管Alice Huang的关系。黄仁勋向员工发备忘录承认婚外情，称对妻子不忠并道歉。事件或影响公司治理与声誉。",
+          "heat": 88
+        },
+        {
+          "title": "Nvidia is investigating Jensen Huang’s relationship with an alleged Chinese spy",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029562/nvidia-investigating-jensen-huang-relationship-chinese-spy",
+          "pubDate": "2026-11-08T20:22:39.000Z",
+          "source": "The Verge",
+          "summary": "英伟达董事会启动独立调查，审查CEO黄仁勋与涉嫌被中国国安部招募的Megaspeed高管Alice Huang的关系，由独立委员会在外部律师协助下推进。",
+          "heat": 88
+        },
+        {
+          "title": "Apple is racing to make Siri more agentic",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1029552/apple-siri-ai-agentic",
+          "pubDate": "2026-11-08T19:18:19.000Z",
+          "source": "The Verge",
+          "summary": "彭博社称苹果CEO Ternus施压AI负责人Federighi加速Siri路线图，打造对标OpenAI的AI智能体。",
+          "heat": 78
+        }
+      ]
+    },
+    {
       "date": "2026-11-08",
       "generatedAt": "2026-11-08T09:52:53.379Z",
       "hours": 24,
@@ -553,6 +601,10 @@
     "theverge.com/ai-artificial-intelligence/1023440/starbucks-ai-personalized-menu-drive-thru",
     "techcrunch.com/2026/10/30/theranos-whistleblower-tyler-shultz-warns-that-the-ai-boom-is-a-great-opportunity-to-go-deceive-people",
     "techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down",
-    "techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds"
+    "techcrunch.com/2026/10/30/last-minute-halloween-costumes-for-tech-nerds",
+    "theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
+    "wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
+    "matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
+    "sergeykuhne.com/blog/fighting-ai-brain-fry"
   ]
 }
