@@ -1,6 +1,59 @@
 {
   "days": [
     {
+      "date": "2026-11-10",
+      "generatedAt": "2026-11-10T10:46:21.682Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Anthropic reportedly plans to move forward with IPO plans",
+          "link": "https://techcrunch.com/2026/11/09/anthropic-reportedly-plans-to-move-forward-with-ipo-plans/",
+          "pubDate": "2026-11-10T01:27:12.000Z",
+          "source": "TechCrunch",
+          "summary": "据《华尔街日报》，Anthropic计划本周确定IPO估值区间，最早下周挂牌。部分投资者要求估值低于1.5万亿美元，已较此前2万亿目标大幅下调。此次IPO被视为检验AI热潮的关键指标。",
+          "heat": 92
+        },
+        {
+          "title": "Jensen Huang reportedly engaged a PR firm with a history of handling  high-profile sex scandals a year ago",
+          "link": "https://techcrunch.com/2026/11/09/jensen-huang-reportedly-engaged-a-pr-firm-with-a-history-of-handling-high-profile-sex-scandals-a-year-ago/",
+          "pubDate": "2026-11-09T23:28:37.000Z",
+          "source": "TechCrunch",
+          "summary": "据 Wired 报道，黄仁勋一年前便聘请危机公关公司 Heller Inc.，应对其婚外情及涉华芯片出口报道。该公司曾服务多名性丑闻知名男性。英伟达董事会已启动独立调查。",
+          "heat": 88
+        },
+        {
+          "title": "Everything we know so far about the Nvidia spy scandal targeting CEO Jensen Huang",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1030422/nvidia-jensen-huang-ai-china-alice-huang",
+          "pubDate": "2026-11-09T23:07:59.000Z",
+          "source": "The Verge",
+          "summary": "英伟达CEO黄仁勋承认与Megaspeed高管Alice Huang有婚外情，美情报指其为中方间谍。英伟达已启动调查，称无证据表明机密泄露，事件牵动对华AI芯片政策。",
+          "heat": 88
+        },
+        {
+          "title": "Jensen Huang’s affair with alleged Chinese spy puts Nvidia’s China ambitions under scrutiny",
+          "link": "https://techcrunch.com/2026/11/09/jensen-huangs-affair-with-alleged-chinese-spy-puts-nvidias-china-ambitions-under-scrutiny/",
+          "pubDate": "2026-11-09T18:09:52.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋承认与疑似中国间谍Alice Huang有婚外情，公司独立董事正调查此事，国会要求解释。事件或影响英伟达游说放宽对华芯片出口限制的努力，中国市场上季度贡献79亿美元营收，约占8%。",
+          "heat": 88
+        },
+        {
+          "title": "A short seller flagged Nvidia CEO’s ties to a suspected Chinese spy six months before the scandal",
+          "link": "https://techcrunch.com/2026/11/09/a-short-seller-flagged-nvidia-ceos-ties-to-a-suspected-chinese-spy-six-months-before-the-scandal/",
+          "pubDate": "2026-11-09T22:46:09.000Z",
+          "source": "TechCrunch",
+          "summary": "做空机构Culper Research早在英伟达间谍丑闻前六个月，就质疑CEO黄仁勋与疑似中国间谍、Megaspeed高管Alice Huang关系过密。黄仁勋已承认婚外情，公司启动调查。",
+          "heat": 85
+        }
+      ]
+    },
+    {
       "date": "2026-11-09",
       "generatedAt": "2026-11-09T10:54:56.379Z",
       "hours": 24,
@@ -605,6 +658,23 @@
     "theverge.com/ai-artificial-intelligence/1029533/elvis-eminem-suno-ai-music-clone-lawsuit",
     "wsj.com/tech/ai/silicon-valley-promises-ai-will-cure-disease-drugmaker-ceos-arent-buying-it-5218511c",
     "matteoraso.github.io/im-not-convinced-the-ai-bubble-exists.html",
-    "sergeykuhne.com/blog/fighting-ai-brain-fry"
+    "sergeykuhne.com/blog/fighting-ai-brain-fry",
+    "techcrunch.com/2026/11/09/the-race-is-on-to-sue-nvidia",
+    "techcrunch.com/2026/11/09/jensen-huang-pulls-out-of-elevenlabs-summit-amid-nvidia-controversy",
+    "techcrunch.com/2026/11/09/anthropic-releases-new-mythos-and-fable-models-amid-rsi-concerns",
+    "theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+    "techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution",
+    "techcrunch.com/2026/11/09/anthropic-joins-ais-natural-gas-frenzy-buys-3-4b-worth-of-turbines",
+    "theverge.com/tech/1030446/trump-jensen-huang-press-conference",
+    "theverge.com/ai-artificial-intelligence/1029802/trump-60-minutes-ai",
+    "techcrunch.com/2026/11/09/otter-ai-can-now-follow-conversations-across-30-languages",
+    "theverge.com/tech/1030084/apple-intelligence-usage-packs-ai-features-creator-studio-logic-pro",
+    "theverge.com/tech/1030061/instagram-ai-effect-builder-filters",
+    "theverge.com/tech/1029773/disney-adobe-generative-ai-partnership",
+    "theverge.com/entertainment/1030510/paramount-skydance-david-ellison-ai",
+    "theverge.com/ai-artificial-intelligence/1029990/jensen-huang-the-spy-who-loved-me",
+    "techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet",
+    "theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang",
+    "techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process"
   ]
 }
