@@ -1,6 +1,59 @@
 {
   "days": [
     {
+      "date": "2026-11-11",
+      "generatedAt": "2026-11-11T10:21:44.298Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion",
+          "link": "https://techcrunch.com/2026/11/10/anthropic-sets-ipo-price-range-of-70-to-78-per-share-to-reach-an-implied-valuation-of-1-404-trillion/",
+          "pubDate": "2026-11-10T14:01:39.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic 更新 IPO 文件，拟发行 8.25 亿股 A 类股，发行价 70-78 美元，最高估值 1.404 万亿美元。",
+          "heat": 98
+        },
+        {
+          "title": "Anthropic targets $1.4 trillion IPO",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1030703/anthropic-ipo-1-4-trillion",
+          "pubDate": "2026-11-10T14:06:54.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic 确认 IPO 发行价每股 70-78 美元，估值最高 1.4 万亿美元，低于此前 2 万亿预期，最快下周开始交易。",
+          "heat": 95
+        },
+        {
+          "title": "All 7 Anthropic founders will each cash out about $250M in IPO",
+          "link": "https://techcrunch.com/2026/11/10/all-7-anthropic-founders-will-each-cash-out-about-250m-in-ipo/",
+          "pubDate": "2026-11-10T19:57:52.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic七位联合创始人将在IPO中各出售约338万股，按发行价中值74美元计，每人套现约2.5亿美元。七人合计仍控制公司51.1%投票权。",
+          "heat": 92
+        },
+        {
+          "title": "Nvidia’s crisis has corporate governance experts reaching for the popcorn",
+          "link": "https://techcrunch.com/2026/11/10/nvidias-crisis-has-corporate-governance-experts-reaching-for-the-popcorn/",
+          "pubDate": "2026-11-11T07:30:51.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋承认婚外情，涉事女方被美情报机构怀疑为中国间谍。董事会已聘请Wachtell律所展开内部调查，公司股价两日累跌约9.5%。治理专家称此类涉国家安全的高管危机史无前例。",
+          "heat": 88
+        },
+        {
+          "title": "OpenAI, Anthropic face new oversight as New York’s AI safety law takes effect",
+          "link": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/",
+          "pubDate": "2026-11-10T20:52:13.000Z",
+          "source": "TechCrunch",
+          "summary": "纽约州启动AI安全法RAISE Act实施，年收入超5亿美元的OpenAI、Anthropic等前沿开发商须在2027年前注册、公开安全框架并在72小时内报告重大事故，违规最高罚300万美元。",
+          "heat": 88
+        }
+      ]
+    },
+    {
       "date": "2026-11-10",
       "generatedAt": "2026-11-10T10:46:21.682Z",
       "hours": 24,
@@ -675,6 +728,28 @@
     "theverge.com/ai-artificial-intelligence/1029990/jensen-huang-the-spy-who-loved-me",
     "techcrunch.com/2026/11/09/automattic-debuts-a-platform-to-deploy-vibe-coding-apps-amid-a-changing-internet",
     "theverge.com/ai-artificial-intelligence/1030328/what-could-china-get-from-jensen-huang",
-    "techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process"
+    "techcrunch.com/2026/11/09/mediums-new-tk-app-brings-ai-assistance-directly-into-the-writing-process",
+    "techcrunch.com/2026/11/10/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline",
+    "theverge.com/ai-artificial-intelligence/1030787/google-gemini-4-carbon-public-rollout",
+    "theverge.com/ai-artificial-intelligence/1031063/jensen-huang-ai-race-us-china-spy",
+    "techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks",
+    "techcrunch.com/2026/11/10/oura-to-acquire-ai-native-primary-care-startup-counsel-health-for-625m",
+    "techcrunch.com/2026/11/10/google-broadens-its-ai-hardware-portfolio-with-two-new-specialized-chips",
+    "techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp",
+    "theverge.com/tech/1030593/adobe-max-ai-agents-mcp-firefly-assistant-updates",
+    "theverge.com/ai-artificial-intelligence/1030709/anthropic-has-its-own-ai-powered-office-suite-now",
+    "theverge.com/tech/1030653/adobe-max-2026-photoshop-premiere-removal-updates",
+    "techcrunch.com/2026/11/10/openai-acquires-odessia-travel-startup-created-by-sonder-founder",
+    "techcrunch.com/2026/11/10/psi-is-trying-to-make-a-business-out-of-ai-driven-scientific-discovery",
+    "techcrunch.com/2026/11/10/openai-rolls-out-new-business-profiles-making-chatgpt-just-a-little-bit-more-like-google",
+    "theverge.com/ai-artificial-intelligence/1030552/openai-chatgpt-business-agents-hub",
+    "techcrunch.com/2026/11/10/metas-ai-agent-muse-lands-on-apple-watch-and-wear-os",
+    "techcrunch.com/2026/11/10/ring-known-for-its-doorbell-cameras-launches-a-home-security-drone-and-an-enterprise-security-robot",
+    "techcrunch.com/2026/11/10/cyberattacks-threaten-to-make-open-source-ai-a-little-less-open-hugging-face-exec-warns",
+    "theverge.com/games/1030994/big-walk-independent-games-festival-igf-ai",
+    "techcrunch.com/2026/11/10/spotifys-ai-dj-gets-new-voices-personalities-and-an-option-for-less-chatter",
+    "theverge.com/tech/1030838/ebay-ai-agents-meta-muse-agentic-shopping",
+    "techcrunch.com/2026/11/10/after-challenging-googles-android-with-cyanogen-its-co-founder-takes-aim-at-windows-for-ai-era",
+    "theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot"
   ]
 }
