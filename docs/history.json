@@ -1,6 +1,59 @@
 {
   "days": [
     {
+      "date": "2026-11-12",
+      "generatedAt": "2026-11-12T10:39:22.772Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "link": "https://techcrunch.com/2026/11/11/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "pubDate": "2026-11-11T23:50:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋承认婚外情，对象疑为中国间谍，其公司两年采购48亿美元英伟达芯片。另有报道称他与下属有染，董事会拟讨论其去留，股价盘后跌约8%。",
+          "heat": 95
+        },
+        {
+          "title": "Nvidia’s stock drops as board reportedly preps to oust CEO Jensen Huang",
+          "link": "https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/",
+          "pubDate": "2026-11-11T23:28:45.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达董事会最快周三晚决定是否罢免CEO黄仁勋，其因婚外情丑闻面临下台压力。消息致英伟达盘后股价跌约8%，五日累跌11%，公司已聘外部机构寻找继任者。",
+          "heat": 95
+        },
+        {
+          "title": "Jensen Huang accused of having another affair — with an Nvidia exec",
+          "link": "https://techcrunch.com/2026/11/11/jensen-huang-accused-of-having-another-affair-with-a-nvidia-exec/",
+          "pubDate": "2026-11-11T23:17:05.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋被曝与公司副总裁Kimberly Powell有婚外情。此前他已承认与一被指中国间谍的女性有染，董事会已启动调查。《华尔街日报》称董事会准备罢免他。",
+          "heat": 95
+        },
+        {
+          "title": "Nvidia is reportedly preparing to fire Jensen Huang",
+          "link": "https://www.theverge.com/tech/1031652/jensen-huang-rumor",
+          "pubDate": "2026-11-11T22:44:36.000Z",
+          "source": "The Verge",
+          "summary": "英伟达董事会据报准备解雇CEO黄仁勋。《纽约时报》称其与下属副总裁Kimberly Powell有婚外情，数日前他刚承认另一段与疑似中国间谍女性的关系。董事会最快今日开会决定其去留。",
+          "heat": 95
+        },
+        {
+          "title": "OpenAI’s quarterly revenue reportedly crosses $10B for the first time",
+          "link": "https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/",
+          "pubDate": "2026-11-11T16:14:44.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI第三季度营收首破100亿美元，环比增近50%，调整后营业利润率从-150%收窄至-109%，年化收入达500亿美元。竞争对手Anthropic同期年化收入810亿美元，企业市场份额领先。",
+          "heat": 92
+        }
+      ]
+    },
+    {
       "date": "2026-11-11",
       "generatedAt": "2026-11-11T10:21:44.298Z",
       "hours": 24,
@@ -750,6 +803,20 @@
     "techcrunch.com/2026/11/10/spotifys-ai-dj-gets-new-voices-personalities-and-an-option-for-less-chatter",
     "theverge.com/tech/1030838/ebay-ai-agents-meta-muse-agentic-shopping",
     "techcrunch.com/2026/11/10/after-challenging-googles-android-with-cyanogen-its-co-founder-takes-aim-at-windows-for-ai-era",
-    "theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot"
+    "theverge.com/tech/1030601/ring-drone-cam-hands-on-price-release-date-ai-pilot",
+    "techcrunch.com/2026/11/11/with-720m-round-britains-fractile-gets-a-leg-up-in-the-race-for-ai-chips",
+    "techcrunch.com/2026/11/11/congress-to-call-jensen-huang-in-to-answer-for-alleged-chinese-spy-affair",
+    "theverge.com/ai-artificial-intelligence/1031524/google-deepmind-alphagenome-2-genetic-ai-model",
+    "techcrunch.com/2026/11/11/who-could-replace-jensen-huang-a-highly-unscientific-list-of-possible-successors",
+    "techcrunch.com/2026/11/11/coreweave-turns-to-customer-prepayments-shorter-contracts-to-fund-ai-growth",
+    "techcrunch.com/2026/11/11/is-jensen-huangs-bad-behavior-more-commonplace-than-it-seems",
+    "theverge.com/tech/1031526/google-tabletop-ai-experiment-waitlist-availability",
+    "techcrunch.com/2026/11/11/databricks-new-ai-agent-tells-ceo-ali-ghodsi-the-unvarnished-truth",
+    "techcrunch.com/2026/11/11/meta-is-losing-its-longtime-head-of-infrastructure",
+    "theverge.com/tech/1031505/adobe-max-2026-sneaks-experiments-ai",
+    "theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents",
+    "techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave",
+    "techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads",
+    "techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built"
   ]
 }
