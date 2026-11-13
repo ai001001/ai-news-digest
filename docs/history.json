@@ -1,6 +1,59 @@
 {
   "days": [
     {
+      "date": "2026-11-13",
+      "generatedAt": "2026-11-13T10:32:22.291Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "The Jensen Huang scandal is hardly over",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032069/jensen-huang-resignation-affair-chips-smuggling",
+          "pubDate": "2026-11-12T17:44:33.000Z",
+          "source": "The Verge",
+          "summary": "英伟达CEO黄仁勋被曝与下属Kimberly Powell有婚外情，董事会随即开会讨论罢免。周四上午英伟达宣布黄仁勋辞职，这位执掌公司多年的硅谷最具权势人物之一就此离任。",
+          "heat": 98
+        },
+        {
+          "title": "Read Nvidia’s internal emails about the ‘extraordinarily difficult period’ amid CEO shakeup",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1032028/read-nvidias-internal-emails-jensen-huang",
+          "pubDate": "2026-11-12T15:48:12.000Z",
+          "source": "The Verge",
+          "summary": "英伟达联合创始人黄仁勋今晨辞去CEO一职，董事会正调查其婚外情及涉中国间谍指控。CFO Colette Kress出任临时CEO。",
+          "heat": 98
+        },
+        {
+          "title": "Jensen Huang is out at Nvidia — who is Colette Kress, his interim replacement?",
+          "link": "https://techcrunch.com/2026/11/12/jensen-huang-is-out-at-nvidia-who-is-colette-kress-his-interim-replacement/",
+          "pubDate": "2026-11-12T15:37:29.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因与一名疑似中国间谍及一名直接下属有染的丑闻辞职，即刻卸任总裁、CEO及董事职务。CFO Colette Kress出任临时CEO，公司市值约3.8万亿美元。",
+          "heat": 98
+        },
+        {
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "link": "https://techcrunch.com/2026/11/12/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "pubDate": "2026-11-12T21:35:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因婚外情辞职，或影响美中AI芯片竞争与国家安全。美方怀疑其情人、Megaspeed高管Alice Huang为中国间谍，该公司两年购入48亿美元英伟达芯片。",
+          "heat": 96
+        },
+        {
+          "title": "Jensen Huang was having a third affair, Reuters reports",
+          "link": "https://techcrunch.com/2026/11/12/jensen-huang-was-having-a-third-affair-reuters-reports/",
+          "pubDate": "2026-11-12T20:26:47.000Z",
+          "source": "TechCrunch",
+          "summary": "路透社报道，英伟达创始人黄仁勋被曝与一名女员工存在第三段婚外情。他当日辞去CEO及董事职务，CFO Colette Kress出任临时CEO，他将赴国会就相关国家安全影响作证。",
+          "heat": 95
+        }
+      ]
+    },
+    {
       "date": "2026-11-12",
       "generatedAt": "2026-11-12T10:39:22.772Z",
       "hours": 24,
@@ -817,6 +870,28 @@
     "theverge.com/ai-artificial-intelligence/1031623/united-unauthorized-ai-agents",
     "techcrunch.com/podcast/how-backlash-and-red-tape-continue-to-slow-data-centers-post-blue-wave",
     "techcrunch.com/2026/11/11/plurai-wants-to-help-ai-agents-work-better-using-the-same-approach-that-helped-get-self-driving-cars-to-roads",
-    "techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built"
+    "techcrunch.com/video/why-the-data-center-you-dread-might-never-even-be-built",
+    "techcrunch.com/2026/11/12/five-ways-jensen-huangs-ouster-from-nvidia-could-damage-the-ai-industry",
+    "theverge.com/podcast/1031260/nvidia-jensen-huang-resign-china-spy-scandal-ai-chips-trump",
+    "techcrunch.com/2026/11/12/jensen-huangs-exit-puts-nvidias-support-for-open-source-in-question",
+    "theverge.com/ai-artificial-intelligence/1032505/google-search-ai-mode-gemini-4-hydrogen",
+    "techcrunch.com/2026/11/12/googles-latest-search-upgrade-promises-better-answers-to-your-most-complicated-questions",
+    "techcrunch.com/2026/11/12/democrats-launch-nvidia-investigation-write-scathing-letter-on-huangs-scheme-with-trump",
+    "techcrunch.com/2026/11/12/hugging-face-ceo-vows-to-keep-fighting-for-open-source-ai-after-jensen-huangs-exit",
+    "techcrunch.com/2026/11/12/softbanks-billion-dollar-loss-may-have-put-a-cap-on-ais-natural-gas-ambitions",
+    "techcrunch.com/2026/11/12/jensen-huang-agrees-to-testify-before-congress",
+    "techcrunch.com/2026/11/12/trump-floats-apple-chairman-tim-cook-as-jensen-huangs-successor",
+    "techcrunch.com/2026/11/12/nebius-tests-the-neocloud-playbook-with-40-billion-in-planned-spending",
+    "techcrunch.com/2026/11/12/united-airlines-blocks-ai-agents-from-booking-flights-citing-cybersecurity-risks",
+    "theverge.com/ai-artificial-intelligence/1032020/gemini-chatgpt-perplexity-shopping-test-risky-fake-websites-citations",
+    "techcrunch.com/2026/11/12/norwest-pushes-deeper-into-ai-with-new-4b-fund",
+    "techcrunch.com/2026/11/12/cyberattack-on-fireworks-ai-allowed-hackers-to-access-notion-customers-chat-transcripts",
+    "theverge.com/tech/1031868/i-reviewed-the-apple-homeview-ask-me-anything",
+    "techcrunch.com/2026/11/12/muse-can-now-place-calls-to-u-s-businesses-if-you-pay",
+    "theverge.com/games/1032085/gdc-festival-of-gaming-annual-survey-ai-layoffs",
+    "techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands",
+    "theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
+    "theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
+    "techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots"
   ]
 }
