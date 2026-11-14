@@ -1,6 +1,59 @@
 {
   "days": [
     {
+      "date": "2026-11-14",
+      "generatedAt": "2026-11-14T09:49:50.328Z",
+      "hours": 24,
+      "failed": [
+        {
+          "source": "Hacker News",
+          "error": "HTTP 502 Bad Gateway"
+        }
+      ],
+      "articles": [
+        {
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "link": "https://techcrunch.com/2026/11/13/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "pubDate": "2026-11-13T15:58:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因婚外情辞职，其中一名对象被美方怀疑是中国间谍。涉事新加坡公司Megaspeed两年采购48亿美元英伟达芯片，正被司法部调查。事件或影响中美AI芯片竞争与国家安全。",
+          "heat": 95
+        },
+        {
+          "title": "Jensen Huang’s departure blasts big hole in AI startup funding, VCs and founders say",
+          "link": "https://techcrunch.com/2026/11/13/jensen-huangs-departure-blasts-big-hole-in-ai-startup-funding-vcs-and-founders-say/",
+          "pubDate": "2026-11-13T22:43:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋辞职，冲击AI创业融资。他任内每年向初创企业投资数百亿美元，今年参与105轮融资。风投预计未来投资规模缩小、估值降低。",
+          "heat": 92
+        },
+        {
+          "title": "Export-banned Nvidia chips are behind China’s most powerful AI models — uh-oh, Jensen!",
+          "link": "https://techcrunch.com/2026/11/13/export-banned-nvidia-chips-are-behind-chinas-most-powerful-ai-models-uh-oh-jensen/",
+          "pubDate": "2026-11-13T18:40:30.000Z",
+          "source": "TechCrunch",
+          "summary": "新研究称DeepSeek、月之暗面等中国开源模型疑似用被禁的英伟达Blackwell芯片训练，Epoch AI估计2024至2025年约200万块先进芯片流入中国。",
+          "heat": 88
+        },
+        {
+          "title": "What&#8217;s really at stake in the Jensen Huang saga",
+          "link": "https://www.theverge.com/podcast/1032866/jensen-huang-nvidia-china-trump-vergecast",
+          "pubDate": "2026-11-13T14:47:16.000Z",
+          "source": "The Verge",
+          "summary": "英伟达CEO黄仁勋于周四辞去公司职务，结束一段风波。但后续可能揭开更大内幕，涉及英伟达在华业务、美国政府庇护及AI行业稳定。The Verge播客对此展开讨论。",
+          "heat": 85
+        },
+        {
+          "title": "Jensen Huang didn’t show confidence in his successor, report says",
+          "link": "https://techcrunch.com/2026/11/13/jensen-huang-didnt-show-confidence-in-his-successor-report-says/",
+          "pubDate": "2026-11-13T12:28:23.000Z",
+          "source": "TechCrunch",
+          "summary": "据《华尔街日报》报道，黄仁勋今夏曾私下评价时任英伟达CFO科莱特·克雷斯为“不知所措”，并称她无法协助战略决策。黄仁勋因婚外情传闻于周四辞职，克雷斯现担任临时CEO，公司正寻找正式继任者。",
+          "heat": 85
+        }
+      ]
+    },
+    {
       "date": "2026-11-13",
       "generatedAt": "2026-11-13T10:32:22.291Z",
       "hours": 24,
@@ -892,6 +945,14 @@
     "techcrunch.com/2026/11/12/nectar-launches-an-ai-agent-to-automate-creator-discovery-and-outreach-for-brands",
     "theverge.com/ai-artificial-intelligence/1032125/ai-agents-maya-site-archeology-discovery",
     "theverge.com/ai-artificial-intelligence/1032126/alex-baby-you-were-recorded-on-video",
-    "techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots"
+    "techcrunch.com/2026/11/12/phota-labs-uses-ai-to-turn-everyday-photos-into-professional-looking-shots",
+    "techcrunch.com/2026/11/13/ai-agent-startup-langchain-hits-3b-valuation",
+    "techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you",
+    "theverge.com/ai-artificial-intelligence/1033425/openai-chatgpt-wallet",
+    "techcrunch.com/2026/11/13/israels-vcs-see-opportunity-for-challengers-in-nvidias-turmoil",
+    "theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
+    "techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams",
+    "theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on",
+    "theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow"
   ]
 }
