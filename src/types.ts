@@ -12,6 +12,11 @@ export interface FeedSource {
    * Keep only the top N items by popularity (optional; keep all if omitted).
    */
   topByPoints?: number;
+  /**
+   * 主地址失败时改用的 HN Algolia 搜索 API 地址（可选，仅 HN）。
+   * HN Algolia search API URL used when the main URL fails (optional, HN only).
+   */
+  algoliaFallbackUrl?: string;
 }
 
 /**

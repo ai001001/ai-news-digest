@@ -22,6 +22,9 @@ export const FEEDS: FeedSource[] = [
     name: 'Hacker News',
     url: 'https://hnrss.org/newest?q=AI&count=100',
     topByPoints: 3,
+    // hnrss.org 偶尔 502，失败时直接查它背后的 Algolia API
+    // hnrss.org occasionally returns 502; fall back to the Algolia API it is built on
+    algoliaFallbackUrl: 'https://hn.algolia.com/api/v1/search_by_date?query=AI&tags=story&hitsPerPage=100',
   },
 ];
 

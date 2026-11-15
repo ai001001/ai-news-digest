@@ -164,10 +164,67 @@ export async function fetchArticleText(url: string): Promise<string> {
  * @returns 该源的文章列表 / Articles from the feed
  */
 async function fetchFeed(feed: FeedSource): Promise<Article[]> {
-  const parsed = await parser.parseString(await fetchWithRetry(feed.url));
-  return parsed.items
-    .map((item) => toArticle(item, feed))
-    .filter((a): a is Article => a !== null);
+  try {
+    const parsed = await parser.parseString(await fetchWithRetry(feed.url));
+    return parsed.items
+      .map((item) => toArticle(item, feed))
+      .filter((a): a is Article => a !== null);
+  } catch (err) {
+    if (!feed.algoliaFallbackUrl) throw err;
+    const reason = err instanceof Error ? err.message : String(err);
+    console.log(`  ⚠ ${feed.name}: ${reason}，改用 Algolia API / falling back to Algolia API`);
+    try {
+      return parseAlgoliaHits(await fetchWithRetry(feed.algoliaFallbackUrl, 'application/json'), feed);
+    } catch (fallbackErr) {
+      const fallbackReason = fallbackErr instanceof Error ? fallbackErr.message : String(fallbackErr);
+      throw new Error(`${reason}; Algolia: ${fallbackReason}`);
+    }
+  }
+}
+
+/** HN Algolia 搜索结果中的一条 / A single hit from the HN Algolia search API */
+interface AlgoliaHit {
+  objectID: string;
+  title?: string | null;
+  url?: string | null;
+  story_text?: string | null;
+  created_at?: string;
+  points?: number | null;
+  num_comments?: number | null;
+}
+
+/**
+ * 把 HN Algolia 搜索 API 的 JSON 转成文章列表，字段与 hnrss 保持一致。
+ * Convert HN Algolia search API JSON into articles, matching the fields produced from hnrss.
+ * @param json - API 响应文本 / API response text
+ * @param feed - 源配置 / Feed config
+ * @returns 文章列表 / Articles
+ */
+export function parseAlgoliaHits(json: string, feed: FeedSource): Article[] {
+  const { hits } = JSON.parse(json) as { hits?: AlgoliaHit[] };
+  if (!Array.isArray(hits)) throw new Error('Algolia 响应缺少 hits / Algolia response has no hits');
+  return hits.flatMap((hit): Article[] => {
+    const title = hit.title?.trim();
+    const pubDate = new Date(hit.created_at ?? '');
+    if (!title || Number.isNaN(pubDate.getTime())) return [];
+    // 与 hnrss 相同：有外链用外链，否则（Ask HN 等）用讨论页
+    // Same as hnrss: use the external URL if present, otherwise the discussion page (Ask HN etc.)
+    const link = hit.url?.trim() || `https://news.ycombinator.com/item?id=${hit.objectID}`;
+    const description = stripHtml(hit.story_text ?? '');
+    return [
+      {
+        title,
+        link,
+        pubDate,
+        source: feed.name,
+        categories: [],
+        description,
+        summary: truncate(description),
+        points: hit.points ?? 0,
+        comments: hit.num_comments ?? 0,
+      },
+    ];
+  });
 }
 
 /**
