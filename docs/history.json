@@ -2,7 +2,7 @@
   "days": [
     {
       "date": "2026-11-15",
-      "generatedAt": "2026-11-15T00:11:43.949Z",
+      "generatedAt": "2026-11-15T10:24:54.617Z",
       "hours": 24,
       "failed": [],
       "articles": [
@@ -992,6 +992,9 @@
     "news.ycombinator.com/item?id=50366117",
     "techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing",
     "arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand",
-    "news.ycombinator.com/item?id=50340088"
+    "news.ycombinator.com/item?id=50340088",
+    "tomshardware.com/tech-industry/artificial-intelligence/mass-smuggling-of-nvidia-ai-gpus-could-be-the-underlying-cause-of-jensen-huangs-departure-analysts-claim-more-than-1-5-gigawatts-of-banned-chips-tracked-to-china-despite-export-controls",
+    "litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal",
+    "wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c"
   ]
 }
