@@ -54,12 +54,7 @@
       "date": "2026-11-14",
       "generatedAt": "2026-11-14T09:49:50.328Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "The unfolding Jensen Huang scandal: a timeline",
@@ -107,12 +102,7 @@
       "date": "2026-11-13",
       "generatedAt": "2026-11-13T10:32:22.291Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "The Jensen Huang scandal is hardly over",
@@ -160,12 +150,7 @@
       "date": "2026-11-12",
       "generatedAt": "2026-11-12T10:39:22.772Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "The unfolding Jensen Huang scandal: a timeline",
@@ -213,12 +198,7 @@
       "date": "2026-11-11",
       "generatedAt": "2026-11-11T10:21:44.298Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "Anthropic sets IPO price range of $70 to $78 per share to reach an implied valuation of $1.404 trillion",
@@ -266,12 +246,7 @@
       "date": "2026-11-10",
       "generatedAt": "2026-11-10T10:46:21.682Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "Anthropic reportedly plans to move forward with IPO plans",
@@ -515,12 +490,7 @@
       "date": "2026-11-05",
       "generatedAt": "2026-11-05T10:22:30.060Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "Google hasn&#8217;t figured out how to make AI pay like its search engine",
@@ -616,12 +586,7 @@
       "date": "2026-11-03",
       "generatedAt": "2026-11-03T10:28:04.583Z",
       "hours": 24,
-      "failed": [
-        {
-          "source": "Hacker News",
-          "error": "HTTP 502 Bad Gateway"
-        }
-      ],
+      "failed": [],
       "articles": [
         {
           "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
@@ -648,20 +613,22 @@
           "heat": 78
         },
         {
+          "title": "Anthropic's internal AI use, at retail prices, now exceeds its employee pay",
+          "link": "https://www.businessinsider.com/anthropic-claude-internal-ai-use-exceeds-employee-pay-tokens-2026-11",
+          "pubDate": "2026-11-02T16:40:29.000Z",
+          "source": "Hacker News",
+          "summary": "Anthropic IPO文件显示，按对外售价计算，4月其内部Claude使用价值已超月度员工薪酬（不含股票），9月内部AI用量较1月激增超250倍。9月新增代码90%以上由Claude编写。",
+          "points": 353,
+          "comments": 274,
+          "heat": 78
+        },
+        {
           "title": "Elon Musk throttles Grok Bot limits due to ‘unsustainably high’ costs",
           "link": "https://techcrunch.com/2026/11/02/elon-musk-throttles-grok-bot-limits-due-to-unsustainably-high-costs/",
           "pubDate": "2026-11-02T16:23:21.000Z",
           "source": "TechCrunch",
           "summary": "马斯克证实Grok Bot因服务成本相对收入“不可持续地高”而削减用户每周使用限额，部分用户使用率一夜从50%跳至100%。SpaceX称AI占公司收入52%，其“超级智能”部门盈利4.31亿美元。",
           "heat": 78
-        },
-        {
-          "title": "Apple Watch’s AI features for rewinding and recapping conversations begin beta testing",
-          "link": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/",
-          "pubDate": "2026-11-03T07:20:00.000Z",
-          "source": "TechCrunch",
-          "summary": "苹果 Apple Watch 的 AI「音频智能」功能随 iOS 27.3 向开发者开启 beta 测试，含声音识别、识曲、Live Rewind 对话回溯等四项特性，可回看最近 15 秒对话。",
-          "heat": 72
         }
       ]
     },
@@ -1007,6 +974,24 @@
     "techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
     "theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
     "claude.com/resources/articles/projects-redesigned",
-    "news.ycombinator.com/item?id=50494696"
+    "news.ycombinator.com/item?id=50494696",
+    "status.claude.com/incidents/nn11wk485zfn",
+    "youtube.com/watch?v=IRK8h67ol7Q",
+    "blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen",
+    "scottjg.com/posts/2026-11-11-reverse-engineering-my-coway-air-purifier-to-ditch-the-cloud",
+    "github.com/aws/aws-emulator",
+    "cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights",
+    "pietromiotti.com/latest/maya-site",
+    "9to5mac.com/2026/11/10/apple-has-new-mac-app-coming-to-make-running-local-ai-models-easy",
+    "github.com/GoogleChrome/modern-web-guidance",
+    "evanxmerz.com/post/ai-usage-generates-a-fragile-codebase",
+    "artificialanalysis.ai/models/claude-fable-5-2",
+    "foldableflight.com",
+    "spectrum.ieee.org/ai-in-cybersecurity-php2shell-vulnerability",
+    "theguardian.com/uk-news/2026/nov/03/ai-godfather-geoffrey-hinton-better-off-without-ai",
+    "news.ycombinator.com/item?id=50366117",
+    "techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing",
+    "arstechnica.com/gadgets/2026/10/fujifilm-to-boost-tape-production-5x-as-ai-fuels-archiving-demand",
+    "news.ycombinator.com/item?id=50340088"
   ]
 }
