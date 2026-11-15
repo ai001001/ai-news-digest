@@ -1,6 +1,56 @@
 {
   "days": [
     {
+      "date": "2026-11-15",
+      "generatedAt": "2026-11-15T00:11:43.949Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Where was Nvidia’s security team?",
+          "link": "https://techcrunch.com/2026/11/14/where-was-nvidias-security-team/",
+          "pubDate": "2026-11-15T00:08:07.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因婚外情曝光辞职，涉及新加坡Megaspeed高管，该公司涉嫌向中国转运芯片。首席安全官8月已因健康离职，前情报官员称此类泄露难被察觉。",
+          "heat": 88
+        },
+        {
+          "title": "Asian governments react to Nvidia CEO Jensen Huang’s exit",
+          "link": "https://techcrunch.com/2026/11/14/asian-governments-react-to-nvidia-ceo-jensen-huangs-exit/",
+          "pubDate": "2026-11-14T16:34:15.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋离职引发亚洲多国反应：部分政府确认芯片供应承诺，另一些则关注项目影响。其离任使中国逾30亿美元依赖英伟达受限处理器的AI算力项目面临不确定性，新加坡当局曾调查相关前高管。",
+          "heat": 88
+        },
+        {
+          "title": "Jensen Huang and the decline of the visionary showman founder CEO",
+          "link": "https://www.theverge.com/tech/1033781/nvidia-jensen-huang-last-visionary-showman-founder-ceo",
+          "pubDate": "2026-11-14T12:00:00.000Z",
+          "source": "The Verge",
+          "summary": "英伟达CEO黄仁勋2025年1月CES高调亮相后，被指涉及两起芯片走私丑闻和三起婚外情，其中一名对象疑为中国间谍，同期他与特朗普有往来。黄仁勋已离开英伟达。",
+          "heat": 88
+        },
+        {
+          "title": "Elon Musk, other tech execs sign petition calling on Nvidia to reinstate Jensen Huang",
+          "link": "https://techcrunch.com/2026/11/14/elon-musk-other-tech-execs-sign-petition-calling-on-nvidia-to-reinstate-jensen-huang/",
+          "pubDate": "2026-11-14T21:41:22.000Z",
+          "source": "TechCrunch",
+          "summary": "因与疑似中国间谍的芯片高管有婚外情而辞职四天后，英伟达前CEO黄仁勋遭解职引发请愿。截至周六下午，请愿获超11.5万人签名，含5965名现员工及马斯克等科技高管，要求董事会恢复其职务并展开独立调查。",
+          "heat": 85
+        },
+        {
+          "title": "Nvidia allegedly engineered scarcity by funding AI startups to buy its GPUs",
+          "link": "https://www.techpowerup.com/354814/nvidia-allegedly-engineered-scarcity-by-funding-ai-startups-to-buy-its-gpus",
+          "pubDate": "2026-11-14T02:52:59.000Z",
+          "source": "Hacker News",
+          "summary": "《华尔街日报》报道称，英伟达通过投资AI初创公司、再由这些公司采购其GPU建设数据中心，人为制造GPU与内存短缺；此消息出现在前CEO黄仁勋离职之后。",
+          "points": 1022,
+          "comments": 615,
+          "heat": 81
+        }
+      ]
+    },
+    {
       "date": "2026-11-14",
       "generatedAt": "2026-11-14T09:49:50.328Z",
       "hours": 24,
@@ -953,6 +1003,10 @@
     "theverge.com/tech/1033697/amazon-world-product-graph-ai-search",
     "techcrunch.com/2026/11/13/elevenlabs-new-app-combines-meeting-note-taking-and-dictation-for-teams",
     "theverge.com/ai-artificial-intelligence/1032518/claude-duet-ai-agent-hands-on",
-    "theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow"
+    "theverge.com/ai-artificial-intelligence/1032339/lets-talk-about-the-nvidia-shitshow",
+    "techcrunch.com/2026/11/14/the-ai-graveyard-a-running-list-of-projects-and-startups-that-didnt-make-it",
+    "theverge.com/podcast/1032907/helen-toner-openai-cset-ai-safety-policy-interview",
+    "claude.com/resources/articles/projects-redesigned",
+    "news.ycombinator.com/item?id=50494696"
   ]
 }
