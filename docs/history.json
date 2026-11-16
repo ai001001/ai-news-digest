@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-16",
+      "generatedAt": "2026-11-16T10:39:42.552Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Is bad news for Jensen Huang also bad news for the AI industry?",
+          "link": "https://techcrunch.com/2026/11/15/is-bad-news-for-jensen-huang-also-bad-news-for-the-ai-industry/",
+          "pubDate": "2026-11-15T21:56:35.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因婚外情丑闻辞职，CFO Collette Kress出任临时CEO。英伟达是AI经济基石，此次人事震荡引发行业关注。",
+          "heat": 92
+        },
+        {
+          "title": "Congress wants to tighten export rules on AI chips after Nvidia spy scandal",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1033984/congress-export-rules-ai-chips-china",
+          "pubDate": "2026-11-15T19:15:43.000Z",
+          "source": "The Verge",
+          "summary": "英伟达前CEO黄仁勋涉疑似中国间谍丑闻后，美国国会两党推动收紧AI芯片出口管制，并要求黄仁勋等高管出席听证。舒默称其须向国会交代，参院银行委员会已致函要求公开作证。",
+          "heat": 88
+        },
+        {
+          "title": "An overview of Jensen Huang’s messy days",
+          "link": "https://www.theverge.com/column/1033943/jensen-huang-nvidia-china-spying-scandal-resignation",
+          "pubDate": "2026-11-15T13:00:00.000Z",
+          "source": "The Verge",
+          "summary": "《纽约时报》10月29日报道，英伟达联合创始人兼CEO黄仁勋疑似成为中国间谍阴谋的目标，引发对其领导力的关注。文章还提及黄仁勋辞职及英伟达领导层危机的后续影响。",
+          "heat": 85
+        },
+        {
+          "title": "Apple launches new app to study how people use AI for health",
+          "link": "https://techcrunch.com/2026/11/15/apple-launches-new-app-to-study-how-people-use-ai-for-health/",
+          "pubDate": "2026-11-16T01:30:00.000Z",
+          "source": "TechCrunch",
+          "summary": "苹果联合医疗AI公司OpenEvidence推出研究应用，招募美国2万名21岁以上iPhone用户，测试基于临床文献的健康问答。研究为期超12个月，数据匿名化处理且不用于训练模型。",
+          "heat": 78
+        },
+        {
+          "title": "Jensen Huang might be plotting a return and more of the latest Nvidia drama",
+          "link": "https://www.theverge.com/tech/1033999/jensen-huang-return-nvidia-megaspeed",
+          "pubDate": "2026-11-15T20:43:49.000Z",
+          "source": "The Verge",
+          "summary": "围绕英伟达前CEO黄仁勋的传闻持续发酵：有消息称他可能寻求重返CEO职位，马斯克等公开支持要求其回归的公开信。",
+          "heat": 78
+        }
+      ]
+    },
+    {
       "date": "2026-11-15",
       "generatedAt": "2026-11-15T10:24:54.617Z",
       "hours": 24,
@@ -995,6 +1043,12 @@
     "news.ycombinator.com/item?id=50340088",
     "tomshardware.com/tech-industry/artificial-intelligence/mass-smuggling-of-nvidia-ai-gpus-could-be-the-underlying-cause-of-jensen-huangs-departure-analysts-claim-more-than-1-5-gigawatts-of-banned-chips-tracked-to-china-despite-export-controls",
     "litnews.ai/articles/garciaguirre-samsung-sk-hynix-micron-dram-conspiracy-suit-survives-dismissal",
-    "wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c"
+    "wsj.com/business/airlines/the-single-router-in-southern-arkansas-that-ground-air-travel-to-a-halt-eedc326c",
+    "qwen.ai/blog?id=qwen4-max",
+    "theverge.com/tech/1033355/apples-new-study-looks-to-improve-the-effectiveness-of-ai-health-tools",
+    "techcrunch.com/2026/11/15/indian-chip-startup-bharat-semi-lands-24m-seed-round-as-it-eyes-global-ai-sensor-market",
+    "hntrends.com/2026/november.html",
+    "forum.torproject.org/t/security-release-0-4-9-17/22454",
+    "techcrunch.com/2026/11/15/snl-gathers-all-the-tech-tycoons-for-a-lesson-in-dating-and-spycraft"
   ]
 }
