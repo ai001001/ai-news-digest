@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-20",
+      "generatedAt": "2026-11-20T10:55:00.357Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Anthropic’s 7 founders cashed out nearly $2B in record-breaking IPO",
+          "link": "https://techcrunch.com/2026/11/19/anthropics-7-founders-cashed-out-nearly-2b-in-record-breaking-ipo/",
+          "pubDate": "2026-11-20T00:43:50.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic 周四上市，以每股83美元募资813亿美元，七位创始人各套现约2.8亿美元、合计19.5亿美元。公司另向英伟达、谷歌等售260亿美元N类股，估值与资金需求巨大。",
+          "heat": 97
+        },
+        {
+          "title": "Anthropic starts trading on Wall Street",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1035384/anthropic-ipo-trading-nasdaq",
+          "pubDate": "2026-11-19T16:52:01.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic 正式登陆纳斯达克，代码 ANT，开盘价 111.50 美元，高于 83 美元发行价，估值约 1.5 万亿美元。S-1 显示其上半年营收 163 亿美元。",
+          "heat": 96
+        },
+        {
+          "title": "The unfolding Jensen Huang scandal: a timeline",
+          "link": "https://techcrunch.com/2026/11/19/nvidia-ceo-jensen-huangs-affair-with-alleged-chinese-spy-a-timeline/",
+          "pubDate": "2026-11-19T20:18:49.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达联合创始人兼CEO黄仁勋因婚外情丑闻辞职，其中一名对象被美方怀疑为中国间谍。美中AI芯片竞赛背景下，此事或危及国家安全。英伟达CFO Colette Kress任临时CEO。",
+          "heat": 95
+        },
+        {
+          "title": "Anthropic hits Nasdaq exchanges at $111, 33% above IPO price",
+          "link": "https://techcrunch.com/2026/11/19/anthropic-hits-nasdaq-exchanges-at-110-27-above-ipo-price/",
+          "pubDate": "2026-11-19T16:59:23.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic登陆纳斯达克，IPO定价83美元，开盘报111.50美元，涨33%。此次募资超810亿美元，市值超2万亿美元。",
+          "heat": 95
+        },
+        {
+          "title": "Anthropic’s IPO puts AI’s circular financing boom to the test",
+          "link": "https://techcrunch.com/2026/11/19/anthropics-ipo-puts-ais-circular-financing-boom-to-the-test/",
+          "pubDate": "2026-11-19T14:54:39.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic 启动 IPO，发行价 83 美元，预计持有约 2200 亿美元现金及短期投资。亚马逊、谷歌持股合计约 3079 亿美元，英伟达、微软等另承诺 260 亿美元认购。",
+          "heat": 92
+        }
+      ]
+    },
+    {
       "date": "2026-11-19",
       "generatedAt": "2026-11-19T11:08:35.566Z",
       "hours": 24,
@@ -1264,6 +1312,27 @@
     "theverge.com/policy/1036935/congress-forced-arbitration-deepfakes-defiance-act",
     "techcrunch.com/2026/11/18/felicis-leads-7-5m-bet-on-unsiloed-ai-to-make-enterprise-documents-usable-by-ai-agents",
     "colossus.com/article/ai-will-not-make-you-rich",
-    "taskandpurpose.com/news/c-130-damage-ireland-daithi-ocorrain"
+    "taskandpurpose.com/news/c-130-damage-ireland-daithi-ocorrain",
+    "theverge.com/ai-artificial-intelligence/1037459/anthropic-ipo-safe-ai-reputation-power-structure",
+    "techcrunch.com/2026/11/19/anthropics-ipo-could-deliver-156-billion-to-charity",
+    "techcrunch.com/2026/11/19/at-nasdaq-opening-bell-anthropic-ceo-recommits-to-pacing-ai-development",
+    "techcrunch.com/2026/11/19/apple-may-be-developing-its-own-ai-agent-that-runs-your-mac",
+    "theverge.com/tech/1038227/apple-ai-agent-engineer-job-listing",
+    "theverge.com/ai-artificial-intelligence/1038063/nvidia-stock-market-price-earnings",
+    "theverge.com/tech/1037902/google-gemini-macos-ai-computer-use",
+    "techcrunch.com/2026/11/19/metas-ai-agent-muse-is-mixing-up-conversations-and-exposing-private-data-report-says",
+    "techcrunch.com/2026/11/19/google-gives-gemini-the-ability-to-use-your-mac-for-you",
+    "techcrunch.com/2026/11/19/metas-new-muse-charm-device-may-cost-300",
+    "theverge.com/tech/1038087/meta-muse-charm-ai-price",
+    "theverge.com/tech/1038059/google-search-homepage-ai-chats",
+    "theverge.com/ai-artificial-intelligence/1037634/openai-chatgpt-live-dictation",
+    "techcrunch.com/2026/11/19/former-alibaba-execs-everful-raises-48-5m-to-connect-retailers-with-chinese-factories",
+    "techcrunch.com/2026/11/19/these-tech-outages-are-giving-y2k-ai-agent-style",
+    "techcrunch.com/2026/11/19/superhuman-pushes-its-go-assistant-everywhere",
+    "theverge.com/ai-artificial-intelligence/1037126/canva-ai-features-off-button",
+    "techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause",
+    "theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on",
+    "youtube.com/watch?v=lwfewYL7X0o",
+    "robertpeake.com/archives/104254-ai-came-for-the-coders-understanding-why-tells-us-whos-next.html"
   ]
 }
