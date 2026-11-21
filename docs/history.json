@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-21",
+      "generatedAt": "2026-11-21T10:39:12.648Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Anthropic mathematician claims to have solved prestigious Millennium Prize problem with Claude",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1010051/anthropic-riemann-hypothesis-millennium-prize-problem",
+          "pubDate": "2026-11-20T16:34:13.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic数学家Levent Alpöge声称借助Claude证明了黎曼猜想，该证明尚待独立验证，Anthropic未予置评。若属实，将是AI在数学领域的又一重大突破。",
+          "heat": 95
+        },
+        {
+          "title": "AI claimed a solution to the 167-year-old Riemann hypothesis — and a human did, too",
+          "link": "https://techcrunch.com/2026/11/20/ai-claimed-a-solution-to-the-167-year-old-riemann-hypothesis-and-a-human-did-too/",
+          "pubDate": "2026-11-20T19:32:08.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic数学家Levent Alpöge宣称借Claude找到黎曼猜想的Lean可编译证明，MIT的Andrew Sutherland等已确认编译成功，但人类可理解的解释尚待补充。",
+          "heat": 92
+        },
+        {
+          "title": "The fallout from Nvidia’s Jensen Huang scandal continues",
+          "link": "https://techcrunch.com/podcast/the-fallout-from-nvidias-jensen-huang-scandal-continues/",
+          "pubDate": "2026-11-20T14:55:44.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达发布财报，业绩健康增长，但正应对CEO黄仁勋被罢免的余波，并拒绝让其回归。同时，英伟达宣布停止在中国销售H200芯片。",
+          "heat": 88
+        },
+        {
+          "title": "Trump threatens ‘tremendous tax’ for moving AI data centers outside the US",
+          "link": "https://www.theverge.com/policy/1038892/trump-foreign-data-centers-tax",
+          "pubDate": "2026-11-20T18:50:19.000Z",
+          "source": "The Verge",
+          "summary": "特朗普表示将对在境外建设 AI 数据中心的公司征收“巨额税收”，并称不会允许美国公司到国外建数据中心，以避免重蹈芯片产业外流的覆辙。此言论发表在中俄领导人峰会后的记者会上。",
+          "heat": 82
+        },
+        {
+          "title": "Chips can survive the space environment — can their financing?",
+          "link": "https://techcrunch.com/2026/11/20/chips-can-survive-the-space-environment-can-their-financing/",
+          "pubDate": "2026-11-20T17:40:01.000Z",
+          "source": "TechCrunch",
+          "summary": "SpaceX 的400亿美元芯片融资中，贷款方要求所购芯片不得用于轨道数据中心计划。太空数据中心还面临火箭运力不足、芯片难以抵押回收等难题，融资成本或上升。",
+          "heat": 72
+        }
+      ]
+    },
+    {
       "date": "2026-11-20",
       "generatedAt": "2026-11-20T10:55:00.357Z",
       "hours": 24,
@@ -1333,6 +1381,13 @@
     "techdirt.com/2026/11/19/court-tells-cops-that-the-4th-amendment-doesnt-cover-ai-generated-probable-cause",
     "theverge.com/tech/1037100/apple-siri-recap-audio-intelligence-hands-on",
     "youtube.com/watch?v=lwfewYL7X0o",
-    "robertpeake.com/archives/104254-ai-came-for-the-coders-understanding-why-tells-us-whos-next.html"
+    "robertpeake.com/archives/104254-ai-came-for-the-coders-understanding-why-tells-us-whos-next.html",
+    "theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app",
+    "motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition",
+    "a90.com/experiments/same-advice",
+    "techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
+    "theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
+    "ricapar.net/ClawDOS",
+    "techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
   ]
 }
