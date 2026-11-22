@@ -1,6 +1,58 @@
 {
   "days": [
     {
+      "date": "2026-11-22",
+      "generatedAt": "2026-11-22T10:43:31.322Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Can Anthropic afford to put safety first?",
+          "link": "https://www.theverge.com/podcast/1038701/anthropic-ipo-ai-safety-openai-nvidia-structure",
+          "pubDate": "2026-11-21T15:00:00.000Z",
+          "source": "The Verge",
+          "summary": "Anthropic上周四登陆纳斯达克，成为首家IPO的纯AI实验室，发行价83美元。其安全优先理念与上市公司股东压力、未来数年约9000亿美元算力支出之间的张力成为焦点。",
+          "heat": 88
+        },
+        {
+          "title": "A tale of two Nvidias",
+          "link": "https://techcrunch.com/2026/11/21/a-tale-of-two-nvidias/",
+          "pubDate": "2026-11-21T21:07:42.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达本周呈现两面：一边是财报营收飙升、临时CEO称无需黄仁勋回归，一边是马斯克等人请愿要求其重返。公司同时宣布停止在中国销售H200芯片，配合美方收紧远程访问限制。",
+          "heat": 82
+        },
+        {
+          "title": "Signal restricts mobile screenshots as it confronts ‘existential threat’ of AI surveillance",
+          "link": "https://techcrunch.com/2026/11/21/signal-restricts-mobile-screenshots-as-it-confronts-existential-threat-of-ai-surveillance/",
+          "pubDate": "2026-11-21T21:37:10.000Z",
+          "source": "TechCrunch",
+          "summary": "Signal 在 Android 和 iOS 应用限制截图，应对操作系统 AI 代理的“生存威胁”。总裁 Whittaker 称 AI 扫描屏幕数据致其无法独立保障隐私，用户可关闭该限制。",
+          "heat": 72
+        },
+        {
+          "title": "Upload2Shell (CVE-2026-125396)",
+          "link": "https://pwn.ai/upload2shell",
+          "pubDate": "2026-11-21T18:29:29.000Z",
+          "source": "Hacker News",
+          "summary": "Ghostscript Type 1 字体加载器释放后使用漏洞（CVE-2026-125396）可突破 -dSAFER 沙箱执行任意命令。",
+          "points": 119,
+          "comments": 57,
+          "heat": 70
+        },
+        {
+          "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+          "link": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+          "pubDate": "2026-11-22T08:57:34.000Z",
+          "source": "Hacker News",
+          "summary": "研究测算，Anthropic 2028年美国数据中心约87%电力来自天然气、11%来自煤炭，年碳排放或达1700万至3800万吨；公司已签约15GW算力，并斥34亿美元采购1.7GW燃气发电设备。",
+          "points": 104,
+          "comments": 111,
+          "heat": 64
+        }
+      ]
+    },
+    {
       "date": "2026-11-21",
       "generatedAt": "2026-11-21T10:39:12.648Z",
       "hours": 24,
@@ -1388,6 +1440,11 @@
     "techcrunch.com/2026/11/20/daniel-ek-backs-ai-researchers-fusion-power-startup-heres-what-theyre-building",
     "theverge.com/podcast/1038419/outage-outlook-ground-stop-tech-failure-vergecast",
     "ricapar.net/ClawDOS",
-    "techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter"
+    "techcrunch.com/2026/11/20/6-ai-powered-gadgets-that-could-make-your-home-office-smarter",
+    "theverge.com/tech/1039554/un-regulations-killer-robots",
+    "techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood",
+    "openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers",
+    "techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages",
+    "theverge.com/games/1038099/chess-classic-games-expansion-ai"
   ]
 }
