@@ -1,6 +1,56 @@
 {
   "days": [
     {
+      "date": "2026-11-23",
+      "generatedAt": "2026-11-23T11:49:28.536Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "How Notable Capital, GIC, and Baillie Gifford bet big on Anthropic before its IPO",
+          "link": "https://techcrunch.com/2026/11/22/how-notable-capital-gic-and-baillie-gifford-bet-big-on-anthropic-before-its-ipo/",
+          "pubDate": "2026-11-23T01:25:53.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic完成813亿美元IPO，创史上最大规模，估值约1.5万亿美元。早期投资方Notable Capital押注约10%基金获15倍回报；GIC三轮累计投资超45亿美元，持股约1%。",
+          "heat": 95
+        },
+        {
+          "title": "Meta Muse can now do your Black Friday shopping at Walmart",
+          "link": "https://www.theverge.com/ai-artificial-intelligence/1039874/walmart-agent-gateway-meta-muse-black-friday",
+          "pubDate": "2026-11-23T11:00:00.000Z",
+          "source": "The Verge",
+          "summary": "沃尔玛向Meta的AI购物代理Muse开放网站，让其代用户寻找并购买黑五折扣商品。沃尔玛通过Agent Profiles提供消费上限、购买审批和记录查询功能。",
+          "heat": 72
+        },
+        {
+          "title": "OpenAI’s chief scientist has thoughts on how to limit AI development",
+          "link": "https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/",
+          "pubDate": "2026-11-22T21:14:07.000Z",
+          "source": "TechCrunch",
+          "summary": "OpenAI首席科学家Jakub Pachocki提议用困惑度（perplexity）作为衡量AI进展的共享基准，据此为开发设定速度上限。",
+          "heat": 72
+        },
+        {
+          "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+          "link": "https://z.ai/blog/glm-5.4",
+          "pubDate": "2026-11-23T10:06:43.000Z",
+          "source": "Hacker News",
+          "summary": "智谱发布 GLM-5.4，主打泛化编码能力，是其首个采用 Loop Transformer 架构的模型，旨在提升代码生成与推理的通用性。",
+          "points": 131,
+          "comments": 55,
+          "heat": 66
+        },
+        {
+          "title": "We haven’t seen the last of the major tech outages",
+          "link": "https://www.theverge.com/tech/1039851/major-tech-outages",
+          "pubDate": "2026-11-22T22:48:02.000Z",
+          "source": "The Verge",
+          "summary": "美国近期接连发生FAA全国停飞、Outlook多日中断和摩根大通银行系统故障。国家情报总监克莱顿警告，技术跃迁必然伴随阵痛，民众应准备好为系统升级和网络安全投入巨资。",
+          "heat": 55
+        }
+      ]
+    },
+    {
       "date": "2026-11-22",
       "generatedAt": "2026-11-22T10:43:31.322Z",
       "hours": 24,
@@ -1445,6 +1495,11 @@
     "techcrunch.com/2026/11/21/is-selling-an-ai-version-of-your-face-to-this-microdrama-startup-the-future-of-hollywood",
     "openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers",
     "techcrunch.com/2026/11/21/all-the-ai-agents-that-can-live-in-your-text-messages",
-    "theverge.com/games/1038099/chess-classic-games-expansion-ai"
+    "theverge.com/games/1038099/chess-classic-games-expansion-ai",
+    "theverge.com/games/1039770/binding-of-isaac-ai-music",
+    "gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+    "theverge.com/column/1039139/vibe-coding-gadgets-tv-camera",
+    "techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash",
+    "claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3"
   ]
 }
