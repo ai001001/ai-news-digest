@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-24",
+      "generatedAt": "2026-11-24T13:17:16.012Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Nvidia reverses course and brings Jensen Huang back as CEO",
+          "link": "https://techcrunch.com/2026/11/23/nvidia-reverses-course-and-brings-jensen-huang-back-as-ceo/",
+          "pubDate": "2026-11-23T14:21:59.000Z",
+          "source": "TechCrunch",
+          "summary": "Nvidia 董事会周一宣布重新任命黄仁勋为 CEO 兼总裁，距其因婚外情及疑似中国间谍关联辞职不到两周。美国政府高级官员参与评估，认定无国家安全风险；消息公布后股价开盘涨约30%。",
+          "heat": 95
+        },
+        {
+          "title": "Elon Musk and others rejoice as Jensen Huang is reinstated at Nvidia amid scandal",
+          "link": "https://techcrunch.com/2026/11/23/elon-musk-and-others-rejoice-as-jensen-huang-is-reinstated-at-nvidia-amid-scandal/",
+          "pubDate": "2026-11-23T21:47:41.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达周一恢复黄仁勋CEO及总裁职务，马斯克、Altman、CZ等科技领袖公开庆祝，称“错误已纠正”。黄仁勋此前因三起婚外情（含涉中国间谍指控）被免，引发国会国安调查。",
+          "heat": 92
+        },
+        {
+          "title": "Jensen Huang scheduled to testify next week in Senate following reinstatement as Nvidia CEO",
+          "link": "https://techcrunch.com/2026/11/23/jensen-huang-scheduled-to-testify-next-week-in-senate-following-reinstatement-as-nvidia-ceo/",
+          "pubDate": "2026-11-23T18:12:22.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋将于12月3日出席参议院银行委员会公开听证会，就涉中国间谍嫌疑人的婚外情及芯片走私问题作证。此前他因该丑闻辞职，但刚被恢复CEO职务。",
+          "heat": 88
+        },
+        {
+          "title": "Amazon snaps up Decart’s AI optimization tech for $7.5B as it prepares to sell Trainium chips",
+          "link": "https://techcrunch.com/2026/11/23/amazon-snaps-up-decarts-ai-optimization-tech-for-7-5b-as-it-prepares-to-sell-trainium-chips/",
+          "pubDate": "2026-11-23T17:14:23.000Z",
+          "source": "TechCrunch",
+          "summary": "亚马逊以75亿美元收购以色列初创公司Decart的AI优化技术及研究团队，包括其优化栈DOS，可提升模型在英伟达、亚马逊等硬件上的运行效率。",
+          "heat": 88
+        },
+        {
+          "title": "Jensen Huang isn’t out of the woods yet",
+          "link": "https://techcrunch.com/2026/11/23/jensen-huang-isnt-out-of-the-woods-yet/",
+          "pubDate": "2026-11-23T16:57:40.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋因多起婚外情辞职后于周一回归，纳斯达克应声上涨7%，CoreWeave等云股反弹。但芯片走私中国、与情报人员关联及特朗普干预等国家安全疑问未消，国会调查风险仍存。",
+          "heat": 88
+        }
+      ]
+    },
+    {
       "date": "2026-11-23",
       "generatedAt": "2026-11-23T11:49:28.536Z",
       "hours": 24,
@@ -1500,6 +1548,26 @@
     "gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
     "theverge.com/column/1039139/vibe-coding-gadgets-tv-camera",
     "techcrunch.com/2026/11/22/why-data-centers-are-at-the-center-of-the-big-tech-backlash",
-    "claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3"
+    "claude.ai/artifact/CtQyX8qfYAF822bgHJHHE3",
+    "techcrunch.com/2026/11/23/sierra-doubles-valuation-to-30b-within-six-months-as-demand-for-ai-in-cx-takes-off",
+    "theverge.com/ai-artificial-intelligence/1040652/jensen-huang-nvidia-trump-reinstated",
+    "techcrunch.com/2026/11/23/nvidia-employees-greet-jensen-huang-like-a-hero-as-he-returns-to-companys-hq",
+    "theverge.com/tech/1040428/nvidia-jensen-huang-ceo-return",
+    "techcrunch.com/2026/11/23/trump-reportedly-called-into-nvidia-board-meeting-to-advocate-for-huangs-return",
+    "techcrunch.com/2026/11/23/trump-endorses-jensen-huangs-return-to-nvidia-says-us-has-no-evidence-of-wrongdoing",
+    "techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes",
+    "techcrunch.com/2026/11/23/megaspeed-the-company-at-the-center-of-the-jensen-huang-scandal-appears-headed-for-a-u-s-blacklist",
+    "theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests",
+    "techcrunch.com/2026/11/23/google-searchs-ai-mode-can-now-tap-into-drive-and-wallet-for-more-personalized-responses",
+    "theverge.com/ai-artificial-intelligence/1040255/x-grok-ai-deepfakes-oregon-virginia-lawsuit",
+    "theverge.com/policy/1040096/trump-nvidia-jensen-huang-reinstated",
+    "theverge.com/tech/1040069/jensen-huang-return-elon-musk-sam-altman-yay",
+    "theverge.com/science/1040497/ai-data-centers-electricity-un-climate-summit",
+    "techcrunch.com/2026/11/23/supertake-raises-20m-to-let-ai-agents-turn-your-market-predictions-into-stock-portfolios",
+    "theverge.com/gadgets/1040357/nothing-ear-note-earbuds-ai-recording",
+    "theverge.com/ai-artificial-intelligence/1040819/welcome-to-elite-impunity-jensen-huang",
+    "philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex",
+    "davidtemkin.github.io/declarelang",
+    "theatlantic.com/newsletters/2026/11/jensen-huang-ai-apology-nvidia/689366"
   ]
 }
