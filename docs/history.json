@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-25",
+      "generatedAt": "2026-11-25T12:08:18.043Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Amazon’s Decart acquisition is a bet on using software to narrow the silicon gap with Nvidia",
+          "link": "https://techcrunch.com/2026/11/24/amazons-decart-acquisition-is-a-bet-on-using-software-to-narrow-the-gap-with-nvidia-in-the-ai-chip-race/",
+          "pubDate": "2026-11-24T15:51:07.000Z",
+          "source": "TechCrunch",
+          "summary": "亚马逊据报以75亿美元收购Decart，核心是获其模型优化技术，让AI模型在非英伟达芯片上运行更高效。此举意在提升自研Trainium芯片性能，缩小与英伟达的差距。",
+          "heat": 88
+        },
+        {
+          "title": "Anthropic shares fall below IPO price, a worrying sign for AI startups",
+          "link": "https://techcrunch.com/2026/11/24/anthropic-shares-fall-below-ipo-price-a-worrying-sign-for-ai-startups/",
+          "pubDate": "2026-11-24T18:30:42.000Z",
+          "source": "TechCrunch",
+          "summary": "Anthropic上市不到一周股价跌破83美元IPO发行价，周二盘中最低76美元，较高点跌近12%。作为AI行业风向标，其低迷表现或压低私营初创估值，并削弱其他AI公司上市前景。",
+          "heat": 85
+        },
+        {
+          "title": "In all-hands meeting, Jensen Huang thanks White House and says he’s in therapy",
+          "link": "https://techcrunch.com/2026/11/24/in-all-hands-meeting-jensen-huang-thanks-white-house-and-says-hes-in-therapy/",
+          "pubDate": "2026-11-24T21:48:27.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达CEO黄仁勋在复职后首次全员大会上道歉，称伤害了员工，并透露自己正在接受心理治疗。他感谢白宫提供情报协助董事会评估复职的国家安全风险，下周将出席参议院银行委员会听证会。",
+          "heat": 78
+        },
+        {
+          "title": "Tidal to ban and remove millions of AI-generated tracks as AI slop inundates music streaming",
+          "link": "https://techcrunch.com/2026/11/24/tidal-to-ban-and-remove-millions-of-ai-generated-tracks-as-ai-slop-inundates-music-streaming/",
+          "pubDate": "2026-11-24T16:46:00.000Z",
+          "source": "TechCrunch",
+          "summary": "Tidal宣布12月9日起禁止并下架完全由AI生成的歌曲，年底前将删除逾2900万首。过去90天该平台43%的上传曲目为AI生成，Tidal仍接受AI辅助创作。",
+          "heat": 78
+        },
+        {
+          "title": "Yale’s Sonnenfeld: Nvidia is a ‘detriment’ to US industrial might — not a champion",
+          "link": "https://techcrunch.com/2026/11/24/yales-sonnenfeld-nvidia-is-a-detriment-to-u-s-industrial-might-not-a-champion/",
+          "pubDate": "2026-11-25T00:12:02.000Z",
+          "source": "TechCrunch",
+          "summary": "耶鲁教授Sonnenfeld批评英伟达CEO黄仁勋在特朗普政府施压下回归，认为英伟达将先进芯片流入中国，损害美国工业实力，董事会面临历史性个人责任及多起诉讼。",
+          "heat": 72
+        }
+      ]
+    },
+    {
       "date": "2026-11-24",
       "generatedAt": "2026-11-24T13:17:16.012Z",
       "hours": 24,
@@ -1568,6 +1616,22 @@
     "theverge.com/ai-artificial-intelligence/1040819/welcome-to-elite-impunity-jensen-huang",
     "philippdubach.com/posts/cheaper-ai-tokens-wont-pay-for-capex",
     "davidtemkin.github.io/declarelang",
-    "theatlantic.com/newsletters/2026/11/jensen-huang-ai-apology-nvidia/689366"
+    "theatlantic.com/newsletters/2026/11/jensen-huang-ai-apology-nvidia/689366",
+    "techcrunch.com/2026/11/24/even-the-best-ai-agents-struggle-with-everyday-life",
+    "techcrunch.com/2026/11/24/walmart-teams-up-with-meta-to-bring-black-friday-deals-to-ai-agent-muse",
+    "techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security",
+    "theverge.com/entertainment/1041362/tidal-ai-music-ban",
+    "techcrunch.com/2026/11/24/meta-brings-its-muse-ai-assistant-directly-into-instagram-dms",
+    "techcrunch.com/2026/11/24/jensen-huang-still-thinks-a-succession-plan-creates-unnecessary-hierarchy",
+    "theverge.com/tech/1041571/jensen-huang-all-hands-nvidia-apology",
+    "theverge.com/entertainment/1041417/david-fincher-netflix-cliff-booth-ai-interpositive",
+    "techcrunch.com/2026/11/24/pinterest-will-now-let-parents-limit-the-ai-generated-content-their-teens-see",
+    "theverge.com/tech/1041222/jensen-huang-nvidia-scandal-deepfakes",
+    "theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+    "anthropic.com/research/working-with-ai",
+    "news.ycombinator.com/item?id=50634426",
+    "techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself",
+    "techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers",
+    "marginalia.nu/log/a_141_marginalia_update"
   ]
 }
