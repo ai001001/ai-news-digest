@@ -1,6 +1,54 @@
 {
   "days": [
     {
+      "date": "2026-11-26",
+      "generatedAt": "2026-11-26T11:54:02.042Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "The questions Jensen Huang and Nvidia will still have to answer about Megaspeed",
+          "link": "https://techcrunch.com/2026/11/25/the-questions-jensen-huang-and-nvidia-will-still-have-to-answer-about-megaspeed/",
+          "pubDate": "2026-11-25T13:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达因客户Megaspeed涉嫌违反对华出口管制走私GPU，遭美司法部、加州总检察长、国会及SEC调查。",
+          "heat": 85
+        },
+        {
+          "title": "42 state AGs are trying to stop Character.AI from selling users’ chats",
+          "link": "https://www.theverge.com/policy/1042620/character-ai-sale-state-ags-block-selling-users-chats",
+          "pubDate": "2026-11-26T09:54:40.000Z",
+          "source": "The Verge",
+          "summary": "美国42州总检察长联合反对Character.AI在破产程序中出售2100万美国用户聊天记录，其中超210万属未成年人账户。公司10月已申请破产。",
+          "heat": 82
+        },
+        {
+          "title": "FCC signs off on SpaceX’s plan to put up to 1 million data center satellites into space",
+          "link": "https://www.theverge.com/science/1042278/spacex-fcc-starmind-ai-space-data-centers",
+          "pubDate": "2026-11-25T17:44:51.000Z",
+          "source": "The Verge",
+          "summary": "美国FCC批准SpaceX部署最多100万颗搭载AI芯片的卫星，用于其「Starmind」计划，这是该机构首次批准完整的AI卫星星座。SpaceX须在2033年前发射首颗，2040年前达到百万颗规模。",
+          "heat": 82
+        },
+        {
+          "title": "Character.AI’s plan to auction off users’ private chats challenged by state AGs",
+          "link": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/",
+          "pubDate": "2026-11-25T17:35:58.000Z",
+          "source": "TechCrunch",
+          "summary": "42州总检察长介入Character.AI破产程序，力图阻止其拍卖2100万美国用户（含210万未成年人）的私密聊天记录等敏感数据，认为买家可随意转售且无需遵守隐私政策。",
+          "heat": 82
+        },
+        {
+          "title": "S&P considers Nvidia credit downgrade over governance and ‘key man’ risks",
+          "link": "https://techcrunch.com/2026/11/25/sp-considers-nvidia-credit-downgrade-over-governance-and-key-man-risks/",
+          "pubDate": "2026-11-25T22:44:32.000Z",
+          "source": "TechCrunch",
+          "summary": "标普考虑将英伟达评级从AA下调至AA-，担忧治理薄弱、缺乏继任计划及对CEO黄仁勋的关键人依赖。审查90天内完成，降级或推高其借贷与AI基建担保融资成本。",
+          "heat": 78
+        }
+      ]
+    },
+    {
       "date": "2026-11-25",
       "generatedAt": "2026-11-25T12:08:18.043Z",
       "hours": 24,
@@ -1632,6 +1680,18 @@
     "news.ycombinator.com/item?id=50634426",
     "techcrunch.com/2026/11/24/maple-raises-5-3m-to-build-ai-products-that-protect-your-data-even-from-itself",
     "techcrunch.com/2026/11/24/why-a-crusoe-investor-is-betting-on-solar-and-batteries-to-power-future-ai-data-centers",
-    "marginalia.nu/log/a_141_marginalia_update"
+    "marginalia.nu/log/a_141_marginalia_update",
+    "techcrunch.com/podcast/ai-data-centers-are-becoming-harder-to-build-and-neoclouds-are-feeling-it",
+    "techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work",
+    "techcrunch.com/2026/11/25/want-to-buy-your-kid-an-ai-toy-this-christmas-not-in-new-york",
+    "techcrunch.com/2026/11/25/amazon-and-meta-reportedly-in-talks-to-lift-blockade-on-ai-agent-muse",
+    "theverge.com/entertainment/1042221/google-my-channel-ai-video-patent",
+    "theverge.com/tech/1042071/meta-amazon-muse-ai-shopping-discussions",
+    "techstackups.com/articles/google-workspace-ai-agents-mcp",
+    "techcrunch.com/2026/11/25/jensen-huang-broke-nvidias-code-of-conduct-and-his-employees-may-not-forget-it",
+    "techcrunch.com/2026/11/25/anthropics-dario-amodei-calls-accusations-of-surrendering-human-control-to-ai-absurd",
+    "theverge.com/gadgets/1042162/nothing-ear-note-ai-earbuds-reveal",
+    "theguardian.com/us-news/2026/nov/25/new-york-bans-ai-toys",
+    "theverge.com/ai-artificial-intelligence/1040081/vibe-coding-open-source-music-firmware"
   ]
 }
