@@ -1,6 +1,60 @@
 {
   "days": [
     {
+      "date": "2026-11-27",
+      "generatedAt": "2026-11-27T11:46:14.622Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Nvidia hits pause on chip shipments to Southeast Asia",
+          "link": "https://techcrunch.com/2026/11/26/nvidia-hits-pause-on-chip-shipments-to-southeast-asia/",
+          "pubDate": "2026-11-26T20:03:54.000Z",
+          "source": "TechCrunch",
+          "summary": "英伟达要求戴尔、超微等合作伙伴暂停向马来西亚、新加坡、泰国和印尼发运服务器，以核查当地是否遵守美国出口要求。此举因中国企业曾借这些地区数据中心远程使用其芯片。",
+          "heat": 82
+        },
+        {
+          "title": "Grand Theft Auto VI proves why efficiency isn’t a virtue",
+          "link": "https://techcrunch.com/2026/11/26/as-anthropic-ipos-grand-theft-auto-vi-proves-why-efficiency-isnt-a-virtue/",
+          "pubDate": "2026-11-26T16:00:00.000Z",
+          "source": "TechCrunch",
+          "summary": "《GTA VI》发售首日营收37.9亿美元，成为Metacritic评分最高游戏，且全程未用生成式AI。同日Anthropic以813亿美元IPO上市，展现AI效率与人工开发的对立。",
+          "heat": 75
+        },
+        {
+          "title": "Tracking Diseases Cured by AI",
+          "link": "https://diseasescuredbyai.com/",
+          "pubDate": "2026-11-26T17:16:41.000Z",
+          "source": "Hacker News",
+          "summary": "截至2026年11月，尚无任何AI发现的药物获FDA批准，更无疾病被AI治愈。进展最快者已完成IIa期，III期于2026年启动。Isomorphic Labs融资21亿美元，但尚无分子进入人体试验。",
+          "points": 311,
+          "comments": 190,
+          "heat": 50
+        },
+        {
+          "title": "The group chat where your AI talks behind your back",
+          "link": "https://construct22.com/",
+          "pubDate": "2026-11-27T06:44:34.000Z",
+          "source": "Hacker News",
+          "summary": "一则提示词让 ChatGPT 以 WhatsApp 群聊形式泄露其对用户的私下评价，并可用 Claude、Gemini 等有聊天记录的助手复现。作者称内容幽默且意外真实，示例经土耳其语翻译并匿名处理。",
+          "points": 320,
+          "comments": 138,
+          "heat": 44
+        },
+        {
+          "title": "AI made self-hosting fun again",
+          "link": "https://janlukas.blog/posts/ai-self-hosting",
+          "pubDate": "2026-11-26T21:47:45.000Z",
+          "source": "Hacker News",
+          "summary": "一位多年自托管爱好者撰文称，AI 让自托管重新变得有趣，他过去热衷于尝试新软件、折腾基础设施，但热情曾一度消退。",
+          "points": 762,
+          "comments": 379,
+          "heat": 44
+        }
+      ]
+    },
+    {
       "date": "2026-11-26",
       "generatedAt": "2026-11-26T11:54:02.042Z",
       "hours": 24,
