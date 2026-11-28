@@ -1,6 +1,52 @@
 {
   "days": [
     {
+      "date": "2026-11-28",
+      "generatedAt": "2026-11-28T11:22:33.933Z",
+      "hours": 24,
+      "failed": [],
+      "articles": [
+        {
+          "title": "Woman evicted after landlord's AI assistant told her she could delay rent",
+          "link": "https://drmahfouz.substack.com/p/woman-evicted-after-landlords-ai",
+          "pubDate": "2026-11-28T01:32:56.000Z",
+          "source": "Hacker News",
+          "summary": "美国一名女租户因房东的AI助手告知其可延期缴纳租金而遭驱逐，事件暴露AI助手在租赁场景中给出错误承诺的责任归属问题。",
+          "points": 178,
+          "comments": 129,
+          "heat": 49
+        },
+        {
+          "title": "Android’s DIY widgets are a bit of vibe-coding fun",
+          "link": "https://www.theverge.com/tech/1041801/android-intelligence-create-my-widget-gemini",
+          "pubDate": "2026-11-27T14:00:00.000Z",
+          "source": "The Verge",
+          "summary": "谷歌在 I/O 大会上推出的 Android「Create My Widget」AI 自定义小组件功能实测：记者想用它做实时公交到站组件未果，但制作其他小组件体验有趣。",
+          "heat": 45
+        },
+        {
+          "title": "Prospero: Bloat-free, native AI coding harness with ImGui",
+          "link": "https://github.com/skeeto/prospero",
+          "pubDate": "2026-11-27T20:23:14.000Z",
+          "source": "Hacker News",
+          "summary": "开发者 skeeto 发布开源 AI 编码工具 Prospero，单文件 C++ 程序，跨平台兼容 OpenAI 与 Anthropic API，无需守护进程，已置于公有领域。",
+          "points": 78,
+          "comments": 32,
+          "heat": 40
+        },
+        {
+          "title": "I'm Scared of AI",
+          "link": "https://thesoapbox.email/archive/3",
+          "pubDate": "2026-11-27T17:45:31.000Z",
+          "source": "Hacker News",
+          "summary": "一名订阅者在邮件通讯中投稿，表达对AI的恐惧：不是担心黑客攻击或核灾难，而是发现自己每次把思考外包给AI后变得更笨，失去完成任务后的成就感。他呼吁读者分享应对建议。",
+          "points": 214,
+          "comments": 247,
+          "heat": 32
+        }
+      ]
+    },
+    {
       "date": "2026-11-27",
       "generatedAt": "2026-11-27T11:46:14.622Z",
       "hours": 24,
